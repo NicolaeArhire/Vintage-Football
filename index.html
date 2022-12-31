@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vintage Football</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="standings">
+        <div class="standings_header">
+          <span class="standings_place">#.</span>
+          <span class="standings_teams">Teams</span>
+          <span class="standings_played">G</span>
+          <span class="standings_wins">W</span>
+          <span class="standings_draws">D</span>
+          <span class="standings_lost">L</span>
+          <span class="standings_goals">GA</span>
+          <span class="standings_points">P</span>
+        </div>
+        <div class="standings_no1" id="standings_details">
+          <span class="standings_no1_place" id="standings_place">1.</span>
+          <span class="standings_no1_teams" id="standings_teams">Arsenal</span>
+          <span class="standings_no1_played" id="standings_played">0</span>
+          <span class="standings_no1_wins" id="standings_wins">0</span>
+          <span class="standings_no1_draws" id="standings_draws">0</span>
+          <span class="standings_no1_lost" id="standings_lost">0</span>
+          <span class="standings_no1_goals" id="standings_goals">0-0</span>
+          <span class="standings_no1_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no2" id="standings_details">
+          <span class="standings_no2_place" id="standings_place">2.</span>
+          <span class="standings_no2_teams" id="standings_teams"
+            >Manchester City</span
+          >
+          <span class="standings_no2_played" id="standings_played">0</span>
+          <span class="standings_no2_wins" id="standings_wins">0</span>
+          <span class="standings_no2_draws" id="standings_draws">0</span>
+          <span class="standings_no2_lost" id="standings_lost">0</span>
+          <span class="standings_no2_goals" id="standings_goals">0-0</span>
+          <span class="standings_no2_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no3" id="standings_details">
+          <span class="standings_no3_place" id="standings_place">3.</span>
+          <span class="standings_no3_teams" id="standings_teams"
+            >Newcastle</span
+          >
+          <span class="standings_no3_played" id="standings_played">0</span>
+          <span class="standings_no3_wins" id="standings_wins">0</span>
+          <span class="standings_no3_draws" id="standings_draws">0</span>
+          <span class="standings_no3_lost" id="standings_lost">0</span>
+          <span class="standings_no3_goals" id="standings_goals">0-0</span>
+          <span class="standings_no3_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no4" id="standings_details">
+          <span class="standings_no4_place" id="standings_place">4.</span>
+          <span class="standings_no4_teams" id="standings_teams"
+            >Tottenham</span
+          >
+          <span class="standings_no4_played" id="standings_played">0</span>
+          <span class="standings_no4_wins" id="standings_wins">0</span>
+          <span class="standings_no4_draws" id="standings_draws">0</span>
+          <span class="standings_no4_lost" id="standings_lost">0</span>
+          <span class="standings_no4_goals" id="standings_goals">0-0</span>
+          <span class="standings_no4_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no5" id="standings_details">
+          <span class="standings_no5_place" id="standings_place">5.</span>
+          <span class="standings_no5_teams" id="standings_teams"
+            >Manchester United</span
+          >
+          <span class="standings_no5_played" id="standings_played">0</span>
+          <span class="standings_no5_wins" id="standings_wins">0</span>
+          <span class="standings_no5_draws" id="standings_draws">0</span>
+          <span class="standings_no5_lost" id="standings_lost">0</span>
+          <span class="standings_no5_goals" id="standings_goals">0-0</span>
+          <span class="standings_no5_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no6" id="standings_details">
+          <span class="standings_no6_place" id="standings_place">6.</span>
+          <span class="standings_no6_teams" id="standings_teams"
+            >Liverpool</span
+          >
+          <span class="standings_no6_played" id="standings_played">0</span>
+          <span class="standings_no6_wins" id="standings_wins">0</span>
+          <span class="standings_no6_draws" id="standings_draws">0</span>
+          <span class="standings_no6_lost" id="standings_lost">0</span>
+          <span class="standings_no6_goals" id="standings_goals">0-0</span>
+          <span class="standings_no6_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no7" id="standings_details">
+          <span class="standings_no7_place" id="standings_place">7.</span>
+          <span class="standings_no7_teams" id="standings_teams">Brighton</span>
+          <span class="standings_no7_played" id="standings_played">0</span>
+          <span class="standings_no7_wins" id="standings_wins">0</span>
+          <span class="standings_no7_draws" id="standings_draws">0</span>
+          <span class="standings_no7_lost" id="standings_lost">0</span>
+          <span class="standings_no7_goals" id="standings_goals">0-0</span>
+          <span class="standings_no7_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no8" id="standings_details">
+          <span class="standings_no8_place" id="standings_place">8.</span>
+          <span class="standings_no8_teams" id="standings_teams">Chelsea</span>
+          <span class="standings_no8_played" id="standings_played">0</span>
+          <span class="standings_no8_wins" id="standings_wins">0</span>
+          <span class="standings_no8_draws" id="standings_draws">0</span>
+          <span class="standings_no8_lost" id="standings_lost">0</span>
+          <span class="standings_no8_goals" id="standings_goals">0-0</span>
+          <span class="standings_no8_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no9" id="standings_details">
+          <span class="standings_no9_place" id="standings_place">9.</span>
+          <span class="standings_no9_teams" id="standings_teams"
+            >Brentford</span
+          >
+          <span class="standings_no9_played" id="standings_played">0</span>
+          <span class="standings_no9_wins" id="standings_wins">0</span>
+          <span class="standings_no9_draws" id="standings_draws">0</span>
+          <span class="standings_no9_lost" id="standings_lost">0</span>
+          <span class="standings_no9_goals" id="standings_goals">0-0</span>
+          <span class="standings_no9_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no10" id="standings_details">
+          <span class="standings_no10_place" id="standings_place">10.</span>
+          <span class="standings_no10_teams" id="standings_teams">Fulham</span>
+          <span class="standings_no10_played" id="standings_played">0</span>
+          <span class="standings_no10_wins" id="standings_wins">0</span>
+          <span class="standings_no10_draws" id="standings_draws">0</span>
+          <span class="standings_no10_lost" id="standings_lost">0</span>
+          <span class="standings_no10_goals" id="standings_goals">0-0</span>
+          <span class="standings_no10_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no11" id="standings_details">
+          <span class="standings_no11_place" id="standings_place">11.</span>
+          <span class="standings_no11_teams" id="standings_teams"
+            >Crystal Palace</span
+          >
+          <span class="standings_no11_played" id="standings_played">0</span>
+          <span class="standings_no11_wins" id="standings_wins">0</span>
+          <span class="standings_no11_draws" id="standings_draws">0</span>
+          <span class="standings_no11_lost" id="standings_lost">0</span>
+          <span class="standings_no11_goals" id="standings_goals">0-0</span>
+          <span class="standings_no11_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no12" id="standings_details">
+          <span class="standings_no12_place" id="standings_place">12.</span>
+          <span class="standings_no12_teams" id="standings_teams"
+            >Aston Villa</span
+          >
+          <span class="standings_no12_played" id="standings_played">0</span>
+          <span class="standings_no12_wins" id="standings_wins">0</span>
+          <span class="standings_no12_draws" id="standings_draws">0</span>
+          <span class="standings_no12_lost" id="standings_lost">0</span>
+          <span class="standings_no12_goals" id="standings_goals">0-0</span>
+          <span class="standings_no12_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no13" id="standings_details">
+          <span class="standings_no13_place" id="standings_place">13.</span>
+          <span class="standings_no13_teams" id="standings_teams"
+            >Leicester</span
+          >
+          <span class="standings_no13_played" id="standings_played">0</span>
+          <span class="standings_no13_wins" id="standings_wins">0</span>
+          <span class="standings_no13_draws" id="standings_draws">0</span>
+          <span class="standings_no13_lost" id="standings_lost">0</span>
+          <span class="standings_no13_goals" id="standings_goals">0-0</span>
+          <span class="standings_no13_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no14" id="standings_details">
+          <span class="standings_no14_place" id="standings_place">14.</span>
+          <span class="standings_no14_teams" id="standings_teams"
+            >Bournemouth</span
+          >
+          <span class="standings_no14_played" id="standings_played">0</span>
+          <span class="standings_no14_wins" id="standings_wins">0</span>
+          <span class="standings_no14_draws" id="standings_draws">0</span>
+          <span class="standings_no14_lost" id="standings_lost">0</span>
+          <span class="standings_no14_goals" id="standings_goals">0-0</span>
+          <span class="standings_no14_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no15" id="standings_details">
+          <span class="standings_no15_place" id="standings_place">15.</span>
+          <span class="standings_no15_teams" id="standings_teams">Leeds</span>
+          <span class="standings_no15_played" id="standings_played">0</span>
+          <span class="standings_no15_wins" id="standings_wins">0</span>
+          <span class="standings_no15_draws" id="standings_draws">0</span>
+          <span class="standings_no15_lost" id="standings_lost">0</span>
+          <span class="standings_no15_goals" id="standings_goals">0-0</span>
+          <span class="standings_no15_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no16" id="standings_details">
+          <span class="standings_no16_place" id="standings_place">16.</span>
+          <span class="standings_no16_teams" id="standings_teams">Everton</span>
+          <span class="standings_no16_played" id="standings_played">0</span>
+          <span class="standings_no16_wins" id="standings_wins">0</span>
+          <span class="standings_no16_draws" id="standings_draws">0</span>
+          <span class="standings_no16_lost" id="standings_lost">0</span>
+          <span class="standings_no16_goals" id="standings_goals">0-0</span>
+          <span class="standings_no16_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no17" id="standings_details">
+          <span class="standings_no17_place" id="standings_place">17.</span>
+          <span class="standings_no17_teams" id="standings_teams"
+            >West Ham</span
+          >
+          <span class="standings_no17_played" id="standings_played">0</span>
+          <span class="standings_no17_wins" id="standings_wins">0</span>
+          <span class="standings_no17_draws" id="standings_draws">0</span>
+          <span class="standings_no17_lost" id="standings_lost">0</span>
+          <span class="standings_no17_goals" id="standings_goals">0-0</span>
+          <span class="standings_no17_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no18" id="standings_details">
+          <span class="standings_no18_place" id="standings_place">18.</span>
+          <span class="standings_no18_teams" id="standings_teams"
+            >Wolverhampton</span
+          >
+          <span class="standings_no18_played" id="standings_played">0</span>
+          <span class="standings_no18_wins" id="standings_wins">0</span>
+          <span class="standings_no18_draws" id="standings_draws">0</span>
+          <span class="standings_no18_lost" id="standings_lost">0</span>
+          <span class="standings_no18_goals" id="standings_goals">0-0</span>
+          <span class="standings_no18_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no19" id="standings_details">
+          <span class="standings_no19_place" id="standings_place">19.</span>
+          <span class="standings_no19_teams" id="standings_teams"
+            >Nottingham</span
+          >
+          <span class="standings_no19_played" id="standings_played">0</span>
+          <span class="standings_no19_wins" id="standings_wins">0</span>
+          <span class="standings_no19_draws" id="standings_draws">0</span>
+          <span class="standings_no19_lost" id="standings_lost">0</span>
+          <span class="standings_no19_goals" id="standings_goals">0-0</span>
+          <span class="standings_no19_points" id="standings_points">0</span>
+        </div>
+        <div class="standings_no20" id="standings_details">
+          <span class="standings_no20_place" id="standings_place">20.</span>
+          <span class="standings_no20_teams" id="standings_teams"
+            >Southampton</span
+          >
+          <span class="standings_no20_played" id="standings_played">0</span>
+          <span class="standings_no20_wins" id="standings_wins">0</span>
+          <span class="standings_no20_draws" id="standings_draws">0</span>
+          <span class="standings_no20_lost" id="standings_lost">0</span>
+          <span class="standings_no20_goals" id="standings_goals">0-0</span>
+          <span class="standings_no20_points" id="standings_points">0</span>
+        </div>
+      </div>
+      <div class="games">
+        <div class="rounds">Round 1</div>
+        <div class="teams">
+          <span class="game1_time" id="game_time">TBD</span>
+          <span class="game1_home" id="home">Arsenal</span>
+          <span class="game1_home_score" id="home_score">0</span>
+          <span class="game1_guest" id="guest">Manchester City</span>
+          <span class="game1_guest_score" id="guest_score">0</span>
+        </div>
+        <div class="teams">
+          <span class="game2_time" id="game_time">TBD</span>
+          <span class="game2_home" id="home">Newcastle</span>
+          <span class="game2_home_score" id="home_score">0</span>
+          <span class="game2_guest" id="guest">Tottenham</span>
+          <span class="game2_guest_score" id="guest_score">0</span>
+        </div>
+        <div class="teams">
+          <span class="game3_time" id="game_time">TBD</span>
+          <span class="game3_home" id="home">Manchester United</span>
+          <span class="game3_home_score" id="home_score">0</span>
+          <span class="game3_guest" id="guest">Liverpool</span>
+          <span class="game3_guest_score" id="guest_score">0</span>
+        </div>
+        <div class="teams">
+          <span class="game4_time" id="game_time">TBD</span>
+          <span class="game4_home" id="home">Brighton</span>
+          <span class="game4_home_score" id="home_score">0</span>
+          <span class="game4_guest" id="guest">Chelsea</span>
+          <span class="game4_guest_score" id="guest_score">0</span>
+        </div>
+        <div class="teams">
+          <span class="game5_time" id="game_time">TBD</span>
+          <span class="game5_home" id="home">Brentford</span>
+          <span class="game5_home_score" id="home_score">0</span>
+          <span class="game5_guest" id="guest">Fulham</span>
+          <span class="game5_guest_score" id="guest_score">0</span>
+        </div>
+        <div class="teams">
+          <span class="game6_time" id="game_time">TBD</span>
+          <span class="game6_home" id="home">Crystal Palace</span>
+          <span class="game6_home_score" id="home_score">0</span>
+          <span class="game6_guest" id="guest">Aston Villa</span>
+          <span class="game6_guest_score" id="guest_score">0</span>
+        </div>
+        <div class="teams">
+          <span class="game7_time" id="game_time">TBD</span>
+          <span class="game7_home" id="home">Leicester</span>
+          <span class="game7_home_score" id="home_score">0</span>
+          <span class="game7_guest" id="guest">Bournemouth</span>
+          <span class="game7_guest_score" id="guest_score">0</span>
+        </div>
+        <div class="teams">
+          <span class="game8_time" id="game_time">TBD</span>
+          <span class="game8_home" id="home">Leeds</span>
+          <span class="game8_home_score" id="home_score">0</span>
+          <span class="game8_guest" id="guest">Everton</span>
+          <span class="game8_guest_score" id="guest_score">0</span>
+        </div>
+        <div class="teams">
+          <span class="game9_time" id="game_time">TBD</span>
+          <span class="game9_home" id="home">West Ham</span>
+          <span class="game9_home_score" id="home_score">0</span>
+          <span class="game9_guest" id="guest">Wolverhampton</span>
+          <span class="game9_guest_score" id="guest_score">0</span>
+        </div>
+        <div class="teams">
+          <span class="game10_time" id="game_time">TBD</span>
+          <span class="game10_home" id="home">Nottingham</span>
+          <span class="game10_home_score" id="home_score">0</span>
+          <span class="game10_guest" id="guest">Southampton</span>
+          <span class="game10_guest_score" id="guest_score">0</span>
+        </div>
+        <button class="start_games">Start Games</button>
+      </div>
+    </div>
+    <script type="text/javascript" src="./script.js"></script>
+  </body>
+</html>
