@@ -27,23 +27,26 @@ body {
   background-color: rgb(251, 255, 0);
 }
 
-.start_games {
-  width: 100px;
+.start_games,
+.clear_results {
+  width: 60px;
   margin-top: 10px;
   margin-left: 10px;
   padding-left: 10px;
   border-radius: 10px;
   text-decoration: none;
   background-color: rgb(238, 49, 49);
-  color: wheat;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
 }
 
-.start_games:hover {
+.start_games:hover,
+.clear_results:hover {
   cursor: pointer;
-  background-color: rgb(31, 20, 31);
 }
 
-.start_games:active {
+.start_games:active,
+.clear_results:active {
   background-color: rgb(5, 22, 175);
 }
 
