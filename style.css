@@ -28,7 +28,8 @@ body {
 }
 
 .start_games,
-.clear_results {
+.clear_results,
+.next_round {
   width: 60px;
   margin-top: 10px;
   margin-left: 10px;
@@ -40,13 +41,20 @@ body {
   font-weight: bold;
 }
 
+.next_round {
+  width: 100px;
+  background-color: rgb(206, 203, 19);
+}
+
 .start_games:hover,
-.clear_results:hover {
+.clear_results:hover,
+.next_round {
   cursor: pointer;
 }
 
 .start_games:active,
-.clear_results:active {
+.clear_results:active,
+.next_round:active {
   background-color: rgb(5, 22, 175);
 }
 
@@ -155,7 +163,7 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   border-radius: 15px;
-  color: white;
+  color: rgb(238, 223, 11);
 }
 
 #home {
