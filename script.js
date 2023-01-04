@@ -1,11 +1,11 @@
 const gameTime = document.querySelectorAll("#game_time");
-
 const currentTime = new Date();
 const hours = currentTime.getHours();
 const minutes = currentTime.getMinutes();
+const minutesWithLeadingZero = minutes < 10 ? `0${minutes}` : minutes;
 
 for (const element of gameTime) {
-  element.innerHTML = `${hours}:${minutes}`;
+  element.innerHTML = "--:--";
 }
 
 let homeScore1 = document.querySelector(".game1_home_score");
@@ -58,6 +58,54 @@ let guestScore = [
 
 let startGames = document.querySelector(".start_games");
 let clearResults = document.querySelector(".clear_results");
+
+let teamNo1 = document.querySelector(".team_no1");
+let teamNo2 = document.querySelector(".team_no2");
+let teamNo3 = document.querySelector(".team_no3");
+let teamNo4 = document.querySelector(".team_no4");
+let teamNo5 = document.querySelector(".team_no5");
+let teamNo6 = document.querySelector(".team_no6");
+let teamNo7 = document.querySelector(".team_no7");
+let teamNo8 = document.querySelector(".team_no8");
+let teamNo9 = document.querySelector(".team_no9");
+let teamNo10 = document.querySelector(".team_no10");
+let teamNo11 = document.querySelector(".team_no11");
+let teamNo12 = document.querySelector(".team_no12");
+let teamNo13 = document.querySelector(".team_no13");
+let teamNo14 = document.querySelector(".team_no14");
+let teamNo15 = document.querySelector(".team_no15");
+let teamNo16 = document.querySelector(".team_no16");
+let teamNo17 = document.querySelector(".team_no17");
+let teamNo18 = document.querySelector(".team_no18");
+let teamNo19 = document.querySelector(".team_no19");
+let teamNo20 = document.querySelector(".team_no20");
+
+let teamNames = [
+  teamNo1,
+  teamNo2,
+  teamNo3,
+  teamNo4,
+  teamNo5,
+  teamNo6,
+  teamNo7,
+  teamNo8,
+  teamNo9,
+  teamNo10,
+  teamNo11,
+  teamNo12,
+  teamNo13,
+  teamNo14,
+  teamNo15,
+  teamNo16,
+  teamNo17,
+  teamNo18,
+  teamNo19,
+  teamNo20,
+];
+
+// for (let i = 0; i < teamNames.length; i += 2) {
+//   teamNames[i].innerHTML = teamNames[i + 1].innerHTML;
+// }
 
 let standingNo1 = document.querySelector(".standings_no1_teams"); //homeScore1
 let standingNo2 = document.querySelector(".standings_no2_teams"); //guestScore1
@@ -390,8 +438,9 @@ function addStrings(val1, val2) {
 startGames.addEventListener("click", () => {
   startGames.disabled = true;
   clearResults.disabled = false;
+
   for (const element of gameTime) {
-    element.innerHTML = "FIN";
+    element.innerHTML = `${hours}:${minutesWithLeadingZero}`;
   }
 
   let dummy1 = getRandomInt(7);
@@ -624,41 +673,29 @@ startGames.addEventListener("click", () => {
       if (b.points !== a.points) {
         return parseInt(b.points) - parseInt(a.points);
       } else {
-        return parseInt(b.goals) - parseInt(a.goals);
+        let diffA =
+          parseInt(a.goals.split("-")[0]) - parseInt(a.goals.split("-")[1]);
+        let diffB =
+          parseInt(b.goals.split("-")[0]) - parseInt(b.goals.split("-")[1]);
+        if (diffB !== diffA) {
+          return diffB - diffA;
+        } else {
+          return (
+            parseInt(b.goals.split("-")[0]) - parseInt(a.goals.split("-")[0])
+          );
+        }
       }
     });
 
   for (let i = 0; i < sortedStanding.length; i++) {
     standingTeams[i].innerHTML = sortedStanding[i].team;
-  }
-
-  for (let i = 0; i < sortedStanding.length; i++) {
     playedTeams[i].innerHTML = sortedStanding[i].games;
-  }
-
-  for (let i = 0; i < sortedStanding.length; i++) {
     winsTeams[i].innerHTML = sortedStanding[i].wins;
-  }
-
-  for (let i = 0; i < sortedStanding.length; i++) {
     drawsTeams[i].innerHTML = sortedStanding[i].draws;
-  }
-
-  for (let i = 0; i < sortedStanding.length; i++) {
     lostTeams[i].innerHTML = sortedStanding[i].lost;
-  }
-
-  for (let i = 0; i < sortedStanding.length; i++) {
     goalsTeams[i].innerHTML = sortedStanding[i].goals;
-  }
-
-  for (let i = 0; i < sortedStanding.length; i++) {
     pointsTeams[i].innerHTML = sortedStanding[i].points;
   }
-
-  console.log(goalsTeam1.innerHTML);
-  console.log(goalsTeam2.innerHTML);
-  console.log(addStrings(goalsTeam1.innerHTML, goalsTeam2.innerHTML));
 });
 
 function standings() {

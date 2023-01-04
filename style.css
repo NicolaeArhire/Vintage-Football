@@ -30,7 +30,7 @@ body {
 .start_games,
 .clear_results,
 .next_round {
-  width: 60px;
+  width: 80px;
   margin-top: 10px;
   margin-left: 10px;
   padding-left: 10px;
@@ -56,6 +56,13 @@ body {
 .clear_results:active,
 .next_round:active {
   background-color: rgb(5, 22, 175);
+}
+
+.start_games:disabled,
+.clear_results:disabled {
+  background-color: moccasin;
+  opacity: 0.5;
+  cursor: initial;
 }
 
 .teams {
