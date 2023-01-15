@@ -1,0 +1,2531 @@
+[
+  {
+    "round": "Matchday 1",
+    "date": "2020-09-12",
+    "team1": "Rayo Vallecano",
+    "team2": "RC Celta Vigo",
+    "score": {
+      "ft": [0, 0]
+    }
+  },
+  {
+    "round": "Matchday 1",
+    "date": "2020-09-12",
+    "team1": "Mallorca",
+    "team2": "Athletic Bilbao",
+    "score": {
+      "ft": [2, 0]
+    }
+  },
+  {
+    "round": "Matchday 1",
+    "date": "2020-09-12",
+    "team1": "Cádiz CF",
+    "team2": "CA Osasuna",
+    "score": {
+      "ft": [0, 2]
+    }
+  },
+  {
+    "round": "Matchday 1",
+    "date": "2020-09-13",
+    "team1": "FC Barcelona",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 1",
+    "date": "2020-09-13",
+    "team1": "Real Madrid",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 1",
+    "date": "2020-09-13",
+    "team1": "Girona",
+    "team2": "Real Betis",
+    "score": {
+      "ft": [0, 1]
+    }
+  },
+  {
+    "round": "Matchday 1",
+    "date": "2020-09-13",
+    "team1": "Valladolid",
+    "team2": "Real Sociedad",
+    "score": {
+      "ft": [1, 1]
+    }
+  },
+  {
+    "round": "Matchday 1",
+    "date": "2020-09-13",
+    "team1": "Villarreal CF",
+    "team2": "Almeria",
+    "score": {
+      "ft": [1, 1]
+    }
+  },
+  {
+    "round": "Matchday 1",
+    "date": "2020-09-13",
+    "team1": "Valencia CF",
+    "team2": "Espanyol",
+    "score": {
+      "ft": [4, 2]
+    }
+  },
+  {
+    "round": "Matchday 2",
+    "date": "2020-09-19",
+    "team1": "Villarreal CF",
+    "team2": "Rayo Vallecano",
+    "score": {
+      "ft": [2, 1]
+    }
+  },
+  {
+    "round": "Matchday 2",
+    "date": "2020-09-19",
+    "team1": "Getafe CF",
+    "team2": "CA Osasuna",
+    "score": {
+      "ft": [1, 0]
+    }
+  },
+  {
+    "round": "Matchday 2",
+    "date": "2020-09-19",
+    "team1": "RC Celta Vigo",
+    "team2": "Valencia CF",
+    "score": {
+      "ft": [2, 1]
+    }
+  },
+  {
+    "round": "Matchday 2",
+    "date": "2020-09-20",
+    "team1": "Espanyol",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 2",
+    "date": "2020-09-20",
+    "team1": "Sevilla FC",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 2",
+    "date": "2020-09-20",
+    "team1": "Almeria",
+    "team2": "Cádiz CF",
+    "score": {
+      "ft": [0, 2]
+    }
+  },
+  {
+    "round": "Matchday 2",
+    "date": "2020-09-20",
+    "team1": "Real Betis",
+    "team2": "Valladolid",
+    "score": {
+      "ft": [2, 0]
+    }
+  },
+  {
+    "round": "Matchday 2",
+    "date": "2020-09-20",
+    "team1": "Mallorca",
+    "team2": "Girona",
+    "score": {
+      "ft": [2, 1]
+    }
+  },
+  {
+    "round": "Matchday 2",
+    "date": "2020-09-20",
+    "team1": "Real Sociedad",
+    "team2": "Real Madrid",
+    "score": {
+      "ft": [0, 0]
+    }
+  },
+  {
+    "round": "Matchday 3",
+    "date": "2020-09-26",
+    "team1": "Girona",
+    "team2": "Getafe CF",
+    "score": {
+      "ft": [0, 0]
+    }
+  },
+  {
+    "round": "Matchday 3",
+    "date": "2020-09-26",
+    "team1": "Valencia CF",
+    "team2": "Almeria",
+    "score": {
+      "ft": [1, 1]
+    }
+  },
+  {
+    "round": "Matchday 3",
+    "date": "2020-09-26",
+    "team1": "Elche CF",
+    "team2": "Real Sociedad",
+    "score": {
+      "ft": [0, 3]
+    }
+  },
+  {
+    "round": "Matchday 3",
+    "date": "2020-09-26",
+    "team1": "Real Betis",
+    "team2": "Real Madrid",
+    "score": {
+      "ft": [2, 3]
+    }
+  },
+  {
+    "round": "Matchday 3",
+    "date": "2020-09-27",
+    "team1": "CA Osasuna",
+    "team2": "Espanyol",
+    "score": {
+      "ft": [1, 3]
+    }
+  },
+  {
+    "round": "Matchday 3",
+    "date": "2020-09-27",
+    "team1": "Rayo Vallecano",
+    "team2": "Athletic Bilbao",
+    "score": {
+      "ft": [1, 2]
+    }
+  },
+  {
+    "round": "Matchday 3",
+    "date": "2020-09-27",
+    "team1": "Atlético Madrid",
+    "team2": "Mallorca",
+    "score": {
+      "ft": [6, 1]
+    }
+  },
+  {
+    "round": "Matchday 3",
+    "date": "2020-09-27",
+    "team1": "Cádiz CF",
+    "team2": "Sevilla FC",
+    "score": {
+      "ft": [1, 3]
+    }
+  },
+  {
+    "round": "Matchday 3",
+    "date": "2020-09-27",
+    "team1": "Valladolid",
+    "team2": "RC Celta Vigo",
+    "score": {
+      "ft": [1, 1]
+    }
+  },
+  {
+    "round": "Matchday 3",
+    "date": "2020-09-27",
+    "team1": "FC Barcelona",
+    "team2": "Villarreal CF",
+    "score": {
+      "ft": [4, 0]
+    }
+  },
+  {
+    "round": "Matchday 4",
+    "date": "2020-09-29",
+    "team1": "Real Sociedad",
+    "team2": "Valencia CF",
+    "score": {
+      "ft": [0, 1]
+    }
+  },
+  {
+    "round": "Matchday 4",
+    "date": "2020-09-29",
+    "team1": "Getafe CF",
+    "team2": "Real Betis",
+    "score": {
+      "ft": [3, 0]
+    }
+  },
+  {
+    "round": "Matchday 4",
+    "date": "2020-09-30",
+    "team1": "Almeria",
+    "team2": "Atlético Madrid",
+    "score": {
+      "ft": [0, 0]
+    }
+  },
+  {
+    "round": "Matchday 4",
+    "date": "2020-09-30",
+    "team1": "Villarreal CF",
+    "team2": "Girona",
+    "score": {
+      "ft": [3, 1]
+    }
+  },
+  {
+    "round": "Matchday 4",
+    "date": "2020-09-30",
+    "team1": "Rayo Vallecano",
+    "team2": "Elche CF",
+    "score": {
+      "ft": [0, 1]
+    }
+  },
+  {
+    "round": "Matchday 4",
+    "date": "2020-09-30",
+    "team1": "Real Madrid",
+    "team2": "Valladolid",
+    "score": {
+      "ft": [1, 0]
+    }
+  },
+  {
+    "round": "Matchday 4",
+    "date": "2020-10-01",
+    "team1": "Athletic Bilbao",
+    "team2": "Cádiz CF",
+    "score": {
+      "ft": [0, 1]
+    }
+  },
+  {
+    "round": "Matchday 4",
+    "date": "2020-10-01",
+    "team1": "Sevilla FC",
+    "team2": "Espanyol",
+    "score": {
+      "ft": [1, 0]
+    }
+  },
+  {
+    "round": "Matchday 4",
+    "date": "2020-10-01",
+    "team1": "RC Celta Vigo",
+    "team2": "FC Barcelona",
+    "score": {
+      "ft": [0, 3]
+    }
+  },
+  {
+    "round": "Matchday 5",
+    "date": "2020-10-03",
+    "team1": "Valladolid",
+    "team2": "Rayo Vallecano",
+    "score": {
+      "ft": [1, 2]
+    }
+  },
+  {
+    "round": "Matchday 5",
+    "date": "2020-10-03",
+    "team1": "Atlético Madrid",
+    "team2": "Villarreal CF",
+    "score": {
+      "ft": [0, 0]
+    }
+  },
+  {
+    "round": "Matchday 5",
+    "date": "2020-10-03",
+    "team1": "Real Sociedad",
+    "team2": "Getafe CF",
+    "score": {
+      "ft": [3, 0]
+    }
+  },
+  {
+    "round": "Matchday 5",
+    "date": "2020-10-03",
+    "team1": "Elche CF",
+    "team2": "Almeria",
+    "score": {
+      "ft": [0, 0]
+    }
+  },
+  {
+    "round": "Matchday 5",
+    "date": "2020-10-03",
+    "team1": "Valencia CF",
+    "team2": "Real Betis",
+    "score": {
+      "ft": [0, 2]
+    }
+  },
+  {
+    "round": "Matchday 5",
+    "date": "2020-10-04",
+    "team1": "CA Osasuna",
+    "team2": "RC Celta Vigo",
+    "score": {
+      "ft": [2, 0]
+    }
+  },
+  {
+    "round": "Matchday 5",
+    "date": "2020-10-04",
+    "team1": "Girona",
+    "team2": "Athletic Bilbao",
+    "score": {
+      "ft": [1, 0]
+    }
+  },
+  {
+    "round": "Matchday 5",
+    "date": "2020-10-04",
+    "team1": "Espanyol",
+    "team2": "Real Madrid",
+    "score": {
+      "ft": [0, 2]
+    }
+  },
+  {
+    "round": "Matchday 5",
+    "date": "2020-10-04",
+    "team1": "Cádiz CF",
+    "team2": "Mallorca",
+    "score": {
+      "ft": [1, 1]
+    }
+  },
+  {
+    "round": "Matchday 5",
+    "date": "2020-10-04",
+    "team1": "FC Barcelona",
+    "team2": "Sevilla FC",
+    "score": {
+      "ft": [1, 1]
+    }
+  },
+  {
+    "round": "Matchday 6",
+    "date": "2020-10-17",
+    "team1": "Mallorca",
+    "team2": "Sevilla FC",
+    "score": {
+      "ft": [1, 0]
+    }
+  },
+  {
+    "round": "Matchday 6",
+    "date": "2020-10-17",
+    "team1": "RC Celta Vigo",
+    "team2": "Atlético Madrid",
+    "score": {
+      "ft": [0, 2]
+    }
+  },
+  {
+    "round": "Matchday 6",
+    "date": "2020-10-17",
+    "team1": "Real Madrid",
+    "team2": "Cádiz CF",
+    "score": {
+      "ft": [0, 1]
+    }
+  },
+  {
+    "round": "Matchday 6",
+    "date": "2020-10-17",
+    "team1": "Getafe CF",
+    "team2": "FC Barcelona",
+    "score": {
+      "ft": [1, 0]
+    }
+  },
+  {
+    "round": "Matchday 6",
+    "date": "2020-10-18",
+    "team1": "Rayo Vallecano",
+    "team2": "CA Osasuna",
+    "score": {
+      "ft": [0, 0]
+    }
+  },
+  {
+    "round": "Matchday 6",
+    "date": "2020-10-18",
+    "team1": "Athletic Bilbao",
+    "team2": "Espanyol",
+    "score": {
+      "ft": [2, 0]
+    }
+  },
+  {
+    "round": "Matchday 6",
+    "date": "2020-10-18",
+    "team1": "Villarreal CF",
+    "team2": "Valencia CF",
+    "score": {
+      "ft": [2, 1]
+    }
+  },
+  {
+    "round": "Matchday 6",
+    "date": "2020-10-18",
+    "team1": "Girona",
+    "team2": "Elche CF",
+    "score": {
+      "ft": [0, 2]
+    }
+  },
+  {
+    "round": "Matchday 6",
+    "date": "2020-10-18",
+    "team1": "Almeria",
+    "team2": "Valladolid",
+    "score": {
+      "ft": [2, 2]
+    }
+  },
+  {
+    "round": "Matchday 6",
+    "date": "2020-10-18",
+    "team1": "Real Betis",
+    "team2": "Real Sociedad",
+    "score": {
+      "ft": [0, 3]
+    }
+  },
+  {
+    "round": "Matchday 7",
+    "date": "2020-10-23",
+    "team1": "Elche CF",
+    "team2": "Valencia CF",
+    "score": {
+      "ft": [2, 1]
+    }
+  },
+  {
+    "round": "Matchday 7",
+    "date": "2020-10-24",
+    "team1": "FC Barcelona",
+    "team2": "Real Madrid",
+    "score": {
+      "ft": [1, 3]
+    }
+  },
+  {
+    "round": "Matchday 7",
+    "date": "2020-10-24",
+    "team1": "CA Osasuna",
+    "team2": "Athletic Bilbao",
+    "score": {
+      "ft": [1, 0]
+    }
+  },
+  {
+    "round": "Matchday 7",
+    "date": "2020-10-24",
+    "team1": "Sevilla FC",
+    "team2": "Rayo Vallecano",
+    "score": {
+      "ft": [0, 1]
+    }
+  },
+  {
+    "round": "Matchday 7",
+    "date": "2020-10-24",
+    "team1": "Atlético Madrid",
+    "team2": "Real Betis",
+    "score": {
+      "ft": [2, 0]
+    }
+  },
+  {
+    "round": "Matchday 7",
+    "date": "2020-10-25",
+    "team1": "Valladolid",
+    "team2": "Girona",
+    "score": {
+      "ft": [0, 2]
+    }
+  },
+  {
+    "round": "Matchday 7",
+    "date": "2020-10-25",
+    "team1": "Cádiz CF",
+    "team2": "Villarreal CF",
+    "score": {
+      "ft": [0, 0]
+    }
+  },
+  {
+    "round": "Matchday 7",
+    "date": "2020-10-25",
+    "team1": "Getafe CF",
+    "team2": "Mallorca",
+    "score": {
+      "ft": [0, 1]
+    }
+  },
+  {
+    "round": "Matchday 7",
+    "date": "2020-10-25",
+    "team1": "Real Sociedad",
+    "team2": "Almeria",
+    "score": {
+      "ft": [4, 1]
+    }
+  },
+  {
+    "round": "Matchday 7",
+    "date": "2020-10-26",
+    "team1": "Espanyol",
+    "team2": "RC Celta Vigo",
+    "score": {
+      "ft": [1, 1]
+    }
+  },
+  {
+    "round": "Matchday 8",
+    "date": "2020-10-30",
+    "team1": "Rayo Vallecano",
+    "team2": "Cádiz CF",
+    "score": {
+      "ft": [0, 2]
+    }
+  },
+  {
+    "round": "Matchday 8",
+    "date": "2020-10-31",
+    "team1": "Real Madrid",
+    "team2": "Almeria",
+    "score": {
+      "ft": [4, 1]
+    }
+  },
+  {
+    "round": "Matchday 8",
+    "date": "2020-10-31",
+    "team1": "Athletic Bilbao",
+    "team2": "Sevilla FC",
+    "score": {
+      "ft": [2, 1]
+    }
+  },
+  {
+    "round": "Matchday 8",
+    "date": "2020-10-31",
+    "team1": "CA Osasuna",
+    "team2": "Atlético Madrid",
+    "score": {
+      "ft": [1, 3]
+    }
+  },
+  {
+    "round": "Matchday 8",
+    "date": "2020-10-31",
+    "team1": "Girona",
+    "team2": "FC Barcelona",
+    "score": {
+      "ft": [1, 1]
+    }
+  },
+  {
+    "round": "Matchday 8",
+    "date": "2020-11-01",
+    "team1": "Real Betis",
+    "team2": "Elche CF",
+    "score": {
+      "ft": [3, 1]
+    }
+  },
+  {
+    "round": "Matchday 8",
+    "date": "2020-11-01",
+    "team1": "RC Celta Vigo",
+    "team2": "Real Sociedad",
+    "score": {
+      "ft": [1, 4]
+    }
+  },
+  {
+    "round": "Matchday 8",
+    "date": "2020-11-01",
+    "team1": "Mallorca",
+    "team2": "Espanyol",
+    "score": {
+      "ft": [1, 1]
+    }
+  },
+  {
+    "round": "Matchday 8",
+    "date": "2020-11-01",
+    "team1": "Valencia CF",
+    "team2": "Getafe CF",
+    "score": {
+      "ft": [2, 2]
+    }
+  },
+  {
+    "round": "Matchday 8",
+    "date": "2020-11-02",
+    "team1": "Villarreal CF",
+    "team2": "Valladolid",
+    "score": {
+      "ft": [2, 0]
+    }
+  },
+  {
+    "round": "Matchday 9",
+    "date": "2020-11-06",
+    "team1": "Elche CF",
+    "team2": "RC Celta Vigo",
+    "score": {
+      "ft": [1, 1]
+    }
+  },
+  {
+    "round": "Matchday 9",
+    "date": "2020-11-07",
+    "team1": "Almeria",
+    "team2": "Rayo Vallecano",
+    "score": {
+      "ft": [1, 1]
+    }
+  },
+  {
+    "round": "Matchday 9",
+    "date": "2020-11-07",
+    "team1": "FC Barcelona",
+    "team2": "Real Betis",
+    "score": {
+      "ft": [5, 2]
+    }
+  },
+  {
+    "round": "Matchday 9",
+    "date": "2020-11-07",
+    "team1": "Sevilla FC",
+    "team2": "CA Osasuna",
+    "score": {
+      "ft": [1, 0]
+    }
+  },
+  {
+    "round": "Matchday 9",
+    "date": "2020-11-07",
+    "team1": "Atlético Madrid",
+    "team2": "Cádiz CF",
+    "score": {
+      "ft": [4, 0]
+    }
+  },
+  {
+    "round": "Matchday 9",
+    "date": "2020-11-08",
+    "team1": "Getafe CF",
+    "team2": "Villarreal CF",
+    "score": {
+      "ft": [1, 3]
+    }
+  },
+  {
+    "round": "Matchday 9",
+    "date": "2020-11-08",
+    "team1": "Real Sociedad",
+    "team2": "Mallorca",
+    "score": {
+      "ft": [2, 0]
+    }
+  },
+  {
+    "round": "Matchday 9",
+    "date": "2020-11-08",
+    "team1": "Espanyol",
+    "team2": "Girona",
+    "score": {
+      "ft": [1, 1]
+    }
+  },
+  {
+    "round": "Matchday 9",
+    "date": "2020-11-08",
+    "team1": "Valladolid",
+    "team2": "Athletic Bilbao",
+    "score": {
+      "ft": [2, 1]
+    }
+  },
+  {
+    "round": "Matchday 9",
+    "date": "2020-11-08",
+    "team1": "Valencia CF",
+    "team2": "Real Madrid",
+    "score": {
+      "ft": [4, 1]
+    }
+  },
+  {
+    "round": "Matchday 10",
+    "date": "2020-11-20",
+    "team1": "CA Osasuna",
+    "team2": "Almeria"
+  },
+  {
+    "round": "Matchday 10",
+    "date": "2020-11-21",
+    "team1": "Espanyol",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 10",
+    "date": "2020-11-21",
+    "team1": "Villarreal CF",
+    "team2": "Real Madrid"
+  },
+  {
+    "round": "Matchday 10",
+    "date": "2020-11-21",
+    "team1": "Sevilla FC",
+    "team2": "RC Celta Vigo"
+  },
+  {
+    "round": "Matchday 10",
+    "date": "2020-11-21",
+    "team1": "Atlético Madrid",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 10",
+    "date": "2020-11-22",
+    "team1": "Rayo Vallecano",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 10",
+    "date": "2020-11-22",
+    "team1": "Cádiz CF",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 10",
+    "date": "2020-11-22",
+    "team1": "Mallorca",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 10",
+    "date": "2020-11-22",
+    "team1": "Girona",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 10",
+    "date": "2020-11-23",
+    "team1": "Athletic Bilbao",
+    "team2": "Real Betis"
+  },
+  {
+    "round": "Matchday 11",
+    "date": "2020-11-27",
+    "team1": "Valladolid",
+    "team2": "Espanyol"
+  },
+  {
+    "round": "Matchday 11",
+    "date": "2020-11-28",
+    "team1": "Elche CF",
+    "team2": "Cádiz CF"
+  },
+  {
+    "round": "Matchday 11",
+    "date": "2020-11-28",
+    "team1": "Valencia CF",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 11",
+    "date": "2020-11-28",
+    "team1": "Almeria",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 11",
+    "date": "2020-11-28",
+    "team1": "Real Madrid",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 11",
+    "date": "2020-11-29",
+    "team1": "FC Barcelona",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 11",
+    "date": "2020-11-29",
+    "team1": "Getafe CF",
+    "team2": "Athletic Bilbao"
+  },
+  {
+    "round": "Matchday 11",
+    "date": "2020-11-29",
+    "team1": "RC Celta Vigo",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 11",
+    "date": "2020-11-29",
+    "team1": "Real Sociedad",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 11",
+    "date": "2020-11-30",
+    "team1": "Real Betis",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 12",
+    "date": "2020-12-04",
+    "team1": "Athletic Bilbao",
+    "team2": "RC Celta Vigo"
+  },
+  {
+    "round": "Matchday 12",
+    "date": "2020-12-05",
+    "team1": "Espanyol",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 12",
+    "date": "2020-12-05",
+    "team1": "Sevilla FC",
+    "team2": "Real Madrid"
+  },
+  {
+    "round": "Matchday 12",
+    "date": "2020-12-05",
+    "team1": "Atlético Madrid",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 12",
+    "date": "2020-12-05",
+    "team1": "Cádiz CF",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 12",
+    "date": "2020-12-06",
+    "team1": "Mallorca",
+    "team2": "Almeria"
+  },
+  {
+    "round": "Matchday 12",
+    "date": "2020-12-06",
+    "team1": "CA Osasuna",
+    "team2": "Real Betis"
+  },
+  {
+    "round": "Matchday 12",
+    "date": "2020-12-06",
+    "team1": "Villarreal CF",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 12",
+    "date": "2020-12-06",
+    "team1": "Girona",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 12",
+    "date": "2020-12-07",
+    "team1": "Rayo Vallecano",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 13",
+    "date": "2020-12-13",
+    "team1": "FC Barcelona",
+    "team2": "Espanyol"
+  },
+  {
+    "round": "Matchday 13",
+    "date": "2020-12-13",
+    "team1": "Real Betis",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 13",
+    "date": "2020-12-13",
+    "team1": "RC Celta Vigo",
+    "team2": "Cádiz CF"
+  },
+  {
+    "round": "Matchday 13",
+    "date": "2020-12-13",
+    "team1": "Getafe CF",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 13",
+    "date": "2020-12-13",
+    "team1": "Almeria",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 13",
+    "date": "2020-12-13",
+    "team1": "Real Madrid",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 13",
+    "date": "2020-12-13",
+    "team1": "Real Sociedad",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 13",
+    "date": "2020-12-13",
+    "team1": "Valencia CF",
+    "team2": "Athletic Bilbao"
+  },
+  {
+    "round": "Matchday 13",
+    "date": "2020-12-13",
+    "team1": "Valladolid",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 13",
+    "date": "2020-12-13",
+    "team1": "Elche CF",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 14",
+    "date": "2020-12-20",
+    "team1": "Athletic Bilbao",
+    "team2": "Almeria"
+  },
+  {
+    "round": "Matchday 14",
+    "date": "2020-12-20",
+    "team1": "Atlético Madrid",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 14",
+    "date": "2020-12-20",
+    "team1": "FC Barcelona",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 14",
+    "date": "2020-12-20",
+    "team1": "RC Celta Vigo",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 14",
+    "date": "2020-12-20",
+    "team1": "Rayo Vallecano",
+    "team2": "Real Madrid"
+  },
+  {
+    "round": "Matchday 14",
+    "date": "2020-12-20",
+    "team1": "Cádiz CF",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 14",
+    "date": "2020-12-20",
+    "team1": "Mallorca",
+    "team2": "Real Betis"
+  },
+  {
+    "round": "Matchday 14",
+    "date": "2020-12-20",
+    "team1": "Espanyol",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 14",
+    "date": "2020-12-20",
+    "team1": "CA Osasuna",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 14",
+    "date": "2020-12-20",
+    "team1": "Sevilla FC",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 15",
+    "date": "2020-12-23",
+    "team1": "Girona",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 15",
+    "date": "2020-12-23",
+    "team1": "Real Betis",
+    "team2": "Cádiz CF"
+  },
+  {
+    "round": "Matchday 15",
+    "date": "2020-12-23",
+    "team1": "Getafe CF",
+    "team2": "RC Celta Vigo"
+  },
+  {
+    "round": "Matchday 15",
+    "date": "2020-12-23",
+    "team1": "Almeria",
+    "team2": "Espanyol"
+  },
+  {
+    "round": "Matchday 15",
+    "date": "2020-12-23",
+    "team1": "Real Madrid",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 15",
+    "date": "2020-12-23",
+    "team1": "Real Sociedad",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 15",
+    "date": "2020-12-23",
+    "team1": "Valencia CF",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 15",
+    "date": "2020-12-23",
+    "team1": "Valladolid",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 15",
+    "date": "2020-12-23",
+    "team1": "Villarreal CF",
+    "team2": "Athletic Bilbao"
+  },
+  {
+    "round": "Matchday 15",
+    "date": "2020-12-23",
+    "team1": "Elche CF",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 16",
+    "date": "2020-12-30",
+    "team1": "Athletic Bilbao",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 16",
+    "date": "2020-12-30",
+    "team1": "Atlético Madrid",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 16",
+    "date": "2020-12-30",
+    "team1": "FC Barcelona",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 16",
+    "date": "2020-12-30",
+    "team1": "RC Celta Vigo",
+    "team2": "Almeria"
+  },
+  {
+    "round": "Matchday 16",
+    "date": "2020-12-30",
+    "team1": "Cádiz CF",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 16",
+    "date": "2020-12-30",
+    "team1": "Mallorca",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 16",
+    "date": "2020-12-30",
+    "team1": "Espanyol",
+    "team2": "Real Betis"
+  },
+  {
+    "round": "Matchday 16",
+    "date": "2020-12-30",
+    "team1": "CA Osasuna",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 16",
+    "date": "2020-12-30",
+    "team1": "Sevilla FC",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 16",
+    "date": "2020-12-30",
+    "team1": "Elche CF",
+    "team2": "Real Madrid"
+  },
+  {
+    "round": "Matchday 17",
+    "date": "2021-01-03",
+    "team1": "Girona",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 17",
+    "date": "2021-01-03",
+    "team1": "Athletic Bilbao",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 17",
+    "date": "2021-01-03",
+    "team1": "Real Betis",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 17",
+    "date": "2021-01-03",
+    "team1": "Rayo Vallecano",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 17",
+    "date": "2021-01-03",
+    "team1": "Getafe CF",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 17",
+    "date": "2021-01-03",
+    "team1": "Almeria",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 17",
+    "date": "2021-01-03",
+    "team1": "Real Madrid",
+    "team2": "RC Celta Vigo"
+  },
+  {
+    "round": "Matchday 17",
+    "date": "2021-01-03",
+    "team1": "Real Sociedad",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 17",
+    "date": "2021-01-03",
+    "team1": "Valencia CF",
+    "team2": "Cádiz CF"
+  },
+  {
+    "round": "Matchday 17",
+    "date": "2021-01-03",
+    "team1": "Villarreal CF",
+    "team2": "Espanyol"
+  },
+  {
+    "round": "Matchday 2",
+    "date": "2021-01-06",
+    "team1": "Athletic Bilbao",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 18",
+    "date": "2021-01-10",
+    "team1": "Atlético Madrid",
+    "team2": "Athletic Bilbao"
+  },
+  {
+    "round": "Matchday 18",
+    "date": "2021-01-10",
+    "team1": "RC Celta Vigo",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 18",
+    "date": "2021-01-10",
+    "team1": "Cádiz CF",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 18",
+    "date": "2021-01-10",
+    "team1": "Mallorca",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 18",
+    "date": "2021-01-10",
+    "team1": "Almeria",
+    "team2": "Real Betis"
+  },
+  {
+    "round": "Matchday 18",
+    "date": "2021-01-10",
+    "team1": "Espanyol",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 18",
+    "date": "2021-01-10",
+    "team1": "CA Osasuna",
+    "team2": "Real Madrid"
+  },
+  {
+    "round": "Matchday 18",
+    "date": "2021-01-10",
+    "team1": "Sevilla FC",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 18",
+    "date": "2021-01-10",
+    "team1": "Valladolid",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 18",
+    "date": "2021-01-10",
+    "team1": "Elche CF",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 1",
+    "date": "2021-01-12",
+    "team1": "Atlético Madrid",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 4",
+    "date": "2021-01-12",
+    "team1": "Mallorca",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 19",
+    "date": "2021-01-20",
+    "team1": "Girona",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 19",
+    "date": "2021-01-20",
+    "team1": "Real Betis",
+    "team2": "RC Celta Vigo"
+  },
+  {
+    "round": "Matchday 19",
+    "date": "2021-01-20",
+    "team1": "Rayo Vallecano",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 19",
+    "date": "2021-01-20",
+    "team1": "Getafe CF",
+    "team2": "Almeria"
+  },
+  {
+    "round": "Matchday 19",
+    "date": "2021-01-20",
+    "team1": "Cádiz CF",
+    "team2": "Espanyol"
+  },
+  {
+    "round": "Matchday 19",
+    "date": "2021-01-20",
+    "team1": "Valencia CF",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 19",
+    "date": "2021-01-20",
+    "team1": "Valladolid",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 19",
+    "date": "2021-01-20",
+    "team1": "Villarreal CF",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 19",
+    "date": "2021-01-20",
+    "team1": "FC Barcelona",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 19",
+    "date": "2021-01-20",
+    "team1": "Real Madrid",
+    "team2": "Athletic Bilbao"
+  },
+  {
+    "round": "Matchday 20",
+    "date": "2021-01-24",
+    "team1": "Girona",
+    "team2": "Real Madrid"
+  },
+  {
+    "round": "Matchday 20",
+    "date": "2021-01-24",
+    "team1": "Athletic Bilbao",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 20",
+    "date": "2021-01-24",
+    "team1": "Atlético Madrid",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 20",
+    "date": "2021-01-24",
+    "team1": "RC Celta Vigo",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 20",
+    "date": "2021-01-24",
+    "team1": "Almeria",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 20",
+    "date": "2021-01-24",
+    "team1": "Espanyol",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 20",
+    "date": "2021-01-24",
+    "team1": "CA Osasuna",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 20",
+    "date": "2021-01-24",
+    "team1": "Real Sociedad",
+    "team2": "Real Betis"
+  },
+  {
+    "round": "Matchday 20",
+    "date": "2021-01-24",
+    "team1": "Sevilla FC",
+    "team2": "Cádiz CF"
+  },
+  {
+    "round": "Matchday 20",
+    "date": "2021-01-24",
+    "team1": "Elche CF",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 21",
+    "date": "2021-01-31",
+    "team1": "FC Barcelona",
+    "team2": "Athletic Bilbao"
+  },
+  {
+    "round": "Matchday 21",
+    "date": "2021-01-31",
+    "team1": "Real Betis",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 21",
+    "date": "2021-01-31",
+    "team1": "Rayo Vallecano",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 21",
+    "date": "2021-01-31",
+    "team1": "Getafe CF",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 21",
+    "date": "2021-01-31",
+    "team1": "Cádiz CF",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 21",
+    "date": "2021-01-31",
+    "team1": "Mallorca",
+    "team2": "RC Celta Vigo"
+  },
+  {
+    "round": "Matchday 21",
+    "date": "2021-01-31",
+    "team1": "Real Madrid",
+    "team2": "Espanyol"
+  },
+  {
+    "round": "Matchday 21",
+    "date": "2021-01-31",
+    "team1": "Valencia CF",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 21",
+    "date": "2021-01-31",
+    "team1": "Valladolid",
+    "team2": "Almeria"
+  },
+  {
+    "round": "Matchday 21",
+    "date": "2021-01-31",
+    "team1": "Villarreal CF",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 22",
+    "date": "2021-02-07",
+    "team1": "Girona",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 22",
+    "date": "2021-02-07",
+    "team1": "Athletic Bilbao",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 22",
+    "date": "2021-02-07",
+    "team1": "Atlético Madrid",
+    "team2": "RC Celta Vigo"
+  },
+  {
+    "round": "Matchday 22",
+    "date": "2021-02-07",
+    "team1": "Real Betis",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 22",
+    "date": "2021-02-07",
+    "team1": "Almeria",
+    "team2": "Real Madrid"
+  },
+  {
+    "round": "Matchday 22",
+    "date": "2021-02-07",
+    "team1": "Espanyol",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 22",
+    "date": "2021-02-07",
+    "team1": "CA Osasuna",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 22",
+    "date": "2021-02-07",
+    "team1": "Real Sociedad",
+    "team2": "Cádiz CF"
+  },
+  {
+    "round": "Matchday 22",
+    "date": "2021-02-07",
+    "team1": "Sevilla FC",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 22",
+    "date": "2021-02-07",
+    "team1": "Elche CF",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 23",
+    "date": "2021-02-14",
+    "team1": "FC Barcelona",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 23",
+    "date": "2021-02-14",
+    "team1": "RC Celta Vigo",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 23",
+    "date": "2021-02-14",
+    "team1": "Rayo Vallecano",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 23",
+    "date": "2021-02-14",
+    "team1": "Getafe CF",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 23",
+    "date": "2021-02-14",
+    "team1": "Cádiz CF",
+    "team2": "Athletic Bilbao"
+  },
+  {
+    "round": "Matchday 23",
+    "date": "2021-02-14",
+    "team1": "Mallorca",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 23",
+    "date": "2021-02-14",
+    "team1": "Espanyol",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 23",
+    "date": "2021-02-14",
+    "team1": "Real Madrid",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 23",
+    "date": "2021-02-14",
+    "team1": "Sevilla FC",
+    "team2": "Almeria"
+  },
+  {
+    "round": "Matchday 23",
+    "date": "2021-02-14",
+    "team1": "Villarreal CF",
+    "team2": "Real Betis"
+  },
+  {
+    "round": "Matchday 24",
+    "date": "2021-02-21",
+    "team1": "Athletic Bilbao",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 24",
+    "date": "2021-02-21",
+    "team1": "Atlético Madrid",
+    "team2": "Espanyol"
+  },
+  {
+    "round": "Matchday 24",
+    "date": "2021-02-21",
+    "team1": "FC Barcelona",
+    "team2": "Cádiz CF"
+  },
+  {
+    "round": "Matchday 24",
+    "date": "2021-02-21",
+    "team1": "Real Betis",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 24",
+    "date": "2021-02-21",
+    "team1": "Almeria",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 24",
+    "date": "2021-02-21",
+    "team1": "CA Osasuna",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 24",
+    "date": "2021-02-21",
+    "team1": "Real Sociedad",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 24",
+    "date": "2021-02-21",
+    "team1": "Valencia CF",
+    "team2": "RC Celta Vigo"
+  },
+  {
+    "round": "Matchday 24",
+    "date": "2021-02-21",
+    "team1": "Valladolid",
+    "team2": "Real Madrid"
+  },
+  {
+    "round": "Matchday 24",
+    "date": "2021-02-21",
+    "team1": "Elche CF",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 25",
+    "date": "2021-02-28",
+    "team1": "Girona",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 25",
+    "date": "2021-02-28",
+    "team1": "RC Celta Vigo",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 25",
+    "date": "2021-02-28",
+    "team1": "Rayo Vallecano",
+    "team2": "Almeria"
+  },
+  {
+    "round": "Matchday 25",
+    "date": "2021-02-28",
+    "team1": "Getafe CF",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 25",
+    "date": "2021-02-28",
+    "team1": "Cádiz CF",
+    "team2": "Real Betis"
+  },
+  {
+    "round": "Matchday 25",
+    "date": "2021-02-28",
+    "team1": "Mallorca",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 25",
+    "date": "2021-02-28",
+    "team1": "Espanyol",
+    "team2": "Athletic Bilbao"
+  },
+  {
+    "round": "Matchday 25",
+    "date": "2021-02-28",
+    "team1": "Real Madrid",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 25",
+    "date": "2021-02-28",
+    "team1": "Sevilla FC",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 25",
+    "date": "2021-02-28",
+    "team1": "Villarreal CF",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 26",
+    "date": "2021-03-07",
+    "team1": "Athletic Bilbao",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 26",
+    "date": "2021-03-07",
+    "team1": "Atlético Madrid",
+    "team2": "Real Madrid"
+  },
+  {
+    "round": "Matchday 26",
+    "date": "2021-03-07",
+    "team1": "Real Betis",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 26",
+    "date": "2021-03-07",
+    "team1": "Cádiz CF",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 26",
+    "date": "2021-03-07",
+    "team1": "Almeria",
+    "team2": "RC Celta Vigo"
+  },
+  {
+    "round": "Matchday 26",
+    "date": "2021-03-07",
+    "team1": "CA Osasuna",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 26",
+    "date": "2021-03-07",
+    "team1": "Real Sociedad",
+    "team2": "Espanyol"
+  },
+  {
+    "round": "Matchday 26",
+    "date": "2021-03-07",
+    "team1": "Valencia CF",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 26",
+    "date": "2021-03-07",
+    "team1": "Valladolid",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 26",
+    "date": "2021-03-07",
+    "team1": "Elche CF",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 27",
+    "date": "2021-03-14",
+    "team1": "Girona",
+    "team2": "Cádiz CF"
+  },
+  {
+    "round": "Matchday 27",
+    "date": "2021-03-14",
+    "team1": "FC Barcelona",
+    "team2": "Almeria"
+  },
+  {
+    "round": "Matchday 27",
+    "date": "2021-03-14",
+    "team1": "RC Celta Vigo",
+    "team2": "Athletic Bilbao"
+  },
+  {
+    "round": "Matchday 27",
+    "date": "2021-03-14",
+    "team1": "Rayo Vallecano",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 27",
+    "date": "2021-03-14",
+    "team1": "Getafe CF",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 27",
+    "date": "2021-03-14",
+    "team1": "Mallorca",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 27",
+    "date": "2021-03-14",
+    "team1": "Espanyol",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 27",
+    "date": "2021-03-14",
+    "team1": "CA Osasuna",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 27",
+    "date": "2021-03-14",
+    "team1": "Real Madrid",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 27",
+    "date": "2021-03-14",
+    "team1": "Sevilla FC",
+    "team2": "Real Betis"
+  },
+  {
+    "round": "Matchday 28",
+    "date": "2021-03-21",
+    "team1": "Athletic Bilbao",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 28",
+    "date": "2021-03-21",
+    "team1": "Atlético Madrid",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 28",
+    "date": "2021-03-21",
+    "team1": "Real Betis",
+    "team2": "Espanyol"
+  },
+  {
+    "round": "Matchday 28",
+    "date": "2021-03-21",
+    "team1": "RC Celta Vigo",
+    "team2": "Real Madrid"
+  },
+  {
+    "round": "Matchday 28",
+    "date": "2021-03-21",
+    "team1": "Getafe CF",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 28",
+    "date": "2021-03-21",
+    "team1": "Almeria",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 28",
+    "date": "2021-03-21",
+    "team1": "Real Sociedad",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 28",
+    "date": "2021-03-21",
+    "team1": "Valencia CF",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 28",
+    "date": "2021-03-21",
+    "team1": "Valladolid",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 28",
+    "date": "2021-03-21",
+    "team1": "Villarreal CF",
+    "team2": "Cádiz CF"
+  },
+  {
+    "round": "Matchday 29",
+    "date": "2021-04-04",
+    "team1": "Girona",
+    "team2": "RC Celta Vigo"
+  },
+  {
+    "round": "Matchday 29",
+    "date": "2021-04-04",
+    "team1": "FC Barcelona",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 29",
+    "date": "2021-04-04",
+    "team1": "Cádiz CF",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 29",
+    "date": "2021-04-04",
+    "team1": "Mallorca",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 29",
+    "date": "2021-04-04",
+    "team1": "Espanyol",
+    "team2": "Almeria"
+  },
+  {
+    "round": "Matchday 29",
+    "date": "2021-04-04",
+    "team1": "CA Osasuna",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 29",
+    "date": "2021-04-04",
+    "team1": "Real Madrid",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 29",
+    "date": "2021-04-04",
+    "team1": "Real Sociedad",
+    "team2": "Athletic Bilbao"
+  },
+  {
+    "round": "Matchday 29",
+    "date": "2021-04-04",
+    "team1": "Sevilla FC",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 29",
+    "date": "2021-04-04",
+    "team1": "Elche CF",
+    "team2": "Real Betis"
+  },
+  {
+    "round": "Matchday 30",
+    "date": "2021-04-11",
+    "team1": "Athletic Bilbao",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 30",
+    "date": "2021-04-11",
+    "team1": "Real Betis",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 30",
+    "date": "2021-04-11",
+    "team1": "RC Celta Vigo",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 30",
+    "date": "2021-04-11",
+    "team1": "Rayo Vallecano",
+    "team2": "Espanyol"
+  },
+  {
+    "round": "Matchday 30",
+    "date": "2021-04-11",
+    "team1": "Getafe CF",
+    "team2": "Cádiz CF"
+  },
+  {
+    "round": "Matchday 30",
+    "date": "2021-04-11",
+    "team1": "Almeria",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 30",
+    "date": "2021-04-11",
+    "team1": "Real Madrid",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 30",
+    "date": "2021-04-11",
+    "team1": "Valencia CF",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 30",
+    "date": "2021-04-11",
+    "team1": "Valladolid",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 30",
+    "date": "2021-04-11",
+    "team1": "Villarreal CF",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 31",
+    "date": "2021-04-21",
+    "team1": "Girona",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 31",
+    "date": "2021-04-21",
+    "team1": "Atlético Madrid",
+    "team2": "Almeria"
+  },
+  {
+    "round": "Matchday 31",
+    "date": "2021-04-21",
+    "team1": "FC Barcelona",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 31",
+    "date": "2021-04-21",
+    "team1": "Real Betis",
+    "team2": "Athletic Bilbao"
+  },
+  {
+    "round": "Matchday 31",
+    "date": "2021-04-21",
+    "team1": "Cádiz CF",
+    "team2": "Real Madrid"
+  },
+  {
+    "round": "Matchday 31",
+    "date": "2021-04-21",
+    "team1": "Mallorca",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 31",
+    "date": "2021-04-21",
+    "team1": "Espanyol",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 31",
+    "date": "2021-04-21",
+    "team1": "CA Osasuna",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 31",
+    "date": "2021-04-21",
+    "team1": "Real Sociedad",
+    "team2": "RC Celta Vigo"
+  },
+  {
+    "round": "Matchday 31",
+    "date": "2021-04-21",
+    "team1": "Elche CF",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 32",
+    "date": "2021-04-25",
+    "team1": "Athletic Bilbao",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 32",
+    "date": "2021-04-25",
+    "team1": "RC Celta Vigo",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 32",
+    "date": "2021-04-25",
+    "team1": "Rayo Vallecano",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 32",
+    "date": "2021-04-25",
+    "team1": "Almeria",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 32",
+    "date": "2021-04-25",
+    "team1": "Real Madrid",
+    "team2": "Real Betis"
+  },
+  {
+    "round": "Matchday 32",
+    "date": "2021-04-25",
+    "team1": "Sevilla FC",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 32",
+    "date": "2021-04-25",
+    "team1": "Valencia CF",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 32",
+    "date": "2021-04-25",
+    "team1": "Valladolid",
+    "team2": "Cádiz CF"
+  },
+  {
+    "round": "Matchday 32",
+    "date": "2021-04-25",
+    "team1": "Villarreal CF",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 32",
+    "date": "2021-04-25",
+    "team1": "Elche CF",
+    "team2": "Espanyol"
+  },
+  {
+    "round": "Matchday 33",
+    "date": "2021-04-28",
+    "team1": "Girona",
+    "team2": "Almeria"
+  },
+  {
+    "round": "Matchday 33",
+    "date": "2021-04-28",
+    "team1": "Athletic Bilbao",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 33",
+    "date": "2021-04-28",
+    "team1": "Atlético Madrid",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 33",
+    "date": "2021-04-28",
+    "team1": "FC Barcelona",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 33",
+    "date": "2021-04-28",
+    "team1": "Real Betis",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 33",
+    "date": "2021-04-28",
+    "team1": "Getafe CF",
+    "team2": "Real Madrid"
+  },
+  {
+    "round": "Matchday 33",
+    "date": "2021-04-28",
+    "team1": "Cádiz CF",
+    "team2": "RC Celta Vigo"
+  },
+  {
+    "round": "Matchday 33",
+    "date": "2021-04-28",
+    "team1": "Espanyol",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 33",
+    "date": "2021-04-28",
+    "team1": "CA Osasuna",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 33",
+    "date": "2021-04-28",
+    "team1": "Real Sociedad",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 34",
+    "date": "2021-05-02",
+    "team1": "RC Celta Vigo",
+    "team2": "Espanyol"
+  },
+  {
+    "round": "Matchday 34",
+    "date": "2021-05-02",
+    "team1": "Rayo Vallecano",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 34",
+    "date": "2021-05-02",
+    "team1": "Mallorca",
+    "team2": "Cádiz CF"
+  },
+  {
+    "round": "Matchday 34",
+    "date": "2021-05-02",
+    "team1": "Almeria",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 34",
+    "date": "2021-05-02",
+    "team1": "Real Madrid",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 34",
+    "date": "2021-05-02",
+    "team1": "Sevilla FC",
+    "team2": "Athletic Bilbao"
+  },
+  {
+    "round": "Matchday 34",
+    "date": "2021-05-02",
+    "team1": "Valencia CF",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 34",
+    "date": "2021-05-02",
+    "team1": "Valladolid",
+    "team2": "Real Betis"
+  },
+  {
+    "round": "Matchday 34",
+    "date": "2021-05-02",
+    "team1": "Villarreal CF",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 34",
+    "date": "2021-05-02",
+    "team1": "Elche CF",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 35",
+    "date": "2021-05-09",
+    "team1": "Girona",
+    "team2": "Espanyol"
+  },
+  {
+    "round": "Matchday 35",
+    "date": "2021-05-09",
+    "team1": "Athletic Bilbao",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 35",
+    "date": "2021-05-09",
+    "team1": "FC Barcelona",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 35",
+    "date": "2021-05-09",
+    "team1": "Real Betis",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 35",
+    "date": "2021-05-09",
+    "team1": "Getafe CF",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 35",
+    "date": "2021-05-09",
+    "team1": "Cádiz CF",
+    "team2": "Almeria"
+  },
+  {
+    "round": "Matchday 35",
+    "date": "2021-05-09",
+    "team1": "Real Madrid",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 35",
+    "date": "2021-05-09",
+    "team1": "Real Sociedad",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 35",
+    "date": "2021-05-09",
+    "team1": "Valencia CF",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 35",
+    "date": "2021-05-09",
+    "team1": "Villarreal CF",
+    "team2": "RC Celta Vigo"
+  },
+  {
+    "round": "Matchday 36",
+    "date": "2021-05-12",
+    "team1": "Atlético Madrid",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 36",
+    "date": "2021-05-12",
+    "team1": "RC Celta Vigo",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 36",
+    "date": "2021-05-12",
+    "team1": "Rayo Vallecano",
+    "team2": "Real Betis"
+  },
+  {
+    "round": "Matchday 36",
+    "date": "2021-05-12",
+    "team1": "Mallorca",
+    "team2": "Real Madrid"
+  },
+  {
+    "round": "Matchday 36",
+    "date": "2021-05-12",
+    "team1": "Almeria",
+    "team2": "Athletic Bilbao"
+  },
+  {
+    "round": "Matchday 36",
+    "date": "2021-05-12",
+    "team1": "Espanyol",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 36",
+    "date": "2021-05-12",
+    "team1": "CA Osasuna",
+    "team2": "Cádiz CF"
+  },
+  {
+    "round": "Matchday 36",
+    "date": "2021-05-12",
+    "team1": "Sevilla FC",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 36",
+    "date": "2021-05-12",
+    "team1": "Valladolid",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 36",
+    "date": "2021-05-12",
+    "team1": "Elche CF",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 37",
+    "date": "2021-05-16",
+    "team1": "Girona",
+    "team2": "Mallorca"
+  },
+  {
+    "round": "Matchday 37",
+    "date": "2021-05-16",
+    "team1": "Athletic Bilbao",
+    "team2": "Real Madrid"
+  },
+  {
+    "round": "Matchday 37",
+    "date": "2021-05-16",
+    "team1": "Atlético Madrid",
+    "team2": "CA Osasuna"
+  },
+  {
+    "round": "Matchday 37",
+    "date": "2021-05-16",
+    "team1": "FC Barcelona",
+    "team2": "RC Celta Vigo"
+  },
+  {
+    "round": "Matchday 37",
+    "date": "2021-05-16",
+    "team1": "Real Betis",
+    "team2": "Almeria"
+  },
+  {
+    "round": "Matchday 37",
+    "date": "2021-05-16",
+    "team1": "Getafe CF",
+    "team2": "Espanyol"
+  },
+  {
+    "round": "Matchday 37",
+    "date": "2021-05-16",
+    "team1": "Cádiz CF",
+    "team2": "Elche CF"
+  },
+  {
+    "round": "Matchday 37",
+    "date": "2021-05-16",
+    "team1": "Real Sociedad",
+    "team2": "Valladolid"
+  },
+  {
+    "round": "Matchday 37",
+    "date": "2021-05-16",
+    "team1": "Valencia CF",
+    "team2": "Rayo Vallecano"
+  },
+  {
+    "round": "Matchday 37",
+    "date": "2021-05-16",
+    "team1": "Villarreal CF",
+    "team2": "Sevilla FC"
+  },
+  {
+    "round": "Matchday 38",
+    "date": "2021-05-23",
+    "team1": "RC Celta Vigo",
+    "team2": "Real Betis"
+  },
+  {
+    "round": "Matchday 38",
+    "date": "2021-05-23",
+    "team1": "Rayo Vallecano",
+    "team2": "FC Barcelona"
+  },
+  {
+    "round": "Matchday 38",
+    "date": "2021-05-23",
+    "team1": "Mallorca",
+    "team2": "Getafe CF"
+  },
+  {
+    "round": "Matchday 38",
+    "date": "2021-05-23",
+    "team1": "Almeria",
+    "team2": "Valencia CF"
+  },
+  {
+    "round": "Matchday 38",
+    "date": "2021-05-23",
+    "team1": "Espanyol",
+    "team2": "Cádiz CF"
+  },
+  {
+    "round": "Matchday 38",
+    "date": "2021-05-23",
+    "team1": "CA Osasuna",
+    "team2": "Real Sociedad"
+  },
+  {
+    "round": "Matchday 38",
+    "date": "2021-05-23",
+    "team1": "Real Madrid",
+    "team2": "Villarreal CF"
+  },
+  {
+    "round": "Matchday 38",
+    "date": "2021-05-23",
+    "team1": "Sevilla FC",
+    "team2": "Girona"
+  },
+  {
+    "round": "Matchday 38",
+    "date": "2021-05-23",
+    "team1": "Valladolid",
+    "team2": "Atlético Madrid"
+  },
+  {
+    "round": "Matchday 38",
+    "date": "2021-05-23",
+    "team1": "Elche CF",
+    "team2": "Athletic Bilbao"
+  }
+]

@@ -1,0 +1,105 @@
+{
+  "name": "Ligue 1 2020/21",
+  "clubs": [
+    {
+      "name": "Clermont",
+      "code": "FCGB",
+      "country": "France"
+    },
+    {
+      "name": "FC Nantes",
+      "code": "FCN",
+      "country": "France"
+    },
+    {
+      "name": "Toulouse",
+      "code": "DFCO",
+      "country": "France"
+    },
+    {
+      "name": "Angers SCO",
+      "code": "SCO",
+      "country": "France"
+    },
+    {
+      "name": "Lille OSC",
+      "code": "LOSC",
+      "country": "France"
+    },
+    {
+      "name": "Stade Rennais",
+      "code": "SRFC",
+      "country": "France"
+    },
+    {
+      "name": "AS Monaco",
+      "code": "ASM",
+      "country": "Monaco"
+    },
+    {
+      "name": "Stade de Reims",
+      "code": "SDR",
+      "country": "France"
+    },
+    {
+      "name": "FC Lorient",
+      "code": "FCL",
+      "country": "France"
+    },
+    {
+      "name": "RC Strasbourg",
+      "code": null,
+      "country": "France"
+    },
+    {
+      "name": "Troyes",
+      "code": "NIMES",
+      "country": "France"
+    },
+    {
+      "name": "Brest",
+      "code": "SB29",
+      "country": "France"
+    },
+    {
+      "name": "OGC Nice",
+      "code": "OGCN",
+      "country": "France"
+    },
+    {
+      "name": "RC Lens",
+      "code": "RCL",
+      "country": "France"
+    },
+    {
+      "name": "Ol. Lyonnais",
+      "code": "OL",
+      "country": "France"
+    },
+    {
+      "name": "Montpellier HSC",
+      "code": "MHSC",
+      "country": "France"
+    },
+    {
+      "name": "Ajaccio",
+      "code": "FCM",
+      "country": "France"
+    },
+    {
+      "name": "Auxerre",
+      "code": "ASSE",
+      "country": "France"
+    },
+    {
+      "name": "Ol. de Marseille",
+      "code": "OM",
+      "country": "France"
+    },
+    {
+      "name": "Paris Saint-Germain",
+      "code": "PSG",
+      "country": "France"
+    }
+  ]
+}

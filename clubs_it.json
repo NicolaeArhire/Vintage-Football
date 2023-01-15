@@ -1,0 +1,105 @@
+{
+  "name": "Serie A 2020/21",
+  "clubs": [
+    {
+      "name": "ACF Fiorentina",
+      "code": "FIO",
+      "country": "Italy"
+    },
+    {
+      "name": "Torino FC",
+      "code": "TOR",
+      "country": "Italy"
+    },
+    {
+      "name": "Monza",
+      "code": "HEL",
+      "country": "Italy"
+    },
+    {
+      "name": "AS Roma",
+      "code": "ROM",
+      "country": "Italy"
+    },
+    {
+      "name": "Lecce",
+      "code": "PAR",
+      "country": "Italy"
+    },
+    {
+      "name": "SSC Napoli",
+      "code": "NAP",
+      "country": "Italy"
+    },
+    {
+      "name": "Empoli",
+      "code": "GEN",
+      "country": "Italy"
+    },
+    {
+      "name": "Salernitana",
+      "code": "CRO",
+      "country": "Italy"
+    },
+    {
+      "name": "Sassuolo",
+      "code": "SAS",
+      "country": "Italy"
+    },
+    {
+      "name": "Verona",
+      "code": "CAG",
+      "country": "Italy"
+    },
+    {
+      "name": "Juventus",
+      "code": "JUV",
+      "country": "Italy"
+    },
+    {
+      "name": "UC Sampdoria",
+      "code": "SAM",
+      "country": "Italy"
+    },
+    {
+      "name": "AC Milan",
+      "code": "MIL",
+      "country": "Italy"
+    },
+    {
+      "name": "Bologna FC",
+      "code": "BOL",
+      "country": "Italy"
+    },
+    {
+      "name": "Atalanta",
+      "code": "ATA",
+      "country": "Italy"
+    },
+    {
+      "name": "SS Lazio",
+      "code": "LAZ",
+      "country": "Italy"
+    },
+    {
+      "name": "Cremonese",
+      "code": null,
+      "country": "Italy"
+    },
+    {
+      "name": "Inter Milano",
+      "code": "INT",
+      "country": "Italy"
+    },
+    {
+      "name": "Spezia",
+      "code": null,
+      "country": "Italy"
+    },
+    {
+      "name": "Udinese",
+      "code": "UDI",
+      "country": "Italy"
+    }
+  ]
+}

@@ -18,18 +18,18 @@ body {
 }
 
 .rounds {
-  width: 70px;
+  text-align: center;
+  width: 100px;
   margin-top: 10px;
   margin-left: 10px;
-  padding-left: 10px;
   border-radius: 10px;
   font-weight: bold;
   background-color: rgb(251, 255, 0);
+  opacity: 0;
 }
 
 .start_games,
-.clear_results,
-.next_round {
+.clear_results {
   width: 80px;
   margin-top: 10px;
   margin-left: 10px;
@@ -41,20 +41,13 @@ body {
   font-weight: bold;
 }
 
-.next_round {
-  width: 100px;
-  background-color: rgb(206, 203, 19);
-}
-
 .start_games:hover,
-.clear_results:hover,
-.next_round {
+.clear_results:hover {
   cursor: pointer;
 }
 
 .start_games:active,
-.clear_results:active,
-.next_round:active {
+.clear_results:active {
   background-color: rgb(5, 22, 175);
 }
 
@@ -68,7 +61,7 @@ body {
 .teams {
   display: grid;
   align-items: center;
-  grid-template-columns: 60px 190px 40px;
+  grid-template-columns: 100px 160px 40px;
   width: 300px;
   height: 60px;
   margin-top: 10px;
@@ -145,6 +138,24 @@ body {
 .standings_place,
 #standings_place {
   margin-left: 5px;
+  display: grid;
+  justify-items: center;
+}
+
+.standings_no1_place,
+.standings_no2_place,
+.standings_no3_place,
+.standings_no4_place {
+  background-color: rgb(11, 153, 7);
+  border-radius: 3px;
+}
+
+.standings_no17_place,
+.standings_no18_place,
+.standings_no19_place,
+.standings_no20_place {
+  background-color: rgb(231, 9, 9);
+  border-radius: 3px;
 }
 
 .standings_teams,
@@ -162,11 +173,18 @@ body {
   margin-left: 5px;
 }
 
-#game_time {
-  text-align: center;
-  grid-row: 1/3;
-  width: 35px;
-  margin-left: 15px;
+#game_time_day {
+  display: grid;
+  justify-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 15px;
+  color: rgb(238, 223, 11);
+}
+
+#game_time_hour {
+  display: grid;
+  justify-items: center;
   margin-top: 0;
   margin-bottom: 0;
   border-radius: 15px;
@@ -207,4 +225,12 @@ body {
   margin-top: 0;
   margin-bottom: 0;
   color: white;
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 }

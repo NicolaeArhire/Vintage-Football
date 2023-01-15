@@ -1,0 +1,105 @@
+{
+  "name": "Premier League 2020/21",
+  "clubs": [
+    {
+      "name": "Bournemouth",
+      "code": "BUR",
+      "country": "England"
+    },
+    {
+      "name": "Manchester United",
+      "code": "MUN",
+      "country": "England"
+    },
+    {
+      "name": "Manchester City",
+      "code": "MCI",
+      "country": "England"
+    },
+    {
+      "name": "Aston Villa",
+      "code": "AVL",
+      "country": "England"
+    },
+    {
+      "name": "Fulham",
+      "code": "FUL",
+      "country": "England"
+    },
+    {
+      "name": "Arsenal",
+      "code": "ARS",
+      "country": "England"
+    },
+    {
+      "name": "Crystal Palace",
+      "code": "CRY",
+      "country": "England"
+    },
+    {
+      "name": "Southampton",
+      "code": "SOU",
+      "country": "England"
+    },
+    {
+      "name": "Liverpool",
+      "code": "LIV",
+      "country": "England"
+    },
+    {
+      "name": "Leeds United",
+      "code": "LEE",
+      "country": "England"
+    },
+    {
+      "name": "West Ham",
+      "code": "WHU",
+      "country": "England"
+    },
+    {
+      "name": "Newcastle",
+      "code": "NEW",
+      "country": "England"
+    },
+    {
+      "name": "Nottingham",
+      "code": "WBA",
+      "country": "England"
+    },
+    {
+      "name": "Leicester City",
+      "code": "LEI",
+      "country": "England"
+    },
+    {
+      "name": "Tottenham",
+      "code": "TOT",
+      "country": "England"
+    },
+    {
+      "name": "Everton",
+      "code": "EVE",
+      "country": "England"
+    },
+    {
+      "name": "Brentford",
+      "code": "SHU",
+      "country": "England"
+    },
+    {
+      "name": "Wolverhampton",
+      "code": "WOL",
+      "country": "England"
+    },
+    {
+      "name": "Brighton",
+      "code": "BHA",
+      "country": "England"
+    },
+    {
+      "name": "Chelsea",
+      "code": "CHE",
+      "country": "England"
+    }
+  ]
+}

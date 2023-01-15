@@ -1,12 +1,4 @@
-const gameTime = document.querySelectorAll("#game_time");
-const currentTime = new Date();
-const hours = currentTime.getHours();
-const minutes = currentTime.getMinutes();
-const minutesWithLeadingZero = minutes < 10 ? `0${minutes}` : minutes;
-
-for (const element of gameTime) {
-  element.innerHTML = "--:--";
-}
+// Declaring Batch Variables--------------------------------------------------------------------------
 
 let homeScore1 = document.querySelector(".game1_home_score");
 let homeScore2 = document.querySelector(".game2_home_score");
@@ -56,9 +48,6 @@ let guestScore = [
   guestScore10,
 ];
 
-let startGames = document.querySelector(".start_games");
-let clearResults = document.querySelector(".clear_results");
-
 let teamNo1 = document.querySelector(".team_no1");
 let teamNo2 = document.querySelector(".team_no2");
 let teamNo3 = document.querySelector(".team_no3");
@@ -103,30 +92,26 @@ let teamNames = [
   teamNo20,
 ];
 
-// for (let i = 0; i < teamNames.length; i += 2) {
-//   teamNames[i].innerHTML = teamNames[i + 1].innerHTML;
-// }
-
-let standingNo1 = document.querySelector(".standings_no1_teams"); //homeScore1
-let standingNo2 = document.querySelector(".standings_no2_teams"); //guestScore1
-let standingNo3 = document.querySelector(".standings_no3_teams"); //homeScore2
-let standingNo4 = document.querySelector(".standings_no4_teams"); //guestScore2
-let standingNo5 = document.querySelector(".standings_no5_teams"); //homeScore3
-let standingNo6 = document.querySelector(".standings_no6_teams"); //guestScore3
-let standingNo7 = document.querySelector(".standings_no7_teams"); //homeScore4
-let standingNo8 = document.querySelector(".standings_no8_teams"); //guestScore4
-let standingNo9 = document.querySelector(".standings_no9_teams"); //homeScore5
-let standingNo10 = document.querySelector(".standings_no10_teams"); //guestScore5
-let standingNo11 = document.querySelector(".standings_no11_teams"); //homeScore6
-let standingNo12 = document.querySelector(".standings_no12_teams"); //guestScore6
-let standingNo13 = document.querySelector(".standings_no13_teams"); //homeScore7
-let standingNo14 = document.querySelector(".standings_no14_teams"); //guestScore7
-let standingNo15 = document.querySelector(".standings_no15_teams"); //homeScore8
-let standingNo16 = document.querySelector(".standings_no16_teams"); //guestScore8
-let standingNo17 = document.querySelector(".standings_no17_teams"); //homeScore9
-let standingNo18 = document.querySelector(".standings_no18_teams"); //guestScore9
-let standingNo19 = document.querySelector(".standings_no19_teams"); //homeScore10
-let standingNo20 = document.querySelector(".standings_no20_teams"); //guestScore10
+let standingNo1 = document.querySelector(".standings_no1_teams");
+let standingNo2 = document.querySelector(".standings_no2_teams");
+let standingNo3 = document.querySelector(".standings_no3_teams");
+let standingNo4 = document.querySelector(".standings_no4_teams");
+let standingNo5 = document.querySelector(".standings_no5_teams");
+let standingNo6 = document.querySelector(".standings_no6_teams");
+let standingNo7 = document.querySelector(".standings_no7_teams");
+let standingNo8 = document.querySelector(".standings_no8_teams");
+let standingNo9 = document.querySelector(".standings_no9_teams");
+let standingNo10 = document.querySelector(".standings_no10_teams");
+let standingNo11 = document.querySelector(".standings_no11_teams");
+let standingNo12 = document.querySelector(".standings_no12_teams");
+let standingNo13 = document.querySelector(".standings_no13_teams");
+let standingNo14 = document.querySelector(".standings_no14_teams");
+let standingNo15 = document.querySelector(".standings_no15_teams");
+let standingNo16 = document.querySelector(".standings_no16_teams");
+let standingNo17 = document.querySelector(".standings_no17_teams");
+let standingNo18 = document.querySelector(".standings_no18_teams");
+let standingNo19 = document.querySelector(".standings_no19_teams");
+let standingNo20 = document.querySelector(".standings_no20_teams");
 
 let standingTeams = [
   standingNo1,
@@ -151,26 +136,26 @@ let standingTeams = [
   standingNo20,
 ];
 
-let playedTeam1 = document.querySelector(".standings_no1_played"); //homeScore1
-let playedTeam2 = document.querySelector(".standings_no2_played"); //guestScore1
-let playedTeam3 = document.querySelector(".standings_no3_played"); //homeScore2
-let playedTeam4 = document.querySelector(".standings_no4_played"); //guestScore2
-let playedTeam5 = document.querySelector(".standings_no5_played"); //homeScore3
-let playedTeam6 = document.querySelector(".standings_no6_played"); //guestScore3
-let playedTeam7 = document.querySelector(".standings_no7_played"); //homeScore4
-let playedTeam8 = document.querySelector(".standings_no8_played"); //guestScore4
-let playedTeam9 = document.querySelector(".standings_no9_played"); //homeScore5
-let playedTeam10 = document.querySelector(".standings_no10_played"); //guestScore5
-let playedTeam11 = document.querySelector(".standings_no11_played"); //homeScore6
-let playedTeam12 = document.querySelector(".standings_no12_played"); //guestScore6
-let playedTeam13 = document.querySelector(".standings_no13_played"); //homeScore7
-let playedTeam14 = document.querySelector(".standings_no14_played"); //guestScore7
-let playedTeam15 = document.querySelector(".standings_no15_played"); //homeScore8
-let playedTeam16 = document.querySelector(".standings_no16_played"); //guestScore8
-let playedTeam17 = document.querySelector(".standings_no17_played"); //homeScore9
-let playedTeam18 = document.querySelector(".standings_no18_played"); //guestScore9
-let playedTeam19 = document.querySelector(".standings_no19_played"); //homeScore10
-let playedTeam20 = document.querySelector(".standings_no20_played"); //guestScore10
+let playedTeam1 = document.querySelector(".standings_no1_played");
+let playedTeam2 = document.querySelector(".standings_no2_played");
+let playedTeam3 = document.querySelector(".standings_no3_played");
+let playedTeam4 = document.querySelector(".standings_no4_played");
+let playedTeam5 = document.querySelector(".standings_no5_played");
+let playedTeam6 = document.querySelector(".standings_no6_played");
+let playedTeam7 = document.querySelector(".standings_no7_played");
+let playedTeam8 = document.querySelector(".standings_no8_played");
+let playedTeam9 = document.querySelector(".standings_no9_played");
+let playedTeam10 = document.querySelector(".standings_no10_played");
+let playedTeam11 = document.querySelector(".standings_no11_played");
+let playedTeam12 = document.querySelector(".standings_no12_played");
+let playedTeam13 = document.querySelector(".standings_no13_played");
+let playedTeam14 = document.querySelector(".standings_no14_played");
+let playedTeam15 = document.querySelector(".standings_no15_played");
+let playedTeam16 = document.querySelector(".standings_no16_played");
+let playedTeam17 = document.querySelector(".standings_no17_played");
+let playedTeam18 = document.querySelector(".standings_no18_played");
+let playedTeam19 = document.querySelector(".standings_no19_played");
+let playedTeam20 = document.querySelector(".standings_no20_played");
 
 let playedTeams = [
   playedTeam1,
@@ -195,26 +180,26 @@ let playedTeams = [
   playedTeam20,
 ];
 
-let winsTeam1 = document.querySelector(".standings_no1_wins"); //homeScore1
-let winsTeam2 = document.querySelector(".standings_no2_wins"); //guestScore1
-let winsTeam3 = document.querySelector(".standings_no3_wins"); //homeScore2
-let winsTeam4 = document.querySelector(".standings_no4_wins"); //guestScore2
-let winsTeam5 = document.querySelector(".standings_no5_wins"); //homeScore3
-let winsTeam6 = document.querySelector(".standings_no6_wins"); //guestScore3
-let winsTeam7 = document.querySelector(".standings_no7_wins"); //homeScore4
-let winsTeam8 = document.querySelector(".standings_no8_wins"); //guestScore4
-let winsTeam9 = document.querySelector(".standings_no9_wins"); //homeScore5
-let winsTeam10 = document.querySelector(".standings_no10_wins"); //guestScore5
-let winsTeam11 = document.querySelector(".standings_no11_wins"); //homeScore6
-let winsTeam12 = document.querySelector(".standings_no12_wins"); //guestScore6
-let winsTeam13 = document.querySelector(".standings_no13_wins"); //homeScore7
-let winsTeam14 = document.querySelector(".standings_no14_wins"); //guestScore7
-let winsTeam15 = document.querySelector(".standings_no15_wins"); //homeScore8
-let winsTeam16 = document.querySelector(".standings_no16_wins"); //guestScore8
-let winsTeam17 = document.querySelector(".standings_no17_wins"); //homeScore9
-let winsTeam18 = document.querySelector(".standings_no18_wins"); //guestScore9
-let winsTeam19 = document.querySelector(".standings_no19_wins"); //homeScore10
-let winsTeam20 = document.querySelector(".standings_no20_wins"); //guestScore10
+let winsTeam1 = document.querySelector(".standings_no1_wins");
+let winsTeam2 = document.querySelector(".standings_no2_wins");
+let winsTeam3 = document.querySelector(".standings_no3_wins");
+let winsTeam4 = document.querySelector(".standings_no4_wins");
+let winsTeam5 = document.querySelector(".standings_no5_wins");
+let winsTeam6 = document.querySelector(".standings_no6_wins");
+let winsTeam7 = document.querySelector(".standings_no7_wins");
+let winsTeam8 = document.querySelector(".standings_no8_wins");
+let winsTeam9 = document.querySelector(".standings_no9_wins");
+let winsTeam10 = document.querySelector(".standings_no10_wins");
+let winsTeam11 = document.querySelector(".standings_no11_wins");
+let winsTeam12 = document.querySelector(".standings_no12_wins");
+let winsTeam13 = document.querySelector(".standings_no13_wins");
+let winsTeam14 = document.querySelector(".standings_no14_wins");
+let winsTeam15 = document.querySelector(".standings_no15_wins");
+let winsTeam16 = document.querySelector(".standings_no16_wins");
+let winsTeam17 = document.querySelector(".standings_no17_wins");
+let winsTeam18 = document.querySelector(".standings_no18_wins");
+let winsTeam19 = document.querySelector(".standings_no19_wins");
+let winsTeam20 = document.querySelector(".standings_no20_wins");
 
 let winsTeams = [
   winsTeam1,
@@ -239,26 +224,26 @@ let winsTeams = [
   winsTeam20,
 ];
 
-let drawsTeam1 = document.querySelector(".standings_no1_draws"); //homeScore1
-let drawsTeam2 = document.querySelector(".standings_no2_draws"); //guestScore1
-let drawsTeam3 = document.querySelector(".standings_no3_draws"); //homeScore2
-let drawsTeam4 = document.querySelector(".standings_no4_draws"); //guestScore2
-let drawsTeam5 = document.querySelector(".standings_no5_draws"); //homeScore3
-let drawsTeam6 = document.querySelector(".standings_no6_draws"); //guestScore3
-let drawsTeam7 = document.querySelector(".standings_no7_draws"); //homeScore4
-let drawsTeam8 = document.querySelector(".standings_no8_draws"); //guestScore4
-let drawsTeam9 = document.querySelector(".standings_no9_draws"); //homeScore5
-let drawsTeam10 = document.querySelector(".standings_no10_draws"); //guestScore5
-let drawsTeam11 = document.querySelector(".standings_no11_draws"); //homeScore6
-let drawsTeam12 = document.querySelector(".standings_no12_draws"); //guestScore6
-let drawsTeam13 = document.querySelector(".standings_no13_draws"); //homeScore7
-let drawsTeam14 = document.querySelector(".standings_no14_draws"); //guestScore7
-let drawsTeam15 = document.querySelector(".standings_no15_draws"); //homeScore8
-let drawsTeam16 = document.querySelector(".standings_no16_draws"); //guestScore8
-let drawsTeam17 = document.querySelector(".standings_no17_draws"); //homeScore9
-let drawsTeam18 = document.querySelector(".standings_no18_draws"); //guestScore9
-let drawsTeam19 = document.querySelector(".standings_no19_draws"); //homeScore10
-let drawsTeam20 = document.querySelector(".standings_no20_draws"); //guestScore10
+let drawsTeam1 = document.querySelector(".standings_no1_draws");
+let drawsTeam2 = document.querySelector(".standings_no2_draws");
+let drawsTeam3 = document.querySelector(".standings_no3_draws");
+let drawsTeam4 = document.querySelector(".standings_no4_draws");
+let drawsTeam5 = document.querySelector(".standings_no5_draws");
+let drawsTeam6 = document.querySelector(".standings_no6_draws");
+let drawsTeam7 = document.querySelector(".standings_no7_draws");
+let drawsTeam8 = document.querySelector(".standings_no8_draws");
+let drawsTeam9 = document.querySelector(".standings_no9_draws");
+let drawsTeam10 = document.querySelector(".standings_no10_draws");
+let drawsTeam11 = document.querySelector(".standings_no11_draws");
+let drawsTeam12 = document.querySelector(".standings_no12_draws");
+let drawsTeam13 = document.querySelector(".standings_no13_draws");
+let drawsTeam14 = document.querySelector(".standings_no14_draws");
+let drawsTeam15 = document.querySelector(".standings_no15_draws");
+let drawsTeam16 = document.querySelector(".standings_no16_draws");
+let drawsTeam17 = document.querySelector(".standings_no17_draws");
+let drawsTeam18 = document.querySelector(".standings_no18_draws");
+let drawsTeam19 = document.querySelector(".standings_no19_draws");
+let drawsTeam20 = document.querySelector(".standings_no20_draws");
 
 let drawsTeams = [
   drawsTeam1,
@@ -283,26 +268,26 @@ let drawsTeams = [
   drawsTeam20,
 ];
 
-let lostTeam1 = document.querySelector(".standings_no1_lost"); //homeScore1
-let lostTeam2 = document.querySelector(".standings_no2_lost"); //guestScore1
-let lostTeam3 = document.querySelector(".standings_no3_lost"); //homeScore2
-let lostTeam4 = document.querySelector(".standings_no4_lost"); //guestScore2
-let lostTeam5 = document.querySelector(".standings_no5_lost"); //homeScore3
-let lostTeam6 = document.querySelector(".standings_no6_lost"); //guestScore3
-let lostTeam7 = document.querySelector(".standings_no7_lost"); //homeScore4
-let lostTeam8 = document.querySelector(".standings_no8_lost"); //guestScore4
-let lostTeam9 = document.querySelector(".standings_no9_lost"); //homeScore5
-let lostTeam10 = document.querySelector(".standings_no10_lost"); //guestScore5
-let lostTeam11 = document.querySelector(".standings_no11_lost"); //homeScore6
-let lostTeam12 = document.querySelector(".standings_no12_lost"); //guestScore6
-let lostTeam13 = document.querySelector(".standings_no13_lost"); //homeScore7
-let lostTeam14 = document.querySelector(".standings_no14_lost"); //guestScore7
-let lostTeam15 = document.querySelector(".standings_no15_lost"); //homeScore8
-let lostTeam16 = document.querySelector(".standings_no16_lost"); //guestScore8
-let lostTeam17 = document.querySelector(".standings_no17_lost"); //homeScore9
-let lostTeam18 = document.querySelector(".standings_no18_lost"); //guestScore9
-let lostTeam19 = document.querySelector(".standings_no19_lost"); //homeScore10
-let lostTeam20 = document.querySelector(".standings_no20_lost"); //guestScore10
+let lostTeam1 = document.querySelector(".standings_no1_lost");
+let lostTeam2 = document.querySelector(".standings_no2_lost");
+let lostTeam3 = document.querySelector(".standings_no3_lost");
+let lostTeam4 = document.querySelector(".standings_no4_lost");
+let lostTeam5 = document.querySelector(".standings_no5_lost");
+let lostTeam6 = document.querySelector(".standings_no6_lost");
+let lostTeam7 = document.querySelector(".standings_no7_lost");
+let lostTeam8 = document.querySelector(".standings_no8_lost");
+let lostTeam9 = document.querySelector(".standings_no9_lost");
+let lostTeam10 = document.querySelector(".standings_no10_lost");
+let lostTeam11 = document.querySelector(".standings_no11_lost");
+let lostTeam12 = document.querySelector(".standings_no12_lost");
+let lostTeam13 = document.querySelector(".standings_no13_lost");
+let lostTeam14 = document.querySelector(".standings_no14_lost");
+let lostTeam15 = document.querySelector(".standings_no15_lost");
+let lostTeam16 = document.querySelector(".standings_no16_lost");
+let lostTeam17 = document.querySelector(".standings_no17_lost");
+let lostTeam18 = document.querySelector(".standings_no18_lost");
+let lostTeam19 = document.querySelector(".standings_no19_lost");
+let lostTeam20 = document.querySelector(".standings_no20_lost");
 
 let lostTeams = [
   lostTeam1,
@@ -327,26 +312,26 @@ let lostTeams = [
   lostTeam20,
 ];
 
-let goalsTeam1 = document.querySelector(".standings_no1_goals"); //homeScore1
-let goalsTeam2 = document.querySelector(".standings_no2_goals"); //guestScore1
-let goalsTeam3 = document.querySelector(".standings_no3_goals"); //homeScore2
-let goalsTeam4 = document.querySelector(".standings_no4_goals"); //guestScore2
-let goalsTeam5 = document.querySelector(".standings_no5_goals"); //homeScore3
-let goalsTeam6 = document.querySelector(".standings_no6_goals"); //guestScore3
-let goalsTeam7 = document.querySelector(".standings_no7_goals"); //homeScore4
-let goalsTeam8 = document.querySelector(".standings_no8_goals"); //guestScore4
-let goalsTeam9 = document.querySelector(".standings_no9_goals"); //homeScore5
-let goalsTeam10 = document.querySelector(".standings_no10_goals"); //guestScore5
-let goalsTeam11 = document.querySelector(".standings_no11_goals"); //homeScore6
-let goalsTeam12 = document.querySelector(".standings_no12_goals"); //guestScore6
-let goalsTeam13 = document.querySelector(".standings_no13_goals"); //homeScore7
-let goalsTeam14 = document.querySelector(".standings_no14_goals"); //guestScore7
-let goalsTeam15 = document.querySelector(".standings_no15_goals"); //homeScore8
-let goalsTeam16 = document.querySelector(".standings_no16_goals"); //guestScore8
-let goalsTeam17 = document.querySelector(".standings_no17_goals"); //homeScore9
-let goalsTeam18 = document.querySelector(".standings_no18_goals"); //guestScore9
-let goalsTeam19 = document.querySelector(".standings_no19_goals"); //homeScore10
-let goalsTeam20 = document.querySelector(".standings_no20_goals"); //guestScore10
+let goalsTeam1 = document.querySelector(".standings_no1_goals");
+let goalsTeam2 = document.querySelector(".standings_no2_goals");
+let goalsTeam3 = document.querySelector(".standings_no3_goals");
+let goalsTeam4 = document.querySelector(".standings_no4_goals");
+let goalsTeam5 = document.querySelector(".standings_no5_goals");
+let goalsTeam6 = document.querySelector(".standings_no6_goals");
+let goalsTeam7 = document.querySelector(".standings_no7_goals");
+let goalsTeam8 = document.querySelector(".standings_no8_goals");
+let goalsTeam9 = document.querySelector(".standings_no9_goals");
+let goalsTeam10 = document.querySelector(".standings_no10_goals");
+let goalsTeam11 = document.querySelector(".standings_no11_goals");
+let goalsTeam12 = document.querySelector(".standings_no12_goals");
+let goalsTeam13 = document.querySelector(".standings_no13_goals");
+let goalsTeam14 = document.querySelector(".standings_no14_goals");
+let goalsTeam15 = document.querySelector(".standings_no15_goals");
+let goalsTeam16 = document.querySelector(".standings_no16_goals");
+let goalsTeam17 = document.querySelector(".standings_no17_goals");
+let goalsTeam18 = document.querySelector(".standings_no18_goals");
+let goalsTeam19 = document.querySelector(".standings_no19_goals");
+let goalsTeam20 = document.querySelector(".standings_no20_goals");
 
 let goalsTeams = [
   goalsTeam1,
@@ -371,26 +356,26 @@ let goalsTeams = [
   goalsTeam20,
 ];
 
-let pointsTeam1 = document.querySelector(".standings_no1_points"); //homeScore1
-let pointsTeam2 = document.querySelector(".standings_no2_points"); //guestScore1
-let pointsTeam3 = document.querySelector(".standings_no3_points"); //homeScore2
-let pointsTeam4 = document.querySelector(".standings_no4_points"); //guestScore2
-let pointsTeam5 = document.querySelector(".standings_no5_points"); //homeScore3
-let pointsTeam6 = document.querySelector(".standings_no6_points"); //guestScore3
-let pointsTeam7 = document.querySelector(".standings_no7_points"); //homeScore4
-let pointsTeam8 = document.querySelector(".standings_no8_points"); //guestScore4
-let pointsTeam9 = document.querySelector(".standings_no9_points"); //homeScore5
-let pointsTeam10 = document.querySelector(".standings_no10_points"); //guestScore5
-let pointsTeam11 = document.querySelector(".standings_no11_points"); //homeScore6
-let pointsTeam12 = document.querySelector(".standings_no12_points"); //guestScore6
-let pointsTeam13 = document.querySelector(".standings_no13_points"); //homeScore7
-let pointsTeam14 = document.querySelector(".standings_no14_points"); //guestScore7
-let pointsTeam15 = document.querySelector(".standings_no15_points"); //homeScore8
-let pointsTeam16 = document.querySelector(".standings_no16_points"); //guestScore8
-let pointsTeam17 = document.querySelector(".standings_no17_points"); //homeScore9
-let pointsTeam18 = document.querySelector(".standings_no18_points"); //guestScore9
-let pointsTeam19 = document.querySelector(".standings_no19_points"); //homeScore10
-let pointsTeam20 = document.querySelector(".standings_no20_points"); //guestScore10
+let pointsTeam1 = document.querySelector(".standings_no1_points");
+let pointsTeam2 = document.querySelector(".standings_no2_points");
+let pointsTeam3 = document.querySelector(".standings_no3_points");
+let pointsTeam4 = document.querySelector(".standings_no4_points");
+let pointsTeam5 = document.querySelector(".standings_no5_points");
+let pointsTeam6 = document.querySelector(".standings_no6_points");
+let pointsTeam7 = document.querySelector(".standings_no7_points");
+let pointsTeam8 = document.querySelector(".standings_no8_points");
+let pointsTeam9 = document.querySelector(".standings_no9_points");
+let pointsTeam10 = document.querySelector(".standings_no10_points");
+let pointsTeam11 = document.querySelector(".standings_no11_points");
+let pointsTeam12 = document.querySelector(".standings_no12_points");
+let pointsTeam13 = document.querySelector(".standings_no13_points");
+let pointsTeam14 = document.querySelector(".standings_no14_points");
+let pointsTeam15 = document.querySelector(".standings_no15_points");
+let pointsTeam16 = document.querySelector(".standings_no16_points");
+let pointsTeam17 = document.querySelector(".standings_no17_points");
+let pointsTeam18 = document.querySelector(".standings_no18_points");
+let pointsTeam19 = document.querySelector(".standings_no19_points");
+let pointsTeam20 = document.querySelector(".standings_no20_points");
 
 let pointsTeams = [
   pointsTeam1,
@@ -415,33 +400,92 @@ let pointsTeams = [
   pointsTeam20,
 ];
 
-// ---------------------------------------------------------------------------------------------
+// Declaring Additional Functions ----------------------------------------------------------------
+
+let roundNo = document.querySelector(".rounds");
+let startGames = document.querySelector(".start_games");
+let clearResults = document.querySelector(".clear_results");
+let round = 1;
+let isRed = true;
+let roundCounter = 0;
 
 clearResults.disabled = true;
+
+for (let i = 0; i < teamNames.length; i++) {
+  teamNames[i].style.opacity = "0";
+}
+
+let scheduleCounter = 1;
+
+function schedulePairings() {
+  fetch(`fixtures_en.json`)
+    .then((response) => response.json())
+    .then((data) => {
+      let matchday = `Matchday ${scheduleCounter}`;
+
+      for (let i = 0; i < teamNames.length; i++) {
+        let dataFilter = data.filter((match) => match.round === matchday);
+        let index = Math.floor(i / 2);
+        let team = i % 2 === 0 ? "team1" : "team2";
+        teamNames[i].innerHTML = `${dataFilter[index][team]}`;
+      }
+      scheduleCounter++;
+    });
+}
+
+// for (let i = 0; i < teamNames.length; i++) {
+//   console.log(teamNames[i].innerHTML);
+// }
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-function addStrings(val1, val2) {
-  const goal1 = parseInt(val1.split("-")[0]);
-  const goal2 = parseInt(val2.split("-")[0]);
-  const goalsHome = goal1 + goal2;
+// Start Playing button------------------------------------------------------
 
-  const goal3 = parseInt(val1.split("-")[1]);
-  const goal4 = parseInt(val2.split("-")[1]);
-  const goalsAway = goal3 + goal4;
-
-  return goalsHome + "-" + goalsAway;
-}
-
-startGames.addEventListener("click", () => {
-  startGames.disabled = true;
+startGames.addEventListener("click", function startPlaying() {
   clearResults.disabled = false;
 
-  for (const element of gameTime) {
-    element.innerHTML = `${hours}:${minutesWithLeadingZero}`;
+  roundCounter++;
+
+  if (roundCounter >= 38) {
+    startGames.disabled = true;
   }
+
+  for (let i = 0; i < teamNames.length; i++) {
+    teamNames[i].style.opacity = "1";
+  }
+
+  const gameTimeDay = document.querySelectorAll("#game_time_day");
+  const gameTimeHour = document.querySelectorAll("#game_time_hour");
+  const year = new Date().getFullYear();
+  const month = new Date().getMonth() + 1;
+  const day = new Date().getDate();
+  const hours = new Date().getHours();
+  const minutes = new Date().getMinutes();
+  const monthWithLeadingZero = month < 10 ? `0${month}` : month;
+  const dayWithLeadingZero = day < 10 ? `0${day}` : day;
+  const hoursWithLeadingZero = hours < 10 ? `0${hours}` : hours;
+  const minutesWithLeadingZero = minutes < 10 ? `0${minutes}` : minutes;
+
+  for (const element of gameTimeDay) {
+    element.innerHTML = `${dayWithLeadingZero}.${monthWithLeadingZero}.${year}`;
+  }
+
+  for (const element of gameTimeHour) {
+    element.innerHTML = `${hoursWithLeadingZero}:${minutesWithLeadingZero}`;
+  }
+
+  roundNo.style.opacity = "1";
+  roundNo.style.color = isRed ? "red" : "blue";
+  roundNo.innerHTML = `Round ${round}/38`;
+
+  if (round === 38) {
+    round = 1;
+  } else {
+    round++;
+  }
+  isRed = !isRed;
 
   let dummy1 = getRandomInt(7);
   let dummy2 = getRandomInt(7);
@@ -474,7 +518,8 @@ startGames.addEventListener("click", () => {
   homeScore10.innerHTML = getRandomInt(dummy10);
   guestScore10.innerHTML = getRandomInt(dummy10);
 
-  standings();
+  schedulePairings();
+  results();
 
   const standingDetails = {
     team1: {
@@ -659,66 +704,116 @@ startGames.addEventListener("click", () => {
     },
   };
 
-  let sortedStanding = Object.values(standingDetails)
-    .map((team) => ({
-      team: team.name,
-      games: team.games,
-      wins: team.wins,
-      draws: team.draws,
-      lost: team.lost,
-      goals: team.goals,
-      points: team.points,
-    }))
-    .sort((a, b) => {
-      if (b.points !== a.points) {
-        return parseInt(b.points) - parseInt(a.points);
-      } else {
-        let diffA =
-          parseInt(a.goals.split("-")[0]) - parseInt(a.goals.split("-")[1]);
-        let diffB =
-          parseInt(b.goals.split("-")[0]) - parseInt(b.goals.split("-")[1]);
-        if (diffB !== diffA) {
-          return diffB - diffA;
-        } else {
-          return (
-            parseInt(b.goals.split("-")[0]) - parseInt(a.goals.split("-")[0])
-          );
-        }
-      }
-    });
+  // let sortedStanding = Object.values(standingDetails)
+  //   .map((team) => ({
+  //     team: team.name,
+  //     games: team.games,
+  //     wins: team.wins,
+  //     draws: team.draws,
+  //     lost: team.lost,
+  //     goals: team.goals,
+  //     points: team.points,
+  //   }))
+  //   .sort((a, b) => {
+  //     if (b.points !== a.points) {
+  //       return parseInt(b.points) - parseInt(a.points);
+  //     } else {
+  //       let diffA =
+  //         parseInt(a.goals.split("-")[0]) - parseInt(a.goals.split("-")[1]);
+  //       let diffB =
+  //         parseInt(b.goals.split("-")[0]) - parseInt(b.goals.split("-")[1]);
+  //       if (diffB !== diffA) {
+  //         return diffB - diffA;
+  //       } else {
+  //         return (
+  //           parseInt(b.goals.split("-")[0]) - parseInt(a.goals.split("-")[0])
+  //         );
+  //       }
+  //     }
+  //   });
 
-  for (let i = 0; i < sortedStanding.length; i++) {
-    standingTeams[i].innerHTML = sortedStanding[i].team;
-    playedTeams[i].innerHTML = sortedStanding[i].games;
-    winsTeams[i].innerHTML = sortedStanding[i].wins;
-    drawsTeams[i].innerHTML = sortedStanding[i].draws;
-    lostTeams[i].innerHTML = sortedStanding[i].lost;
-    goalsTeams[i].innerHTML = sortedStanding[i].goals;
-    pointsTeams[i].innerHTML = sortedStanding[i].points;
-  }
+  // for (let i = 0; i < sortedStanding.length; i++) {
+  //   standingTeams[i].innerHTML = sortedStanding[i].team;
+  //   playedTeams[i].innerHTML = sortedStanding[i].games;
+  //   winsTeams[i].innerHTML = sortedStanding[i].wins;
+  //   drawsTeams[i].innerHTML = sortedStanding[i].draws;
+  //   lostTeams[i].innerHTML = sortedStanding[i].lost;
+  //   goalsTeams[i].innerHTML = sortedStanding[i].goals;
+  //   pointsTeams[i].innerHTML = sortedStanding[i].points;
+  // }
 });
 
-function standings() {
-  goalsTeam1.innerHTML = homeScore1.innerHTML + "-" + guestScore1.innerHTML;
-  goalsTeam2.innerHTML = guestScore1.innerHTML + "-" + homeScore1.innerHTML;
-  goalsTeam3.innerHTML = homeScore2.innerHTML + "-" + guestScore2.innerHTML;
-  goalsTeam4.innerHTML = guestScore2.innerHTML + "-" + homeScore2.innerHTML;
-  goalsTeam5.innerHTML = homeScore3.innerHTML + "-" + guestScore3.innerHTML;
-  goalsTeam6.innerHTML = guestScore3.innerHTML + "-" + homeScore3.innerHTML;
-  goalsTeam7.innerHTML = homeScore4.innerHTML + "-" + guestScore4.innerHTML;
-  goalsTeam8.innerHTML = guestScore4.innerHTML + "-" + homeScore4.innerHTML;
-  goalsTeam9.innerHTML = homeScore5.innerHTML + "-" + guestScore5.innerHTML;
-  goalsTeam10.innerHTML = guestScore5.innerHTML + "-" + homeScore5.innerHTML;
-  goalsTeam11.innerHTML = homeScore6.innerHTML + "-" + guestScore6.innerHTML;
-  goalsTeam12.innerHTML = guestScore6.innerHTML + "-" + homeScore6.innerHTML;
-  goalsTeam13.innerHTML = homeScore7.innerHTML + "-" + guestScore7.innerHTML;
-  goalsTeam14.innerHTML = guestScore7.innerHTML + "-" + homeScore7.innerHTML;
-  goalsTeam15.innerHTML = homeScore8.innerHTML + "-" + guestScore8.innerHTML;
-  goalsTeam16.innerHTML = guestScore8.innerHTML + "-" + homeScore8.innerHTML;
-  goalsTeam17.innerHTML = homeScore9.innerHTML + "-" + guestScore9.innerHTML;
-  goalsTeam18.innerHTML = guestScore9.innerHTML + "-" + homeScore9.innerHTML;
-  goalsTeam19.innerHTML = homeScore10.innerHTML + "-" + guestScore10.innerHTML;
-  goalsTeam20.innerHTML = guestScore10.innerHTML + "-" + homeScore10.innerHTML;
+startGames.focus();
+function startPlayingWithEnter(event) {
+  if (event.key === "13") {
+    startPlaying();
+  }
+}
+
+let h1 = 0;
+let h2 = 0;
+let h3 = 0;
+let h4 = 0;
+let h5 = 0;
+let h6 = 0;
+let h7 = 0;
+let h8 = 0;
+let h9 = 0;
+let h10 = 0;
+
+let g1 = 0;
+let g2 = 0;
+let g3 = 0;
+let g4 = 0;
+let g5 = 0;
+let g6 = 0;
+let g7 = 0;
+let g8 = 0;
+let g9 = 0;
+let g10 = 0;
+
+// Calculating Games, Wins, Draws, Loses, Goals, Points---------------------------------------
+
+function results() {
+  h1 += parseInt(homeScore1.innerHTML);
+  g1 += parseInt(guestScore1.innerHTML);
+  h2 += parseInt(homeScore2.innerHTML);
+  g2 += parseInt(guestScore2.innerHTML);
+  h3 += parseInt(homeScore3.innerHTML);
+  g3 += parseInt(guestScore3.innerHTML);
+  h4 += parseInt(homeScore4.innerHTML);
+  g4 += parseInt(guestScore4.innerHTML);
+  h5 += parseInt(homeScore5.innerHTML);
+  g5 += parseInt(guestScore5.innerHTML);
+  h6 += parseInt(homeScore6.innerHTML);
+  g6 += parseInt(guestScore6.innerHTML);
+  h7 += parseInt(homeScore7.innerHTML);
+  g7 += parseInt(guestScore7.innerHTML);
+  h8 += parseInt(homeScore8.innerHTML);
+  g8 += parseInt(guestScore8.innerHTML);
+  h9 += parseInt(homeScore9.innerHTML);
+  g9 += parseInt(guestScore9.innerHTML);
+  h10 += parseInt(homeScore10.innerHTML);
+  g10 += parseInt(guestScore10.innerHTML);
+
+  goalsTeam3.innerHTML = h2 + "-" + g2;
+  goalsTeam4.innerHTML = g2 + "-" + h2;
+  goalsTeam5.innerHTML = h3 + "-" + g3;
+  goalsTeam6.innerHTML = g3 + "-" + h3;
+  goalsTeam7.innerHTML = h4 + "-" + g4;
+  goalsTeam8.innerHTML = g4 + "-" + h4;
+  goalsTeam9.innerHTML = h5 + "-" + g5;
+  goalsTeam10.innerHTML = g5 + "-" + h5;
+  goalsTeam11.innerHTML = h6 + "-" + g6;
+  goalsTeam12.innerHTML = g6 + "-" + h6;
+  goalsTeam13.innerHTML = h7 + "-" + g7;
+  goalsTeam14.innerHTML = g7 + "-" + h7;
+  goalsTeam15.innerHTML = h8 + "-" + g8;
+  goalsTeam16.innerHTML = g8 + "-" + h8;
+  goalsTeam17.innerHTML = h9 + "-" + g9;
+  goalsTeam18.innerHTML = g9 + "-" + h9;
+  goalsTeam19.innerHTML = h10 + "-" + g10;
+  goalsTeam20.innerHTML = g10 + "-" + h10;
 
   if (homeScore1.innerHTML > guestScore1.innerHTML) {
     pointsTeam1.innerHTML = parseInt(pointsTeam1.innerHTML) + 3;
@@ -731,6 +826,8 @@ function standings() {
     drawsTeam2.innerHTML = parseInt(drawsTeam2.innerHTML) + 0;
     lostTeam1.innerHTML = parseInt(lostTeam1.innerHTML) + 0;
     lostTeam2.innerHTML = parseInt(lostTeam2.innerHTML) + 1;
+    goalsTeam1.innerHTML = h1 + "-" + g1;
+    goalsTeam2.innerHTML = g1 + "-" + h1;
   } else if (homeScore1.innerHTML < guestScore1.innerHTML) {
     pointsTeam1.innerHTML = parseInt(pointsTeam1.innerHTML) + 0;
     pointsTeam2.innerHTML = parseInt(pointsTeam2.innerHTML) + 3;
@@ -742,6 +839,8 @@ function standings() {
     drawsTeam2.innerHTML = parseInt(drawsTeam2.innerHTML) + 0;
     lostTeam1.innerHTML = parseInt(lostTeam1.innerHTML) + 1;
     lostTeam2.innerHTML = parseInt(lostTeam2.innerHTML) + 0;
+    goalsTeam1.innerHTML = h1 + "-" + g1;
+    goalsTeam2.innerHTML = g1 + "-" + h1;
   } else {
     pointsTeam1.innerHTML = parseInt(pointsTeam1.innerHTML) + 1;
     pointsTeam2.innerHTML = parseInt(pointsTeam2.innerHTML) + 1;
@@ -753,6 +852,8 @@ function standings() {
     drawsTeam2.innerHTML = parseInt(drawsTeam2.innerHTML) + 1;
     lostTeam1.innerHTML = parseInt(lostTeam1.innerHTML) + 0;
     lostTeam2.innerHTML = parseInt(lostTeam2.innerHTML) + 0;
+    goalsTeam1.innerHTML = h1 + "-" + g1;
+    goalsTeam2.innerHTML = g1 + "-" + h1;
   }
 
   if (homeScore2.innerHTML > guestScore2.innerHTML) {
@@ -1070,9 +1171,6 @@ function standings() {
     lostTeam20.innerHTML = parseInt(lostTeam20.innerHTML) + 0;
   }
 }
-
 clearResults.addEventListener("click", () => {
-  startGames.disabled = true;
-  clearResults.disabled = false;
   location.reload(true);
 });
