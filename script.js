@@ -1,51 +1,125 @@
 // Declaring Batch Variables--------------------------------------------------------------------------
+let leaguePick = document.querySelector(".container");
+let wrapperContainer = document.querySelector(".wrapper");
+let england = document.querySelector(".england");
+let spain = document.querySelector(".spain");
+let italy = document.querySelector(".italy");
+let france = document.querySelector(".france");
+let leagueAll = ["en", "sp", "it", "fr"];
+let leagueSelected = [];
 
-let homeScore1 = document.querySelector(".game1_home_score");
-let homeScore2 = document.querySelector(".game2_home_score");
-let homeScore3 = document.querySelector(".game3_home_score");
-let homeScore4 = document.querySelector(".game4_home_score");
-let homeScore5 = document.querySelector(".game5_home_score");
-let homeScore6 = document.querySelector(".game6_home_score");
-let homeScore7 = document.querySelector(".game7_home_score");
-let homeScore8 = document.querySelector(".game8_home_score");
-let homeScore9 = document.querySelector(".game9_home_score");
-let homeScore10 = document.querySelector(".game10_home_score");
+england.onclick = () => {
+  leaguePick.style.visibility = "hidden";
+  wrapperContainer.style.visibility = "visible";
+  leagueSelected = [leagueAll[0]];
+  getData();
+  firstPairings();
+};
 
-let homeScore = [
-  homeScore1,
-  homeScore2,
-  homeScore3,
-  homeScore4,
-  homeScore5,
-  homeScore6,
-  homeScore7,
-  homeScore8,
-  homeScore9,
-  homeScore10,
-];
+spain.onclick = () => {
+  leaguePick.style.visibility = "hidden";
+  wrapperContainer.style.visibility = "visible";
+  leagueSelected = [leagueAll[1]];
+  getData();
+  firstPairings();
+};
 
-let guestScore1 = document.querySelector(".game1_guest_score");
-let guestScore2 = document.querySelector(".game2_guest_score");
-let guestScore3 = document.querySelector(".game3_guest_score");
-let guestScore4 = document.querySelector(".game4_guest_score");
-let guestScore5 = document.querySelector(".game5_guest_score");
-let guestScore6 = document.querySelector(".game6_guest_score");
-let guestScore7 = document.querySelector(".game7_guest_score");
-let guestScore8 = document.querySelector(".game8_guest_score");
-let guestScore9 = document.querySelector(".game9_guest_score");
-let guestScore10 = document.querySelector(".game10_guest_score");
+italy.onclick = () => {
+  leaguePick.style.visibility = "hidden";
+  wrapperContainer.style.visibility = "visible";
+  leagueSelected = [leagueAll[2]];
+  getData();
+  firstPairings();
+};
 
-let guestScore = [
-  guestScore1,
-  guestScore2,
-  guestScore3,
-  guestScore4,
-  guestScore5,
-  guestScore6,
-  guestScore7,
-  guestScore8,
-  guestScore9,
-  guestScore10,
+france.onclick = () => {
+  leaguePick.style.visibility = "hidden";
+  wrapperContainer.style.visibility = "visible";
+  leagueSelected = [leagueAll[3]];
+  getData();
+  firstPairings();
+};
+
+async function getData() {
+  let response = await fetch(`clubs_${leagueSelected[0]}.json`);
+  let data = await response.json();
+
+  for (let i = 0; i < standingTeams.length; i++) {
+    standingTeams[i].innerHTML = data.clubs[i].name;
+  }
+}
+
+async function firstPairings() {
+  let response = await fetch(`fixtures_${leagueSelected[0]}.json`);
+  let data = await response.json();
+  let matchday = `Matchday 1`;
+
+  for (let i = 0; i < teamNames.length; i++) {
+    let dataFilter = data.filter((match) => match.round === matchday);
+    let index = Math.floor(i / 2);
+    let team = i % 2 === 0 ? "team1" : "team2";
+    teamNames[i].innerHTML = `${dataFilter[index][team]}`;
+  }
+}
+
+let scheduleCounter = 1;
+
+async function schedulePairings() {
+  let response = await fetch(`fixtures_${leagueSelected[0]}.json`);
+  let data = await response.json();
+  let matchday = `Matchday ${scheduleCounter}`;
+
+  for (let i = 0; i < teamNames.length; i++) {
+    let dataFilter = data.filter((match) => match.round === matchday);
+    let index = Math.floor(i / 2);
+    let team = i % 2 === 0 ? "team1" : "team2";
+    teamNames[i].innerHTML = `${dataFilter[index][team]}`;
+  }
+  scheduleCounter++;
+}
+
+let fixtureTeam1 = document.querySelector(".game1_home_score");
+let fixtureTeam2 = document.querySelector(".game1_guest_score");
+let fixtureTeam3 = document.querySelector(".game2_home_score");
+let fixtureTeam4 = document.querySelector(".game2_guest_score");
+let fixtureTeam5 = document.querySelector(".game3_home_score");
+let fixtureTeam6 = document.querySelector(".game3_guest_score");
+let fixtureTeam7 = document.querySelector(".game4_home_score");
+let fixtureTeam8 = document.querySelector(".game4_guest_score");
+let fixtureTeam9 = document.querySelector(".game5_home_score");
+let fixtureTeam10 = document.querySelector(".game5_guest_score");
+let fixtureTeam11 = document.querySelector(".game6_home_score");
+let fixtureTeam12 = document.querySelector(".game6_guest_score");
+let fixtureTeam13 = document.querySelector(".game7_home_score");
+let fixtureTeam14 = document.querySelector(".game7_guest_score");
+let fixtureTeam15 = document.querySelector(".game8_home_score");
+let fixtureTeam16 = document.querySelector(".game8_guest_score");
+let fixtureTeam17 = document.querySelector(".game9_home_score");
+let fixtureTeam18 = document.querySelector(".game9_guest_score");
+let fixtureTeam19 = document.querySelector(".game10_home_score");
+let fixtureTeam20 = document.querySelector(".game10_guest_score");
+
+let fixtureTeams = [
+  fixtureTeam1,
+  fixtureTeam2,
+  fixtureTeam3,
+  fixtureTeam4,
+  fixtureTeam5,
+  fixtureTeam6,
+  fixtureTeam7,
+  fixtureTeam8,
+  fixtureTeam9,
+  fixtureTeam10,
+  fixtureTeam11,
+  fixtureTeam12,
+  fixtureTeam13,
+  fixtureTeam14,
+  fixtureTeam15,
+  fixtureTeam16,
+  fixtureTeam17,
+  fixtureTeam18,
+  fixtureTeam19,
+  fixtureTeam20,
 ];
 
 let teamNo1 = document.querySelector(".team_no1");
@@ -402,6 +476,9 @@ let pointsTeams = [
 
 // Declaring Additional Functions ----------------------------------------------------------------
 
+let modal = document.querySelector(".winner");
+let modalContent = document.querySelector(".modal");
+let modalClose = document.querySelector(".modal_close");
 let roundNo = document.querySelector(".rounds");
 let startGames = document.querySelector(".start_games");
 let clearResults = document.querySelector(".clear_results");
@@ -411,41 +488,128 @@ let roundCounter = 0;
 
 clearResults.disabled = true;
 
-for (let i = 0; i < teamNames.length; i++) {
-  teamNames[i].style.opacity = "0";
-}
-
-let scheduleCounter = 1;
-
-function schedulePairings() {
-  fetch(`fixtures_en.json`)
-    .then((response) => response.json())
-    .then((data) => {
-      let matchday = `Matchday ${scheduleCounter}`;
-
-      for (let i = 0; i < teamNames.length; i++) {
-        let dataFilter = data.filter((match) => match.round === matchday);
-        let index = Math.floor(i / 2);
-        let team = i % 2 === 0 ? "team1" : "team2";
-        teamNames[i].innerHTML = `${dataFilter[index][team]}`;
-      }
-      scheduleCounter++;
-    });
-}
-
-// for (let i = 0; i < teamNames.length; i++) {
-//   console.log(teamNames[i].innerHTML);
-// }
-
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
+let f1 = 0;
+let f2 = 0;
+let f3 = 0;
+let f4 = 0;
+let f5 = 0;
+let f6 = 0;
+let f7 = 0;
+let f8 = 0;
+let f9 = 0;
+let f10 = 0;
+let f11 = 0;
+let f12 = 0;
+let f13 = 0;
+let f14 = 0;
+let f15 = 0;
+let f16 = 0;
+let f17 = 0;
+let f18 = 0;
+let f19 = 0;
+let f20 = 0;
+
+// Calculating Games, Wins, Draws, Loses, Goals, Points---------------------------------------
+
+function results() {
+  f1 += parseInt(fixtureTeam1.innerHTML);
+  f2 += parseInt(fixtureTeam2.innerHTML);
+  f3 += parseInt(fixtureTeam3.innerHTML);
+  f4 += parseInt(fixtureTeam4.innerHTML);
+  f5 += parseInt(fixtureTeam5.innerHTML);
+  f6 += parseInt(fixtureTeam6.innerHTML);
+  f7 += parseInt(fixtureTeam7.innerHTML);
+  f8 += parseInt(fixtureTeam8.innerHTML);
+  f9 += parseInt(fixtureTeam9.innerHTML);
+  f10 += parseInt(fixtureTeam10.innerHTML);
+  f11 += parseInt(fixtureTeam11.innerHTML);
+  f12 += parseInt(fixtureTeam12.innerHTML);
+  f13 += parseInt(fixtureTeam13.innerHTML);
+  f14 += parseInt(fixtureTeam14.innerHTML);
+  f15 += parseInt(fixtureTeam15.innerHTML);
+  f16 += parseInt(fixtureTeam16.innerHTML);
+  f17 += parseInt(fixtureTeam17.innerHTML);
+  f18 += parseInt(fixtureTeam18.innerHTML);
+  f19 += parseInt(fixtureTeam19.innerHTML);
+  f20 += parseInt(fixtureTeam20.innerHTML);
+
+  let fixtures = [
+    f1,
+    f2,
+    f3,
+    f4,
+    f5,
+    f6,
+    f7,
+    f8,
+    f9,
+    f10,
+    f11,
+    f12,
+    f13,
+    f14,
+    f15,
+    f16,
+    f17,
+    f18,
+    f19,
+    f20,
+  ];
+
+  for (let i = 0; i < 20; i += 2) {
+    if (fixtureTeams[i].innerHTML > fixtureTeams[i + 1].innerHTML) {
+      pointsTeams[i].innerHTML = parseInt(pointsTeams[i].innerHTML) + 3;
+      pointsTeams[i + 1].innerHTML = parseInt(pointsTeams[i + 1].innerHTML) + 0;
+      playedTeams[i].innerHTML = parseInt(playedTeams[i].innerHTML) + 1;
+      playedTeams[i + 1].innerHTML = parseInt(playedTeams[i + 1].innerHTML) + 1;
+      winsTeams[i].innerHTML = parseInt(winsTeams[i].innerHTML) + 1;
+      winsTeams[i + 1].innerHTML = parseInt(winsTeams[i + 1].innerHTML) + 0;
+      drawsTeams[i].innerHTML = parseInt(drawsTeams[i].innerHTML) + 0;
+      drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 0;
+      lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 0;
+      lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 1;
+      goalsTeams[i].innerHTML = fixtures[i] + "-" + fixtures[i + 1];
+      goalsTeams[i + 1].innerHTML = fixtures[i + 1] + "-" + fixtures[i];
+    } else if (fixtureTeams[i].innerHTML < fixtureTeams[i + 1].innerHTML) {
+      pointsTeams[i].innerHTML = parseInt(pointsTeams[i].innerHTML) + 0;
+      pointsTeams[i + 1].innerHTML = parseInt(pointsTeams[i + 1].innerHTML) + 3;
+      playedTeams[i].innerHTML = parseInt(playedTeams[i].innerHTML) + 1;
+      playedTeams[i + 1].innerHTML = parseInt(playedTeams[i + 1].innerHTML) + 1;
+      winsTeams[i].innerHTML = parseInt(winsTeams[i].innerHTML) + 0;
+      winsTeams[i + 1].innerHTML = parseInt(winsTeams[i + 1].innerHTML) + 1;
+      drawsTeams[i].innerHTML = parseInt(drawsTeams[i].innerHTML) + 0;
+      drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 0;
+      lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 1;
+      lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 0;
+      goalsTeams[i].innerHTML = fixtures[i] + "-" + fixtures[i + 1];
+      goalsTeams[i + 1].innerHTML = fixtures[i + 1] + "-" + fixtures[i];
+    } else {
+      pointsTeams[i].innerHTML = parseInt(pointsTeams[i].innerHTML) + 1;
+      pointsTeams[i + 1].innerHTML = parseInt(pointsTeams[i + 1].innerHTML) + 1;
+      playedTeams[i].innerHTML = parseInt(playedTeams[i].innerHTML) + 1;
+      playedTeams[i + 1].innerHTML = parseInt(playedTeams[i + 1].innerHTML) + 1;
+      winsTeams[i].innerHTML = parseInt(winsTeams[i].innerHTML) + 0;
+      winsTeams[i + 1].innerHTML = parseInt(winsTeams[i + 1].innerHTML) + 0;
+      drawsTeams[i].innerHTML = parseInt(drawsTeams[i].innerHTML) + 1;
+      drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 1;
+      lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 0;
+      lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 0;
+      goalsTeams[i].innerHTML = fixtures[i] + "-" + fixtures[i + 1];
+      goalsTeams[i + 1].innerHTML = fixtures[i + 1] + "-" + fixtures[i];
+    }
+  }
+}
 // Start Playing button------------------------------------------------------
+let matches = [];
+startGames.onclick = function startPlaying() {
+  console.log(standingTeams[0].innerHTML);
+  console.log(teamNames[0].innerHTML);
 
-startGames.addEventListener("click", function startPlaying() {
   clearResults.disabled = false;
-
   roundCounter++;
 
   if (roundCounter >= 38) {
@@ -497,29 +661,42 @@ startGames.addEventListener("click", function startPlaying() {
   let dummy8 = getRandomInt(7);
   let dummy9 = getRandomInt(7);
   let dummy10 = getRandomInt(7);
-  homeScore1.innerHTML = getRandomInt(dummy1);
-  guestScore1.innerHTML = getRandomInt(dummy1);
-  homeScore2.innerHTML = getRandomInt(dummy2);
-  guestScore2.innerHTML = getRandomInt(dummy2);
-  homeScore3.innerHTML = getRandomInt(dummy3);
-  guestScore3.innerHTML = getRandomInt(dummy3);
-  homeScore4.innerHTML = getRandomInt(dummy4);
-  guestScore4.innerHTML = getRandomInt(dummy4);
-  homeScore5.innerHTML = getRandomInt(dummy5);
-  guestScore5.innerHTML = getRandomInt(dummy5);
-  homeScore6.innerHTML = getRandomInt(dummy6);
-  guestScore6.innerHTML = getRandomInt(dummy6);
-  homeScore7.innerHTML = getRandomInt(dummy7);
-  guestScore7.innerHTML = getRandomInt(dummy7);
-  homeScore8.innerHTML = getRandomInt(dummy8);
-  guestScore8.innerHTML = getRandomInt(dummy8);
-  homeScore9.innerHTML = getRandomInt(dummy9);
-  guestScore9.innerHTML = getRandomInt(dummy9);
-  homeScore10.innerHTML = getRandomInt(dummy10);
-  guestScore10.innerHTML = getRandomInt(dummy10);
+  fixtureTeam1.innerHTML = getRandomInt(dummy1);
+  fixtureTeam2.innerHTML = getRandomInt(dummy1);
+  fixtureTeam3.innerHTML = getRandomInt(dummy2);
+  fixtureTeam4.innerHTML = getRandomInt(dummy2);
+  fixtureTeam5.innerHTML = getRandomInt(dummy3);
+  fixtureTeam6.innerHTML = getRandomInt(dummy3);
+  fixtureTeam7.innerHTML = getRandomInt(dummy4);
+  fixtureTeam8.innerHTML = getRandomInt(dummy4);
+  fixtureTeam9.innerHTML = getRandomInt(dummy5);
+  fixtureTeam10.innerHTML = getRandomInt(dummy5);
+  fixtureTeam11.innerHTML = getRandomInt(dummy6);
+  fixtureTeam12.innerHTML = getRandomInt(dummy6);
+  fixtureTeam13.innerHTML = getRandomInt(dummy7);
+  fixtureTeam14.innerHTML = getRandomInt(dummy7);
+  fixtureTeam15.innerHTML = getRandomInt(dummy8);
+  fixtureTeam16.innerHTML = getRandomInt(dummy8);
+  fixtureTeam17.innerHTML = getRandomInt(dummy9);
+  fixtureTeam18.innerHTML = getRandomInt(dummy9);
+  fixtureTeam19.innerHTML = getRandomInt(dummy10);
+  fixtureTeam20.innerHTML = getRandomInt(dummy10);
 
   schedulePairings();
   results();
+
+  for (let i = 0; i < standingTeams.length; i++) {
+    for (let j = 0; j < teamNames.length; j++) {
+      if (standingTeams[i].innerHTML === teamNames[j].innerHTML) {
+        let match = {
+          standingTeams: i,
+          teamNames: j,
+        };
+        matches.push(match);
+        console.log(match);
+      }
+    }
+  }
 
   const standingDetails = {
     team1: {
@@ -741,7 +918,15 @@ startGames.addEventListener("click", function startPlaying() {
   //   goalsTeams[i].innerHTML = sortedStanding[i].goals;
   //   pointsTeams[i].innerHTML = sortedStanding[i].points;
   // }
-});
+
+  if (startGames.disabled == true) {
+    modal.style.visibility = "visible";
+    wrapperContainer.style.opacity = "0.6";
+    modalContent.innerHTML = `Congratulations, <span class="modal_winnerTeam"><br>${standingTeams[0].innerHTML}!</br></span> <br></br>Not so good, <span class="modal_looserTeam"><br>${standingTeams[19].innerHTML}!</br></span>`;
+  } else {
+    modal.style.visibility = "hidden";
+  }
+};
 
 startGames.focus();
 function startPlayingWithEnter(event) {
@@ -750,427 +935,36 @@ function startPlayingWithEnter(event) {
   }
 }
 
-let h1 = 0;
-let h2 = 0;
-let h3 = 0;
-let h4 = 0;
-let h5 = 0;
-let h6 = 0;
-let h7 = 0;
-let h8 = 0;
-let h9 = 0;
-let h10 = 0;
-
-let g1 = 0;
-let g2 = 0;
-let g3 = 0;
-let g4 = 0;
-let g5 = 0;
-let g6 = 0;
-let g7 = 0;
-let g8 = 0;
-let g9 = 0;
-let g10 = 0;
-
-// Calculating Games, Wins, Draws, Loses, Goals, Points---------------------------------------
-
-function results() {
-  h1 += parseInt(homeScore1.innerHTML);
-  g1 += parseInt(guestScore1.innerHTML);
-  h2 += parseInt(homeScore2.innerHTML);
-  g2 += parseInt(guestScore2.innerHTML);
-  h3 += parseInt(homeScore3.innerHTML);
-  g3 += parseInt(guestScore3.innerHTML);
-  h4 += parseInt(homeScore4.innerHTML);
-  g4 += parseInt(guestScore4.innerHTML);
-  h5 += parseInt(homeScore5.innerHTML);
-  g5 += parseInt(guestScore5.innerHTML);
-  h6 += parseInt(homeScore6.innerHTML);
-  g6 += parseInt(guestScore6.innerHTML);
-  h7 += parseInt(homeScore7.innerHTML);
-  g7 += parseInt(guestScore7.innerHTML);
-  h8 += parseInt(homeScore8.innerHTML);
-  g8 += parseInt(guestScore8.innerHTML);
-  h9 += parseInt(homeScore9.innerHTML);
-  g9 += parseInt(guestScore9.innerHTML);
-  h10 += parseInt(homeScore10.innerHTML);
-  g10 += parseInt(guestScore10.innerHTML);
-
-  goalsTeam3.innerHTML = h2 + "-" + g2;
-  goalsTeam4.innerHTML = g2 + "-" + h2;
-  goalsTeam5.innerHTML = h3 + "-" + g3;
-  goalsTeam6.innerHTML = g3 + "-" + h3;
-  goalsTeam7.innerHTML = h4 + "-" + g4;
-  goalsTeam8.innerHTML = g4 + "-" + h4;
-  goalsTeam9.innerHTML = h5 + "-" + g5;
-  goalsTeam10.innerHTML = g5 + "-" + h5;
-  goalsTeam11.innerHTML = h6 + "-" + g6;
-  goalsTeam12.innerHTML = g6 + "-" + h6;
-  goalsTeam13.innerHTML = h7 + "-" + g7;
-  goalsTeam14.innerHTML = g7 + "-" + h7;
-  goalsTeam15.innerHTML = h8 + "-" + g8;
-  goalsTeam16.innerHTML = g8 + "-" + h8;
-  goalsTeam17.innerHTML = h9 + "-" + g9;
-  goalsTeam18.innerHTML = g9 + "-" + h9;
-  goalsTeam19.innerHTML = h10 + "-" + g10;
-  goalsTeam20.innerHTML = g10 + "-" + h10;
-
-  if (homeScore1.innerHTML > guestScore1.innerHTML) {
-    pointsTeam1.innerHTML = parseInt(pointsTeam1.innerHTML) + 3;
-    pointsTeam2.innerHTML = parseInt(pointsTeam2.innerHTML) + 0;
-    playedTeam1.innerHTML = parseInt(playedTeam1.innerHTML) + 1;
-    playedTeam2.innerHTML = parseInt(playedTeam2.innerHTML) + 1;
-    winsTeam1.innerHTML = parseInt(winsTeam1.innerHTML) + 1;
-    winsTeam2.innerHTML = parseInt(winsTeam2.innerHTML) + 0;
-    drawsTeam1.innerHTML = parseInt(drawsTeam1.innerHTML) + 0;
-    drawsTeam2.innerHTML = parseInt(drawsTeam2.innerHTML) + 0;
-    lostTeam1.innerHTML = parseInt(lostTeam1.innerHTML) + 0;
-    lostTeam2.innerHTML = parseInt(lostTeam2.innerHTML) + 1;
-    goalsTeam1.innerHTML = h1 + "-" + g1;
-    goalsTeam2.innerHTML = g1 + "-" + h1;
-  } else if (homeScore1.innerHTML < guestScore1.innerHTML) {
-    pointsTeam1.innerHTML = parseInt(pointsTeam1.innerHTML) + 0;
-    pointsTeam2.innerHTML = parseInt(pointsTeam2.innerHTML) + 3;
-    playedTeam1.innerHTML = parseInt(playedTeam1.innerHTML) + 1;
-    playedTeam2.innerHTML = parseInt(playedTeam2.innerHTML) + 1;
-    winsTeam1.innerHTML = parseInt(winsTeam1.innerHTML) + 0;
-    winsTeam2.innerHTML = parseInt(winsTeam2.innerHTML) + 1;
-    drawsTeam1.innerHTML = parseInt(drawsTeam1.innerHTML) + 0;
-    drawsTeam2.innerHTML = parseInt(drawsTeam2.innerHTML) + 0;
-    lostTeam1.innerHTML = parseInt(lostTeam1.innerHTML) + 1;
-    lostTeam2.innerHTML = parseInt(lostTeam2.innerHTML) + 0;
-    goalsTeam1.innerHTML = h1 + "-" + g1;
-    goalsTeam2.innerHTML = g1 + "-" + h1;
-  } else {
-    pointsTeam1.innerHTML = parseInt(pointsTeam1.innerHTML) + 1;
-    pointsTeam2.innerHTML = parseInt(pointsTeam2.innerHTML) + 1;
-    playedTeam1.innerHTML = parseInt(playedTeam1.innerHTML) + 1;
-    playedTeam2.innerHTML = parseInt(playedTeam2.innerHTML) + 1;
-    winsTeam1.innerHTML = parseInt(winsTeam1.innerHTML) + 0;
-    winsTeam2.innerHTML = parseInt(winsTeam2.innerHTML) + 0;
-    drawsTeam1.innerHTML = parseInt(drawsTeam1.innerHTML) + 1;
-    drawsTeam2.innerHTML = parseInt(drawsTeam2.innerHTML) + 1;
-    lostTeam1.innerHTML = parseInt(lostTeam1.innerHTML) + 0;
-    lostTeam2.innerHTML = parseInt(lostTeam2.innerHTML) + 0;
-    goalsTeam1.innerHTML = h1 + "-" + g1;
-    goalsTeam2.innerHTML = g1 + "-" + h1;
-  }
-
-  if (homeScore2.innerHTML > guestScore2.innerHTML) {
-    pointsTeam3.innerHTML = parseInt(pointsTeam3.innerHTML) + 3;
-    pointsTeam4.innerHTML = parseInt(pointsTeam4.innerHTML) + 0;
-    playedTeam3.innerHTML = parseInt(playedTeam3.innerHTML) + 1;
-    playedTeam4.innerHTML = parseInt(playedTeam4.innerHTML) + 1;
-    winsTeam3.innerHTML = parseInt(winsTeam3.innerHTML) + 1;
-    winsTeam4.innerHTML = parseInt(winsTeam4.innerHTML) + 0;
-    drawsTeam3.innerHTML = parseInt(drawsTeam3.innerHTML) + 0;
-    drawsTeam4.innerHTML = parseInt(drawsTeam4.innerHTML) + 0;
-    lostTeam3.innerHTML = parseInt(lostTeam3.innerHTML) + 0;
-    lostTeam4.innerHTML = parseInt(lostTeam4.innerHTML) + 1;
-  } else if (homeScore2.innerHTML < guestScore2.innerHTML) {
-    pointsTeam3.innerHTML = parseInt(pointsTeam3.innerHTML) + 0;
-    pointsTeam4.innerHTML = parseInt(pointsTeam4.innerHTML) + 3;
-    playedTeam3.innerHTML = parseInt(playedTeam3.innerHTML) + 1;
-    playedTeam4.innerHTML = parseInt(playedTeam4.innerHTML) + 1;
-    winsTeam3.innerHTML = parseInt(winsTeam3.innerHTML) + 0;
-    winsTeam4.innerHTML = parseInt(winsTeam4.innerHTML) + 1;
-    drawsTeam3.innerHTML = parseInt(drawsTeam3.innerHTML) + 0;
-    drawsTeam4.innerHTML = parseInt(drawsTeam4.innerHTML) + 0;
-    lostTeam3.innerHTML = parseInt(lostTeam3.innerHTML) + 1;
-    lostTeam4.innerHTML = parseInt(lostTeam4.innerHTML) + 0;
-  } else {
-    pointsTeam3.innerHTML = parseInt(pointsTeam3.innerHTML) + 1;
-    pointsTeam4.innerHTML = parseInt(pointsTeam4.innerHTML) + 1;
-    playedTeam3.innerHTML = parseInt(playedTeam3.innerHTML) + 1;
-    playedTeam4.innerHTML = parseInt(playedTeam4.innerHTML) + 1;
-    winsTeam3.innerHTML = parseInt(winsTeam3.innerHTML) + 0;
-    winsTeam4.innerHTML = parseInt(winsTeam4.innerHTML) + 0;
-    drawsTeam3.innerHTML = parseInt(drawsTeam3.innerHTML) + 1;
-    drawsTeam4.innerHTML = parseInt(drawsTeam4.innerHTML) + 1;
-    lostTeam3.innerHTML = parseInt(lostTeam3.innerHTML) + 0;
-    lostTeam4.innerHTML = parseInt(lostTeam4.innerHTML) + 0;
-  }
-
-  if (homeScore3.innerHTML > guestScore3.innerHTML) {
-    pointsTeam5.innerHTML = parseInt(pointsTeam5.innerHTML) + 3;
-    pointsTeam6.innerHTML = parseInt(pointsTeam6.innerHTML) + 0;
-    playedTeam5.innerHTML = parseInt(playedTeam5.innerHTML) + 1;
-    playedTeam6.innerHTML = parseInt(playedTeam6.innerHTML) + 1;
-    winsTeam5.innerHTML = parseInt(winsTeam5.innerHTML) + 1;
-    winsTeam6.innerHTML = parseInt(winsTeam6.innerHTML) + 0;
-    drawsTeam5.innerHTML = parseInt(drawsTeam5.innerHTML) + 0;
-    drawsTeam6.innerHTML = parseInt(drawsTeam6.innerHTML) + 0;
-    lostTeam5.innerHTML = parseInt(lostTeam5.innerHTML) + 0;
-    lostTeam6.innerHTML = parseInt(lostTeam6.innerHTML) + 1;
-  } else if (homeScore3.innerHTML < guestScore3.innerHTML) {
-    pointsTeam5.innerHTML = parseInt(pointsTeam5.innerHTML) + 0;
-    pointsTeam6.innerHTML = parseInt(pointsTeam6.innerHTML) + 3;
-    playedTeam5.innerHTML = parseInt(playedTeam5.innerHTML) + 1;
-    playedTeam6.innerHTML = parseInt(playedTeam6.innerHTML) + 1;
-    winsTeam5.innerHTML = parseInt(winsTeam5.innerHTML) + 0;
-    winsTeam6.innerHTML = parseInt(winsTeam6.innerHTML) + 1;
-    drawsTeam5.innerHTML = parseInt(drawsTeam5.innerHTML) + 0;
-    drawsTeam6.innerHTML = parseInt(drawsTeam6.innerHTML) + 0;
-    lostTeam5.innerHTML = parseInt(lostTeam5.innerHTML) + 1;
-    lostTeam6.innerHTML = parseInt(lostTeam6.innerHTML) + 0;
-  } else {
-    pointsTeam5.innerHTML = parseInt(pointsTeam5.innerHTML) + 1;
-    pointsTeam6.innerHTML = parseInt(pointsTeam6.innerHTML) + 1;
-    playedTeam5.innerHTML = parseInt(playedTeam5.innerHTML) + 1;
-    playedTeam6.innerHTML = parseInt(playedTeam6.innerHTML) + 1;
-    winsTeam5.innerHTML = parseInt(winsTeam5.innerHTML) + 0;
-    winsTeam6.innerHTML = parseInt(winsTeam6.innerHTML) + 0;
-    drawsTeam5.innerHTML = parseInt(drawsTeam5.innerHTML) + 1;
-    drawsTeam6.innerHTML = parseInt(drawsTeam6.innerHTML) + 1;
-    lostTeam5.innerHTML = parseInt(lostTeam5.innerHTML) + 0;
-    lostTeam6.innerHTML = parseInt(lostTeam6.innerHTML) + 0;
-  }
-
-  if (homeScore4.innerHTML > guestScore4.innerHTML) {
-    pointsTeam7.innerHTML = parseInt(pointsTeam7.innerHTML) + 3;
-    pointsTeam8.innerHTML = parseInt(pointsTeam8.innerHTML) + 0;
-    playedTeam7.innerHTML = parseInt(playedTeam7.innerHTML) + 1;
-    playedTeam8.innerHTML = parseInt(playedTeam8.innerHTML) + 1;
-    winsTeam7.innerHTML = parseInt(winsTeam7.innerHTML) + 1;
-    winsTeam8.innerHTML = parseInt(winsTeam8.innerHTML) + 0;
-    drawsTeam7.innerHTML = parseInt(drawsTeam7.innerHTML) + 0;
-    drawsTeam8.innerHTML = parseInt(drawsTeam8.innerHTML) + 0;
-    lostTeam7.innerHTML = parseInt(lostTeam7.innerHTML) + 0;
-    lostTeam8.innerHTML = parseInt(lostTeam8.innerHTML) + 1;
-  } else if (homeScore4.innerHTML < guestScore4.innerHTML) {
-    pointsTeam7.innerHTML = parseInt(pointsTeam7.innerHTML) + 0;
-    pointsTeam8.innerHTML = parseInt(pointsTeam8.innerHTML) + 3;
-    playedTeam7.innerHTML = parseInt(playedTeam7.innerHTML) + 1;
-    playedTeam8.innerHTML = parseInt(playedTeam8.innerHTML) + 1;
-    winsTeam7.innerHTML = parseInt(winsTeam7.innerHTML) + 0;
-    winsTeam8.innerHTML = parseInt(winsTeam8.innerHTML) + 1;
-    drawsTeam7.innerHTML = parseInt(drawsTeam7.innerHTML) + 0;
-    drawsTeam8.innerHTML = parseInt(drawsTeam8.innerHTML) + 0;
-    lostTeam7.innerHTML = parseInt(lostTeam7.innerHTML) + 1;
-    lostTeam8.innerHTML = parseInt(lostTeam8.innerHTML) + 0;
-  } else {
-    pointsTeam7.innerHTML = parseInt(pointsTeam7.innerHTML) + 1;
-    pointsTeam8.innerHTML = parseInt(pointsTeam8.innerHTML) + 1;
-    playedTeam7.innerHTML = parseInt(playedTeam7.innerHTML) + 1;
-    playedTeam8.innerHTML = parseInt(playedTeam8.innerHTML) + 1;
-    winsTeam7.innerHTML = parseInt(winsTeam7.innerHTML) + 0;
-    winsTeam8.innerHTML = parseInt(winsTeam8.innerHTML) + 0;
-    drawsTeam7.innerHTML = parseInt(drawsTeam7.innerHTML) + 1;
-    drawsTeam8.innerHTML = parseInt(drawsTeam8.innerHTML) + 1;
-    lostTeam7.innerHTML = parseInt(lostTeam7.innerHTML) + 0;
-    lostTeam8.innerHTML = parseInt(lostTeam8.innerHTML) + 0;
-  }
-
-  if (homeScore5.innerHTML > guestScore5.innerHTML) {
-    pointsTeam9.innerHTML = parseInt(pointsTeam9.innerHTML) + 3;
-    pointsTeam10.innerHTML = parseInt(pointsTeam10.innerHTML) + 0;
-    playedTeam9.innerHTML = parseInt(playedTeam9.innerHTML) + 1;
-    playedTeam10.innerHTML = parseInt(playedTeam10.innerHTML) + 1;
-    winsTeam9.innerHTML = parseInt(winsTeam9.innerHTML) + 1;
-    winsTeam10.innerHTML = parseInt(winsTeam10.innerHTML) + 0;
-    drawsTeam9.innerHTML = parseInt(drawsTeam9.innerHTML) + 0;
-    drawsTeam10.innerHTML = parseInt(drawsTeam10.innerHTML) + 0;
-    lostTeam9.innerHTML = parseInt(lostTeam9.innerHTML) + 0;
-    lostTeam10.innerHTML = parseInt(lostTeam10.innerHTML) + 1;
-  } else if (homeScore5.innerHTML < guestScore5.innerHTML) {
-    pointsTeam9.innerHTML = parseInt(pointsTeam9.innerHTML) + 0;
-    pointsTeam10.innerHTML = parseInt(pointsTeam10.innerHTML) + 3;
-    playedTeam9.innerHTML = parseInt(playedTeam9.innerHTML) + 1;
-    playedTeam10.innerHTML = parseInt(playedTeam10.innerHTML) + 1;
-    winsTeam9.innerHTML = parseInt(winsTeam9.innerHTML) + 0;
-    winsTeam10.innerHTML = parseInt(winsTeam10.innerHTML) + 1;
-    drawsTeam9.innerHTML = parseInt(drawsTeam9.innerHTML) + 0;
-    drawsTeam10.innerHTML = parseInt(drawsTeam10.innerHTML) + 0;
-    lostTeam9.innerHTML = parseInt(lostTeam9.innerHTML) + 1;
-    lostTeam10.innerHTML = parseInt(lostTeam10.innerHTML) + 0;
-  } else {
-    pointsTeam9.innerHTML = parseInt(pointsTeam9.innerHTML) + 1;
-    pointsTeam10.innerHTML = parseInt(pointsTeam10.innerHTML) + 1;
-    playedTeam9.innerHTML = parseInt(playedTeam9.innerHTML) + 1;
-    playedTeam10.innerHTML = parseInt(playedTeam10.innerHTML) + 1;
-    winsTeam9.innerHTML = parseInt(winsTeam9.innerHTML) + 0;
-    winsTeam10.innerHTML = parseInt(winsTeam10.innerHTML) + 0;
-    drawsTeam9.innerHTML = parseInt(drawsTeam9.innerHTML) + 1;
-    drawsTeam10.innerHTML = parseInt(drawsTeam10.innerHTML) + 1;
-    lostTeam9.innerHTML = parseInt(lostTeam9.innerHTML) + 0;
-    lostTeam10.innerHTML = parseInt(lostTeam10.innerHTML) + 0;
-  }
-
-  if (homeScore6.innerHTML > guestScore6.innerHTML) {
-    pointsTeam11.innerHTML = parseInt(pointsTeam11.innerHTML) + 3;
-    pointsTeam12.innerHTML = parseInt(pointsTeam12.innerHTML) + 0;
-    playedTeam11.innerHTML = parseInt(playedTeam11.innerHTML) + 1;
-    playedTeam12.innerHTML = parseInt(playedTeam12.innerHTML) + 1;
-    winsTeam11.innerHTML = parseInt(winsTeam11.innerHTML) + 1;
-    winsTeam12.innerHTML = parseInt(winsTeam12.innerHTML) + 0;
-    drawsTeam11.innerHTML = parseInt(drawsTeam11.innerHTML) + 0;
-    drawsTeam12.innerHTML = parseInt(drawsTeam12.innerHTML) + 0;
-    lostTeam11.innerHTML = parseInt(lostTeam11.innerHTML) + 0;
-    lostTeam12.innerHTML = parseInt(lostTeam12.innerHTML) + 1;
-  } else if (homeScore6.innerHTML < guestScore6.innerHTML) {
-    pointsTeam11.innerHTML = parseInt(pointsTeam11.innerHTML) + 0;
-    pointsTeam12.innerHTML = parseInt(pointsTeam12.innerHTML) + 3;
-    playedTeam11.innerHTML = parseInt(playedTeam11.innerHTML) + 1;
-    playedTeam12.innerHTML = parseInt(playedTeam12.innerHTML) + 1;
-    winsTeam11.innerHTML = parseInt(winsTeam11.innerHTML) + 0;
-    winsTeam12.innerHTML = parseInt(winsTeam12.innerHTML) + 1;
-    drawsTeam11.innerHTML = parseInt(drawsTeam11.innerHTML) + 0;
-    drawsTeam12.innerHTML = parseInt(drawsTeam12.innerHTML) + 0;
-    lostTeam11.innerHTML = parseInt(lostTeam11.innerHTML) + 1;
-    lostTeam12.innerHTML = parseInt(lostTeam12.innerHTML) + 0;
-  } else {
-    pointsTeam11.innerHTML = parseInt(pointsTeam11.innerHTML) + 1;
-    pointsTeam12.innerHTML = parseInt(pointsTeam12.innerHTML) + 1;
-    playedTeam11.innerHTML = parseInt(playedTeam11.innerHTML) + 1;
-    playedTeam12.innerHTML = parseInt(playedTeam12.innerHTML) + 1;
-    winsTeam11.innerHTML = parseInt(winsTeam11.innerHTML) + 0;
-    winsTeam12.innerHTML = parseInt(winsTeam12.innerHTML) + 0;
-    drawsTeam11.innerHTML = parseInt(drawsTeam11.innerHTML) + 1;
-    drawsTeam12.innerHTML = parseInt(drawsTeam12.innerHTML) + 1;
-    lostTeam11.innerHTML = parseInt(lostTeam11.innerHTML) + 0;
-    lostTeam12.innerHTML = parseInt(lostTeam12.innerHTML) + 0;
-  }
-
-  if (homeScore7.innerHTML > guestScore7.innerHTML) {
-    pointsTeam13.innerHTML = parseInt(pointsTeam13.innerHTML) + 3;
-    pointsTeam14.innerHTML = parseInt(pointsTeam14.innerHTML) + 0;
-    playedTeam13.innerHTML = parseInt(playedTeam13.innerHTML) + 1;
-    playedTeam14.innerHTML = parseInt(playedTeam14.innerHTML) + 1;
-    winsTeam13.innerHTML = parseInt(winsTeam13.innerHTML) + 1;
-    winsTeam14.innerHTML = parseInt(winsTeam14.innerHTML) + 0;
-    drawsTeam13.innerHTML = parseInt(drawsTeam13.innerHTML) + 0;
-    drawsTeam14.innerHTML = parseInt(drawsTeam14.innerHTML) + 0;
-    lostTeam13.innerHTML = parseInt(lostTeam13.innerHTML) + 0;
-    lostTeam14.innerHTML = parseInt(lostTeam14.innerHTML) + 1;
-  } else if (homeScore7.innerHTML < guestScore7.innerHTML) {
-    pointsTeam13.innerHTML = parseInt(pointsTeam13.innerHTML) + 0;
-    pointsTeam14.innerHTML = parseInt(pointsTeam14.innerHTML) + 3;
-    playedTeam13.innerHTML = parseInt(playedTeam13.innerHTML) + 1;
-    playedTeam14.innerHTML = parseInt(playedTeam14.innerHTML) + 1;
-    winsTeam13.innerHTML = parseInt(winsTeam13.innerHTML) + 0;
-    winsTeam14.innerHTML = parseInt(winsTeam14.innerHTML) + 1;
-    drawsTeam13.innerHTML = parseInt(drawsTeam13.innerHTML) + 0;
-    drawsTeam14.innerHTML = parseInt(drawsTeam14.innerHTML) + 0;
-    lostTeam13.innerHTML = parseInt(lostTeam13.innerHTML) + 1;
-    lostTeam14.innerHTML = parseInt(lostTeam14.innerHTML) + 0;
-  } else {
-    pointsTeam13.innerHTML = parseInt(pointsTeam13.innerHTML) + 1;
-    pointsTeam14.innerHTML = parseInt(pointsTeam14.innerHTML) + 1;
-    playedTeam13.innerHTML = parseInt(playedTeam13.innerHTML) + 1;
-    playedTeam14.innerHTML = parseInt(playedTeam14.innerHTML) + 1;
-    winsTeam13.innerHTML = parseInt(winsTeam13.innerHTML) + 0;
-    winsTeam14.innerHTML = parseInt(winsTeam14.innerHTML) + 0;
-    drawsTeam13.innerHTML = parseInt(drawsTeam13.innerHTML) + 1;
-    drawsTeam14.innerHTML = parseInt(drawsTeam14.innerHTML) + 1;
-    lostTeam13.innerHTML = parseInt(lostTeam13.innerHTML) + 0;
-    lostTeam14.innerHTML = parseInt(lostTeam14.innerHTML) + 0;
-  }
-
-  if (homeScore8.innerHTML > guestScore8.innerHTML) {
-    pointsTeam15.innerHTML = parseInt(pointsTeam15.innerHTML) + 3;
-    pointsTeam16.innerHTML = parseInt(pointsTeam16.innerHTML) + 0;
-    playedTeam15.innerHTML = parseInt(playedTeam15.innerHTML) + 1;
-    playedTeam16.innerHTML = parseInt(playedTeam16.innerHTML) + 1;
-    winsTeam15.innerHTML = parseInt(winsTeam15.innerHTML) + 1;
-    winsTeam16.innerHTML = parseInt(winsTeam16.innerHTML) + 0;
-    drawsTeam15.innerHTML = parseInt(drawsTeam15.innerHTML) + 0;
-    drawsTeam16.innerHTML = parseInt(drawsTeam16.innerHTML) + 0;
-    lostTeam15.innerHTML = parseInt(lostTeam15.innerHTML) + 0;
-    lostTeam16.innerHTML = parseInt(lostTeam16.innerHTML) + 1;
-  } else if (homeScore8.innerHTML < guestScore8.innerHTML) {
-    pointsTeam15.innerHTML = parseInt(pointsTeam15.innerHTML) + 0;
-    pointsTeam16.innerHTML = parseInt(pointsTeam16.innerHTML) + 3;
-    playedTeam15.innerHTML = parseInt(playedTeam15.innerHTML) + 1;
-    playedTeam16.innerHTML = parseInt(playedTeam16.innerHTML) + 1;
-    winsTeam15.innerHTML = parseInt(winsTeam15.innerHTML) + 0;
-    winsTeam16.innerHTML = parseInt(winsTeam16.innerHTML) + 1;
-    drawsTeam15.innerHTML = parseInt(drawsTeam15.innerHTML) + 0;
-    drawsTeam16.innerHTML = parseInt(drawsTeam16.innerHTML) + 0;
-    lostTeam15.innerHTML = parseInt(lostTeam15.innerHTML) + 1;
-    lostTeam16.innerHTML = parseInt(lostTeam16.innerHTML) + 0;
-  } else {
-    pointsTeam15.innerHTML = parseInt(pointsTeam15.innerHTML) + 1;
-    pointsTeam16.innerHTML = parseInt(pointsTeam16.innerHTML) + 1;
-    playedTeam15.innerHTML = parseInt(playedTeam15.innerHTML) + 1;
-    playedTeam16.innerHTML = parseInt(playedTeam16.innerHTML) + 1;
-    winsTeam15.innerHTML = parseInt(winsTeam15.innerHTML) + 0;
-    winsTeam16.innerHTML = parseInt(winsTeam16.innerHTML) + 0;
-    drawsTeam15.innerHTML = parseInt(drawsTeam15.innerHTML) + 1;
-    drawsTeam16.innerHTML = parseInt(drawsTeam16.innerHTML) + 1;
-    lostTeam15.innerHTML = parseInt(lostTeam15.innerHTML) + 0;
-    lostTeam16.innerHTML = parseInt(lostTeam16.innerHTML) + 0;
-  }
-
-  if (homeScore9.innerHTML > guestScore9.innerHTML) {
-    pointsTeam17.innerHTML = parseInt(pointsTeam17.innerHTML) + 3;
-    pointsTeam18.innerHTML = parseInt(pointsTeam18.innerHTML) + 0;
-    playedTeam17.innerHTML = parseInt(playedTeam17.innerHTML) + 1;
-    playedTeam18.innerHTML = parseInt(playedTeam18.innerHTML) + 1;
-    winsTeam17.innerHTML = parseInt(winsTeam17.innerHTML) + 1;
-    winsTeam18.innerHTML = parseInt(winsTeam18.innerHTML) + 0;
-    drawsTeam17.innerHTML = parseInt(drawsTeam17.innerHTML) + 0;
-    drawsTeam18.innerHTML = parseInt(drawsTeam18.innerHTML) + 0;
-    lostTeam17.innerHTML = parseInt(lostTeam17.innerHTML) + 0;
-    lostTeam18.innerHTML = parseInt(lostTeam18.innerHTML) + 1;
-  } else if (homeScore9.innerHTML < guestScore9.innerHTML) {
-    pointsTeam17.innerHTML = parseInt(pointsTeam17.innerHTML) + 0;
-    pointsTeam18.innerHTML = parseInt(pointsTeam18.innerHTML) + 3;
-    playedTeam17.innerHTML = parseInt(playedTeam17.innerHTML) + 1;
-    playedTeam18.innerHTML = parseInt(playedTeam18.innerHTML) + 1;
-    winsTeam17.innerHTML = parseInt(winsTeam17.innerHTML) + 0;
-    winsTeam18.innerHTML = parseInt(winsTeam18.innerHTML) + 1;
-    drawsTeam17.innerHTML = parseInt(drawsTeam17.innerHTML) + 0;
-    drawsTeam18.innerHTML = parseInt(drawsTeam18.innerHTML) + 0;
-    lostTeam17.innerHTML = parseInt(lostTeam17.innerHTML) + 1;
-    lostTeam18.innerHTML = parseInt(lostTeam18.innerHTML) + 0;
-  } else {
-    pointsTeam17.innerHTML = parseInt(pointsTeam17.innerHTML) + 1;
-    pointsTeam18.innerHTML = parseInt(pointsTeam18.innerHTML) + 1;
-    playedTeam17.innerHTML = parseInt(playedTeam17.innerHTML) + 1;
-    playedTeam18.innerHTML = parseInt(playedTeam18.innerHTML) + 1;
-    winsTeam17.innerHTML = parseInt(winsTeam17.innerHTML) + 0;
-    winsTeam18.innerHTML = parseInt(winsTeam18.innerHTML) + 0;
-    drawsTeam17.innerHTML = parseInt(drawsTeam17.innerHTML) + 1;
-    drawsTeam18.innerHTML = parseInt(drawsTeam18.innerHTML) + 1;
-    lostTeam17.innerHTML = parseInt(lostTeam17.innerHTML) + 0;
-    lostTeam18.innerHTML = parseInt(lostTeam18.innerHTML) + 0;
-  }
-
-  if (homeScore10.innerHTML > guestScore10.innerHTML) {
-    pointsTeam19.innerHTML = parseInt(pointsTeam19.innerHTML) + 3;
-    pointsTeam20.innerHTML = parseInt(pointsTeam20.innerHTML) + 0;
-    playedTeam19.innerHTML = parseInt(playedTeam19.innerHTML) + 1;
-    playedTeam20.innerHTML = parseInt(playedTeam20.innerHTML) + 1;
-    winsTeam19.innerHTML = parseInt(winsTeam19.innerHTML) + 1;
-    winsTeam20.innerHTML = parseInt(winsTeam20.innerHTML) + 0;
-    drawsTeam19.innerHTML = parseInt(drawsTeam19.innerHTML) + 0;
-    drawsTeam20.innerHTML = parseInt(drawsTeam20.innerHTML) + 0;
-    lostTeam19.innerHTML = parseInt(lostTeam19.innerHTML) + 0;
-    lostTeam20.innerHTML = parseInt(lostTeam20.innerHTML) + 1;
-  } else if (homeScore10.innerHTML < guestScore10.innerHTML) {
-    pointsTeam19.innerHTML = parseInt(pointsTeam19.innerHTML) + 0;
-    pointsTeam20.innerHTML = parseInt(pointsTeam20.innerHTML) + 3;
-    playedTeam19.innerHTML = parseInt(playedTeam19.innerHTML) + 1;
-    playedTeam20.innerHTML = parseInt(playedTeam20.innerHTML) + 1;
-    winsTeam19.innerHTML = parseInt(winsTeam19.innerHTML) + 0;
-    winsTeam20.innerHTML = parseInt(winsTeam20.innerHTML) + 1;
-    drawsTeam19.innerHTML = parseInt(drawsTeam19.innerHTML) + 0;
-    drawsTeam20.innerHTML = parseInt(drawsTeam20.innerHTML) + 0;
-    lostTeam19.innerHTML = parseInt(lostTeam19.innerHTML) + 1;
-    lostTeam20.innerHTML = parseInt(lostTeam20.innerHTML) + 0;
-  } else {
-    pointsTeam19.innerHTML = parseInt(pointsTeam19.innerHTML) + 1;
-    pointsTeam20.innerHTML = parseInt(pointsTeam20.innerHTML) + 1;
-    playedTeam19.innerHTML = parseInt(playedTeam19.innerHTML) + 1;
-    playedTeam20.innerHTML = parseInt(playedTeam20.innerHTML) + 1;
-    winsTeam19.innerHTML = parseInt(winsTeam19.innerHTML) + 0;
-    winsTeam20.innerHTML = parseInt(winsTeam20.innerHTML) + 0;
-    drawsTeam19.innerHTML = parseInt(drawsTeam19.innerHTML) + 1;
-    drawsTeam20.innerHTML = parseInt(drawsTeam20.innerHTML) + 1;
-    lostTeam19.innerHTML = parseInt(lostTeam19.innerHTML) + 0;
-    lostTeam20.innerHTML = parseInt(lostTeam20.innerHTML) + 0;
-  }
-}
 clearResults.addEventListener("click", () => {
   location.reload(true);
 });
+
+modalClose.onclick = () => {
+  modal.style.visibility = "hidden";
+  wrapperContainer.style.opacity = "1";
+};
+
+modal.addEventListener("mousedown", startDragging);
+
+let offset = 0;
+let isDown = false;
+
+function startDragging(e) {
+  isDown = true;
+  offset = e.clientY + 200 + -modal.offsetTop;
+  document.addEventListener("mousemove", doDrag);
+  document.addEventListener("mouseup", stopDragging);
+}
+
+function doDrag(e) {
+  e.preventDefault();
+  if (isDown) {
+    modal.style.top = e.clientY - offset + "px";
+  }
+}
+
+function stopDragging() {
+  isDown = false;
+  document.removeEventListener("mousemove", doDrag);
+  document.removeEventListener("mouseup", stopDragging);
+}

@@ -72,13 +72,18 @@
       "country": "France"
     },
     {
+      "name": "Montpellier HSC",
+      "code": "MHSC",
+      "country": "France"
+    },
+    {
       "name": "Ol. Lyonnais",
       "code": "OL",
       "country": "France"
     },
     {
-      "name": "Montpellier HSC",
-      "code": "MHSC",
+      "name": "Paris Saint-Germain",
+      "code": "PSG",
       "country": "France"
     },
     {
@@ -87,18 +92,13 @@
       "country": "France"
     },
     {
-      "name": "Auxerre",
-      "code": "ASSE",
-      "country": "France"
-    },
-    {
       "name": "Ol. de Marseille",
       "code": "OM",
       "country": "France"
     },
     {
-      "name": "Paris Saint-Germain",
-      "code": "PSG",
+      "name": "Auxerre",
+      "code": "ASSE",
       "country": "France"
     }
   ]

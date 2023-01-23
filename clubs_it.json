@@ -72,16 +72,6 @@
       "country": "Italy"
     },
     {
-      "name": "Atalanta",
-      "code": "ATA",
-      "country": "Italy"
-    },
-    {
-      "name": "SS Lazio",
-      "code": "LAZ",
-      "country": "Italy"
-    },
-    {
       "name": "Cremonese",
       "code": null,
       "country": "Italy"
@@ -92,13 +82,23 @@
       "country": "Italy"
     },
     {
+      "name": "Udinese",
+      "code": "UDI",
+      "country": "Italy"
+    },
+    {
       "name": "Spezia",
       "code": null,
       "country": "Italy"
     },
     {
-      "name": "Udinese",
-      "code": "UDI",
+      "name": "SS Lazio",
+      "code": "LAZ",
+      "country": "Italy"
+    },
+    {
+      "name": "Atalanta",
+      "code": "ATA",
       "country": "Italy"
     }
   ]

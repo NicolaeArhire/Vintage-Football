@@ -63,6 +63,33 @@
     }
   },
   {
+    "round": "Matchday 1",
+    "date": "2020-09-15",
+    "team1": "Montpellier HSC",
+    "team2": "Ol. Lyonnais",
+    "score": {
+      "ft": [2, 1]
+    }
+  },
+  {
+    "round": "Matchday 1",
+    "date": "2020-09-16",
+    "team1": "Paris Saint-Germain",
+    "team2": "Ajaccio",
+    "score": {
+      "ft": [1, 0]
+    }
+  },
+  {
+    "round": "Matchday 1",
+    "date": "2020-09-17",
+    "team1": "Ol. de Marseille",
+    "team2": "Auxerre",
+    "score": {
+      "ft": [0, 2]
+    }
+  },
+  {
     "round": "Matchday 2",
     "date": "2020-08-28",
     "team1": "Ol. Lyonnais",
@@ -240,33 +267,6 @@
     "team2": "Ol. de Marseille",
     "score": {
       "ft": [0, 1]
-    }
-  },
-  {
-    "round": "Matchday 1",
-    "date": "2020-09-15",
-    "team1": "Montpellier HSC",
-    "team2": "Ol. Lyonnais",
-    "score": {
-      "ft": [2, 1]
-    }
-  },
-  {
-    "round": "Matchday 1",
-    "date": "2020-09-16",
-    "team1": "Paris Saint-Germain",
-    "team2": "Ajaccio",
-    "score": {
-      "ft": [1, 0]
-    }
-  },
-  {
-    "round": "Matchday 1",
-    "date": "2020-09-17",
-    "team1": "Ol. de Marseille",
-    "team2": "Auxerre",
-    "score": {
-      "ft": [0, 2]
     }
   },
   {
