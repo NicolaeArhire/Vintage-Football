@@ -14,6 +14,7 @@ england.onclick = () => {
   leagueSelected = [leagueAll[0]];
   getData();
   firstPairings();
+  startGames.focus();
 };
 
 spain.onclick = () => {
@@ -22,6 +23,7 @@ spain.onclick = () => {
   leagueSelected = [leagueAll[1]];
   getData();
   firstPairings();
+  startGames.focus();
 };
 
 italy.onclick = () => {
@@ -30,6 +32,7 @@ italy.onclick = () => {
   leagueSelected = [leagueAll[2]];
   getData();
   firstPairings();
+  startGames.focus();
 };
 
 france.onclick = () => {
@@ -38,6 +41,7 @@ france.onclick = () => {
   leagueSelected = [leagueAll[3]];
   getData();
   firstPairings();
+  startGames.focus();
 };
 
 async function getData() {
@@ -63,7 +67,6 @@ async function firstPairings() {
 }
 
 let scheduleCounter = 1;
-
 async function schedulePairings() {
   let response = await fetch(`fixtures_${leagueSelected[0]}.json`);
   let data = await response.json();
@@ -76,6 +79,39 @@ async function schedulePairings() {
     teamNames[i].innerHTML = `${dataFilter[index][team]}`;
   }
   scheduleCounter++;
+
+  // let indexStandings = [];
+  // let indexPairings = [];
+
+  // for (let i = 0; i < standingTeams.length; i++) {
+  //   for (let j = 0; j < teamNames.length; j++) {
+  //     if (standingTeams[i].innerHTML === teamNames[j].innerHTML) {
+  //       indexStandings.push(i);
+  //       indexPairings.push(j);
+  //     }
+  //   }
+  // }
+
+  let res = await fetch(`clubs_${leagueSelected[0]}.json`);
+  let resData = await res.json();
+
+  if (!window.totalGoalsFor) window.totalGoalsFor = Array(20).fill(0);
+  for (let i = 0; i <= 19; i++) {
+    let clubName = resData.clubs[i].name;
+    let teamIndex = teamNames.findIndex((team) => team.innerHTML === clubName);
+    homeResult = fixtureTeams[teamIndex].innerHTML;
+    window.totalGoalsFor[i] += parseInt(homeResult);
+    goalsFor[i].innerHTML = window.totalGoalsFor[i];
+  }
+
+  if (!window.totalGoalsAgainst) window.totalGoalsAgainst = Array(20).fill(0);
+  for (let i = 0; i <= 18; i++) {
+    let clubName = resData.clubs[i].name;
+    let teamIndex = teamNames.findIndex((team) => team.innerHTML === clubName);
+    guestResult = fixtureTeams[teamIndex].innerHTML;
+    window.totalGoalsAgainst[i] += parseInt(guestResult);
+    goalsAgainst[i].innerHTML = window.totalGoalsAgainst[i];
+  }
 }
 
 let fixtureTeam1 = document.querySelector(".game1_home_score");
@@ -386,48 +422,92 @@ let lostTeams = [
   lostTeam20,
 ];
 
-let goalsTeam1 = document.querySelector(".standings_no1_goals");
-let goalsTeam2 = document.querySelector(".standings_no2_goals");
-let goalsTeam3 = document.querySelector(".standings_no3_goals");
-let goalsTeam4 = document.querySelector(".standings_no4_goals");
-let goalsTeam5 = document.querySelector(".standings_no5_goals");
-let goalsTeam6 = document.querySelector(".standings_no6_goals");
-let goalsTeam7 = document.querySelector(".standings_no7_goals");
-let goalsTeam8 = document.querySelector(".standings_no8_goals");
-let goalsTeam9 = document.querySelector(".standings_no9_goals");
-let goalsTeam10 = document.querySelector(".standings_no10_goals");
-let goalsTeam11 = document.querySelector(".standings_no11_goals");
-let goalsTeam12 = document.querySelector(".standings_no12_goals");
-let goalsTeam13 = document.querySelector(".standings_no13_goals");
-let goalsTeam14 = document.querySelector(".standings_no14_goals");
-let goalsTeam15 = document.querySelector(".standings_no15_goals");
-let goalsTeam16 = document.querySelector(".standings_no16_goals");
-let goalsTeam17 = document.querySelector(".standings_no17_goals");
-let goalsTeam18 = document.querySelector(".standings_no18_goals");
-let goalsTeam19 = document.querySelector(".standings_no19_goals");
-let goalsTeam20 = document.querySelector(".standings_no20_goals");
+let goalsForTeam1 = document.querySelector(".standings_no1_goalsFor");
+let goalsForTeam2 = document.querySelector(".standings_no2_goalsFor");
+let goalsForTeam3 = document.querySelector(".standings_no3_goalsFor");
+let goalsForTeam4 = document.querySelector(".standings_no4_goalsFor");
+let goalsForTeam5 = document.querySelector(".standings_no5_goalsFor");
+let goalsForTeam6 = document.querySelector(".standings_no6_goalsFor");
+let goalsForTeam7 = document.querySelector(".standings_no7_goalsFor");
+let goalsForTeam8 = document.querySelector(".standings_no8_goalsFor");
+let goalsForTeam9 = document.querySelector(".standings_no9_goalsFor");
+let goalsForTeam10 = document.querySelector(".standings_no10_goalsFor");
+let goalsForTeam11 = document.querySelector(".standings_no11_goalsFor");
+let goalsForTeam12 = document.querySelector(".standings_no12_goalsFor");
+let goalsForTeam13 = document.querySelector(".standings_no13_goalsFor");
+let goalsForTeam14 = document.querySelector(".standings_no14_goalsFor");
+let goalsForTeam15 = document.querySelector(".standings_no15_goalsFor");
+let goalsForTeam16 = document.querySelector(".standings_no16_goalsFor");
+let goalsForTeam17 = document.querySelector(".standings_no17_goalsFor");
+let goalsForTeam18 = document.querySelector(".standings_no18_goalsFor");
+let goalsForTeam19 = document.querySelector(".standings_no19_goalsFor");
+let goalsForTeam20 = document.querySelector(".standings_no20_goalsFor");
 
-let goalsTeams = [
-  goalsTeam1,
-  goalsTeam2,
-  goalsTeam3,
-  goalsTeam4,
-  goalsTeam5,
-  goalsTeam6,
-  goalsTeam7,
-  goalsTeam8,
-  goalsTeam9,
-  goalsTeam10,
-  goalsTeam11,
-  goalsTeam12,
-  goalsTeam13,
-  goalsTeam14,
-  goalsTeam15,
-  goalsTeam16,
-  goalsTeam17,
-  goalsTeam18,
-  goalsTeam19,
-  goalsTeam20,
+let goalsFor = [
+  goalsForTeam1,
+  goalsForTeam2,
+  goalsForTeam3,
+  goalsForTeam4,
+  goalsForTeam5,
+  goalsForTeam6,
+  goalsForTeam7,
+  goalsForTeam8,
+  goalsForTeam9,
+  goalsForTeam10,
+  goalsForTeam11,
+  goalsForTeam12,
+  goalsForTeam13,
+  goalsForTeam14,
+  goalsForTeam15,
+  goalsForTeam16,
+  goalsForTeam17,
+  goalsForTeam18,
+  goalsForTeam19,
+  goalsForTeam20,
+];
+
+let goalsAgainstTeam1 = document.querySelector(".standings_no1_goalsAgainst");
+let goalsAgainstTeam2 = document.querySelector(".standings_no2_goalsAgainst");
+let goalsAgainstTeam3 = document.querySelector(".standings_no3_goalsAgainst");
+let goalsAgainstTeam4 = document.querySelector(".standings_no4_goalsAgainst");
+let goalsAgainstTeam5 = document.querySelector(".standings_no5_goalsAgainst");
+let goalsAgainstTeam6 = document.querySelector(".standings_no6_goalsAgainst");
+let goalsAgainstTeam7 = document.querySelector(".standings_no7_goalsAgainst");
+let goalsAgainstTeam8 = document.querySelector(".standings_no8_goalsAgainst");
+let goalsAgainstTeam9 = document.querySelector(".standings_no9_goalsAgainst");
+let goalsAgainstTeam10 = document.querySelector(".standings_no10_goalsAgainst");
+let goalsAgainstTeam11 = document.querySelector(".standings_no11_goalsAgainst");
+let goalsAgainstTeam12 = document.querySelector(".standings_no12_goalsAgainst");
+let goalsAgainstTeam13 = document.querySelector(".standings_no13_goalsAgainst");
+let goalsAgainstTeam14 = document.querySelector(".standings_no14_goalsAgainst");
+let goalsAgainstTeam15 = document.querySelector(".standings_no15_goalsAgainst");
+let goalsAgainstTeam16 = document.querySelector(".standings_no16_goalsAgainst");
+let goalsAgainstTeam17 = document.querySelector(".standings_no17_goalsAgainst");
+let goalsAgainstTeam18 = document.querySelector(".standings_no18_goalsAgainst");
+let goalsAgainstTeam19 = document.querySelector(".standings_no19_goalsAgainst");
+let goalsAgainstTeam20 = document.querySelector(".standings_no20_goalsAgainst");
+
+let goalsAgainst = [
+  goalsAgainstTeam1,
+  goalsAgainstTeam2,
+  goalsAgainstTeam3,
+  goalsAgainstTeam4,
+  goalsAgainstTeam5,
+  goalsAgainstTeam6,
+  goalsAgainstTeam7,
+  goalsAgainstTeam8,
+  goalsAgainstTeam9,
+  goalsAgainstTeam10,
+  goalsAgainstTeam11,
+  goalsAgainstTeam12,
+  goalsAgainstTeam13,
+  goalsAgainstTeam14,
+  goalsAgainstTeam15,
+  goalsAgainstTeam16,
+  goalsAgainstTeam17,
+  goalsAgainstTeam18,
+  goalsAgainstTeam19,
+  goalsAgainstTeam20,
 ];
 
 let pointsTeam1 = document.querySelector(".standings_no1_points");
@@ -572,8 +652,8 @@ function results() {
       drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 0;
       lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 0;
       lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 1;
-      goalsTeams[i].innerHTML = fixtures[i] + "-" + fixtures[i + 1];
-      goalsTeams[i + 1].innerHTML = fixtures[i + 1] + "-" + fixtures[i];
+      // goalsFor[i].innerHTML = fixtures[i];
+      // goalsAgainst[i + 1].innerHTML = fixtures[i + 1];
     } else if (fixtureTeams[i].innerHTML < fixtureTeams[i + 1].innerHTML) {
       pointsTeams[i].innerHTML = parseInt(pointsTeams[i].innerHTML) + 0;
       pointsTeams[i + 1].innerHTML = parseInt(pointsTeams[i + 1].innerHTML) + 3;
@@ -585,8 +665,8 @@ function results() {
       drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 0;
       lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 1;
       lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 0;
-      goalsTeams[i].innerHTML = fixtures[i] + "-" + fixtures[i + 1];
-      goalsTeams[i + 1].innerHTML = fixtures[i + 1] + "-" + fixtures[i];
+      // goalsFor[i].innerHTML = fixtures[i];
+      // goalsAgainst[i + 1].innerHTML = fixtures[i + 1];
     } else {
       pointsTeams[i].innerHTML = parseInt(pointsTeams[i].innerHTML) + 1;
       pointsTeams[i + 1].innerHTML = parseInt(pointsTeams[i + 1].innerHTML) + 1;
@@ -598,17 +678,14 @@ function results() {
       drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 1;
       lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 0;
       lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 0;
-      goalsTeams[i].innerHTML = fixtures[i] + "-" + fixtures[i + 1];
-      goalsTeams[i + 1].innerHTML = fixtures[i + 1] + "-" + fixtures[i];
+      // goalsFor[i].innerHTML = fixtures[i];
+      // goalsAgainst[i + 1].innerHTML = fixtures[i + 1];
     }
   }
 }
-// Start Playing button------------------------------------------------------
-let matches = [];
-startGames.onclick = function startPlaying() {
-  console.log(standingTeams[0].innerHTML);
-  console.log(teamNames[0].innerHTML);
 
+// Start Playing button------------------------------------------------------
+startGames.onclick = function startPlaying() {
   clearResults.disabled = false;
   roundCounter++;
 
@@ -651,52 +728,29 @@ startGames.onclick = function startPlaying() {
   }
   isRed = !isRed;
 
-  let dummy1 = getRandomInt(7);
-  let dummy2 = getRandomInt(7);
-  let dummy3 = getRandomInt(7);
-  let dummy4 = getRandomInt(7);
-  let dummy5 = getRandomInt(7);
-  let dummy6 = getRandomInt(7);
-  let dummy7 = getRandomInt(7);
-  let dummy8 = getRandomInt(7);
-  let dummy9 = getRandomInt(7);
-  let dummy10 = getRandomInt(7);
-  fixtureTeam1.innerHTML = getRandomInt(dummy1);
-  fixtureTeam2.innerHTML = getRandomInt(dummy1);
-  fixtureTeam3.innerHTML = getRandomInt(dummy2);
-  fixtureTeam4.innerHTML = getRandomInt(dummy2);
-  fixtureTeam5.innerHTML = getRandomInt(dummy3);
-  fixtureTeam6.innerHTML = getRandomInt(dummy3);
-  fixtureTeam7.innerHTML = getRandomInt(dummy4);
-  fixtureTeam8.innerHTML = getRandomInt(dummy4);
-  fixtureTeam9.innerHTML = getRandomInt(dummy5);
-  fixtureTeam10.innerHTML = getRandomInt(dummy5);
-  fixtureTeam11.innerHTML = getRandomInt(dummy6);
-  fixtureTeam12.innerHTML = getRandomInt(dummy6);
-  fixtureTeam13.innerHTML = getRandomInt(dummy7);
-  fixtureTeam14.innerHTML = getRandomInt(dummy7);
-  fixtureTeam15.innerHTML = getRandomInt(dummy8);
-  fixtureTeam16.innerHTML = getRandomInt(dummy8);
-  fixtureTeam17.innerHTML = getRandomInt(dummy9);
-  fixtureTeam18.innerHTML = getRandomInt(dummy9);
-  fixtureTeam19.innerHTML = getRandomInt(dummy10);
-  fixtureTeam20.innerHTML = getRandomInt(dummy10);
+  fixtureTeam1.innerHTML = getRandomInt(4 - fixtureTeam2.innerHTML);
+  fixtureTeam2.innerHTML = getRandomInt(4 - fixtureTeam1.innerHTML);
+  fixtureTeam3.innerHTML = getRandomInt(4 - fixtureTeam4.innerHTML) + 1;
+  fixtureTeam4.innerHTML = getRandomInt(4 - fixtureTeam3.innerHTML);
+  fixtureTeam5.innerHTML = getRandomInt(4 - fixtureTeam6.innerHTML) + 1;
+  fixtureTeam6.innerHTML = getRandomInt(4 - fixtureTeam5.innerHTML);
+  fixtureTeam7.innerHTML = getRandomInt(4 - fixtureTeam8.innerHTML) + 1;
+  fixtureTeam8.innerHTML = getRandomInt(4 - fixtureTeam7.innerHTML);
+  fixtureTeam9.innerHTML = getRandomInt(4 - fixtureTeam10.innerHTML) + 1;
+  fixtureTeam10.innerHTML = getRandomInt(4 - fixtureTeam9.innerHTML);
+  fixtureTeam11.innerHTML = getRandomInt(4 - fixtureTeam12.innerHTML) + 1;
+  fixtureTeam12.innerHTML = getRandomInt(4 - fixtureTeam11.innerHTML);
+  fixtureTeam13.innerHTML = getRandomInt(4 - fixtureTeam14.innerHTML) + 1;
+  fixtureTeam14.innerHTML = getRandomInt(4 - fixtureTeam13.innerHTML);
+  fixtureTeam15.innerHTML = getRandomInt(4 - fixtureTeam16.innerHTML) + 1;
+  fixtureTeam16.innerHTML = getRandomInt(4 - fixtureTeam15.innerHTML);
+  fixtureTeam17.innerHTML = getRandomInt(4 - fixtureTeam18.innerHTML) + 1;
+  fixtureTeam18.innerHTML = getRandomInt(4 - fixtureTeam17.innerHTML);
+  fixtureTeam19.innerHTML = getRandomInt(4 - fixtureTeam20.innerHTML) + 1;
+  fixtureTeam20.innerHTML = getRandomInt(4 - fixtureTeam19.innerHTML);
 
   schedulePairings();
   results();
-
-  for (let i = 0; i < standingTeams.length; i++) {
-    for (let j = 0; j < teamNames.length; j++) {
-      if (standingTeams[i].innerHTML === teamNames[j].innerHTML) {
-        let match = {
-          standingTeams: i,
-          teamNames: j,
-        };
-        matches.push(match);
-        console.log(match);
-      }
-    }
-  }
 
   const standingDetails = {
     team1: {
@@ -705,7 +759,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam1.innerHTML,
       draws: drawsTeam1.innerHTML,
       lost: lostTeam1.innerHTML,
-      goals: goalsTeam1.innerHTML,
+      goalsFor: goalsForTeam1.innerHTML,
+      goalsAgainst: goalsAgainstTeam1.innerHTML,
       points: pointsTeam1.innerHTML,
     },
     team2: {
@@ -714,7 +769,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam2.innerHTML,
       draws: drawsTeam2.innerHTML,
       lost: lostTeam2.innerHTML,
-      goals: goalsTeam2.innerHTML,
+      goalsFor: goalsForTeam2.innerHTML,
+      goalsAgainst: goalsAgainstTeam2.innerHTML,
       points: pointsTeam2.innerHTML,
     },
     team3: {
@@ -723,7 +779,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam3.innerHTML,
       draws: drawsTeam3.innerHTML,
       lost: lostTeam3.innerHTML,
-      goals: goalsTeam3.innerHTML,
+      goalsFor: goalsForTeam3.innerHTML,
+      goalsAgainst: goalsAgainstTeam3.innerHTML,
       points: pointsTeam3.innerHTML,
     },
     team4: {
@@ -732,7 +789,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam4.innerHTML,
       draws: drawsTeam4.innerHTML,
       lost: lostTeam4.innerHTML,
-      goals: goalsTeam4.innerHTML,
+      goalsFor: goalsForTeam4.innerHTML,
+      goalsAgainst: goalsAgainstTeam4.innerHTML,
       points: pointsTeam4.innerHTML,
     },
     team5: {
@@ -741,7 +799,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam5.innerHTML,
       draws: drawsTeam5.innerHTML,
       lost: lostTeam5.innerHTML,
-      goals: goalsTeam5.innerHTML,
+      goalsFor: goalsForTeam5.innerHTML,
+      goalsAgainst: goalsAgainstTeam5.innerHTML,
       points: pointsTeam5.innerHTML,
     },
     team6: {
@@ -750,7 +809,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam6.innerHTML,
       draws: drawsTeam6.innerHTML,
       lost: lostTeam6.innerHTML,
-      goals: goalsTeam6.innerHTML,
+      goalsFor: goalsForTeam6.innerHTML,
+      goalsAgainst: goalsAgainstTeam6.innerHTML,
       points: pointsTeam6.innerHTML,
     },
     team7: {
@@ -759,7 +819,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam7.innerHTML,
       draws: drawsTeam7.innerHTML,
       lost: lostTeam7.innerHTML,
-      goals: goalsTeam7.innerHTML,
+      goalsFor: goalsForTeam7.innerHTML,
+      goalsAgainst: goalsAgainstTeam7.innerHTML,
       points: pointsTeam7.innerHTML,
     },
     team8: {
@@ -768,7 +829,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam8.innerHTML,
       draws: drawsTeam8.innerHTML,
       lost: lostTeam8.innerHTML,
-      goals: goalsTeam8.innerHTML,
+      goalsFor: goalsForTeam8.innerHTML,
+      goalsAgainst: goalsAgainstTeam8.innerHTML,
       points: pointsTeam8.innerHTML,
     },
     team9: {
@@ -777,7 +839,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam9.innerHTML,
       draws: drawsTeam9.innerHTML,
       lost: lostTeam9.innerHTML,
-      goals: goalsTeam9.innerHTML,
+      goalsFor: goalsForTeam9.innerHTML,
+      goalsAgainst: goalsAgainstTeam9.innerHTML,
       points: pointsTeam9.innerHTML,
     },
     team10: {
@@ -786,7 +849,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam10.innerHTML,
       draws: drawsTeam10.innerHTML,
       lost: lostTeam10.innerHTML,
-      goals: goalsTeam10.innerHTML,
+      goalsFor: goalsForTeam10.innerHTML,
+      goalsAgainst: goalsAgainstTeam10.innerHTML,
       points: pointsTeam10.innerHTML,
     },
     team11: {
@@ -795,7 +859,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam11.innerHTML,
       draws: drawsTeam11.innerHTML,
       lost: lostTeam11.innerHTML,
-      goals: goalsTeam11.innerHTML,
+      goalsFor: goalsForTeam11.innerHTML,
+      goalsAgainst: goalsAgainstTeam11.innerHTML,
       points: pointsTeam11.innerHTML,
     },
     team12: {
@@ -804,7 +869,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam12.innerHTML,
       draws: drawsTeam12.innerHTML,
       lost: lostTeam12.innerHTML,
-      goals: goalsTeam12.innerHTML,
+      goalsFor: goalsForTeam12.innerHTML,
+      goalsAgainst: goalsAgainstTeam12.innerHTML,
       points: pointsTeam12.innerHTML,
     },
     team13: {
@@ -813,7 +879,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam13.innerHTML,
       draws: drawsTeam13.innerHTML,
       lost: lostTeam13.innerHTML,
-      goals: goalsTeam13.innerHTML,
+      goalsFor: goalsForTeam13.innerHTML,
+      goalsAgainst: goalsAgainstTeam13.innerHTML,
       points: pointsTeam13.innerHTML,
     },
     team14: {
@@ -822,7 +889,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam14.innerHTML,
       draws: drawsTeam14.innerHTML,
       lost: lostTeam14.innerHTML,
-      goals: goalsTeam14.innerHTML,
+      goalsFor: goalsForTeam14.innerHTML,
+      goalsAgainst: goalsAgainstTeam14.innerHTML,
       points: pointsTeam14.innerHTML,
     },
     team15: {
@@ -831,7 +899,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam15.innerHTML,
       draws: drawsTeam15.innerHTML,
       lost: lostTeam15.innerHTML,
-      goals: goalsTeam15.innerHTML,
+      goalsFor: goalsForTeam15.innerHTML,
+      goalsAgainst: goalsAgainstTeam15.innerHTML,
       points: pointsTeam15.innerHTML,
     },
     team16: {
@@ -840,7 +909,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam16.innerHTML,
       draws: drawsTeam16.innerHTML,
       lost: lostTeam16.innerHTML,
-      goals: goalsTeam16.innerHTML,
+      goalsFor: goalsForTeam16.innerHTML,
+      goalsAgainst: goalsAgainstTeam16.innerHTML,
       points: pointsTeam16.innerHTML,
     },
     team17: {
@@ -849,7 +919,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam17.innerHTML,
       draws: drawsTeam17.innerHTML,
       lost: lostTeam17.innerHTML,
-      goals: goalsTeam17.innerHTML,
+      goalsFor: goalsForTeam17.innerHTML,
+      goalsAgainst: goalsAgainstTeam17.innerHTML,
       points: pointsTeam17.innerHTML,
     },
     team18: {
@@ -858,7 +929,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam18.innerHTML,
       draws: drawsTeam18.innerHTML,
       lost: lostTeam18.innerHTML,
-      goals: goalsTeam18.innerHTML,
+      goalsFor: goalsForTeam18.innerHTML,
+      goalsAgainst: goalsAgainstTeam18.innerHTML,
       points: pointsTeam18.innerHTML,
     },
     team19: {
@@ -867,7 +939,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam19.innerHTML,
       draws: drawsTeam19.innerHTML,
       lost: lostTeam19.innerHTML,
-      goals: goalsTeam19.innerHTML,
+      goalsFor: goalsForTeam19.innerHTML,
+      goalsAgainst: goalsAgainstTeam19.innerHTML,
       points: pointsTeam19.innerHTML,
     },
     team20: {
@@ -876,7 +949,8 @@ startGames.onclick = function startPlaying() {
       wins: winsTeam20.innerHTML,
       draws: drawsTeam20.innerHTML,
       lost: lostTeam20.innerHTML,
-      goals: goalsTeam20.innerHTML,
+      goalsFor: goalsForTeam20.innerHTML,
+      goalsAgainst: goalsAgainstTeam20.innerHTML,
       points: pointsTeam20.innerHTML,
     },
   };
@@ -888,23 +962,20 @@ startGames.onclick = function startPlaying() {
   //     wins: team.wins,
   //     draws: team.draws,
   //     lost: team.lost,
-  //     goals: team.goals,
+  //     goalsFor: team.goalsFor,
+  //     goalsAgainst: team.goalsAgainst,
   //     points: team.points,
   //   }))
   //   .sort((a, b) => {
   //     if (b.points !== a.points) {
   //       return parseInt(b.points) - parseInt(a.points);
   //     } else {
-  //       let diffA =
-  //         parseInt(a.goals.split("-")[0]) - parseInt(a.goals.split("-")[1]);
-  //       let diffB =
-  //         parseInt(b.goals.split("-")[0]) - parseInt(b.goals.split("-")[1]);
+  //       let diffA = parseInt(a.goalsFor) - parseInt(a.goalsAgainst);
+  //       let diffB = parseInt(b.goalsFor) - parseInt(b.goalsAgainst);
   //       if (diffB !== diffA) {
   //         return diffB - diffA;
   //       } else {
-  //         return (
-  //           parseInt(b.goals.split("-")[0]) - parseInt(a.goals.split("-")[0])
-  //         );
+  //         return parseInt(b.goalsFor) - parseInt(a.goalsFor);
   //       }
   //     }
   //   });
@@ -915,7 +986,8 @@ startGames.onclick = function startPlaying() {
   //   winsTeams[i].innerHTML = sortedStanding[i].wins;
   //   drawsTeams[i].innerHTML = sortedStanding[i].draws;
   //   lostTeams[i].innerHTML = sortedStanding[i].lost;
-  //   goalsTeams[i].innerHTML = sortedStanding[i].goals;
+  //   goalsFor[i].innerHTML = sortedStanding[i].goalsFor;
+  //   goalsAgainst[i].innerHTML = sortedStanding[i].goalsAgainst;
   //   pointsTeams[i].innerHTML = sortedStanding[i].points;
   // }
 

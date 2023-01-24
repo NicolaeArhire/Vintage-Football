@@ -182,7 +182,7 @@ body {
 .standings_header {
   display: grid;
   align-items: center;
-  grid-template-columns: 25px 140px 50px 40px 40px 40px 50px 40px;
+  grid-template-columns: 25px 140px 40px 35px 35px 35px 35px 35px 40px;
   width: 420px;
   height: 30px;
   margin-top: 10px;
@@ -197,7 +197,8 @@ body {
 .standings_header span:nth-child(5),
 .standings_header span:nth-child(6),
 .standings_header span:nth-child(7),
-.standings_header span:nth-child(8) {
+.standings_header span:nth-child(8),
+.standings_header span:nth-child(9) {
   text-align: center;
 }
 
@@ -223,7 +224,7 @@ body {
 .standings_no20 {
   display: grid;
   align-items: center;
-  grid-template-columns: 25px 140px 50px 40px 40px 40px 50px 40px;
+  grid-template-columns: 25px 140px 40px 35px 35px 35px 35px 35px 40px;
   width: 420px;
   height: 35px;
   margin-left: 10px;
@@ -236,11 +237,12 @@ body {
 #standings_details span:nth-child(5),
 #standings_details span:nth-child(6),
 #standings_details span:nth-child(7),
-#standings_details span:nth-child(8) {
+#standings_details span:nth-child(8),
+#standings_details span:nth-child(9) {
   text-align: center;
 }
 
-#standings_details span:nth-child(8) {
+#standings_details span:nth-child(9) {
   color: red;
 }
 
@@ -272,14 +274,8 @@ body {
   margin-left: 5px;
 }
 
-.standings_played,
-#standings_played {
-  margin-left: 25px;
-}
-
-.standings_wins,
-#standings_wins {
-  margin-left: 5px;
+#standings_goalsFor {
+  border-right: 1px dashed rgb(211, 247, 11);
 }
 
 #game_time_day {
