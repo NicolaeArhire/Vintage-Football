@@ -67,9 +67,12 @@ async function firstPairings() {
 }
 
 let scheduleCounter = 1;
+let gamesPlayedCounter = 0;
+
 async function schedulePairings() {
   let response = await fetch(`fixtures_${leagueSelected[0]}.json`);
   let data = await response.json();
+
   let matchday = `Matchday ${scheduleCounter}`;
 
   for (let i = 0; i < teamNames.length; i++) {
@@ -95,6 +98,13 @@ async function schedulePairings() {
   let res = await fetch(`clubs_${leagueSelected[0]}.json`);
   let resData = await res.json();
 
+  // Calculate Games played
+  gamesPlayedCounter++;
+  for (let i = 0; i <= 19; i++) {
+    playedTeams[i].innerHTML = gamesPlayedCounter;
+  }
+
+  // Calculate goals scored by a team
   if (!window.totalGoalsFor) window.totalGoalsFor = Array(20).fill(0);
   for (let i = 0; i <= 19; i++) {
     let clubName = resData.clubs[i].name;
@@ -104,13 +114,31 @@ async function schedulePairings() {
     goalsFor[i].innerHTML = window.totalGoalsFor[i];
   }
 
-  if (!window.totalGoalsAgainst) window.totalGoalsAgainst = Array(20).fill(0);
-  for (let i = 0; i <= 18; i++) {
-    let clubName = resData.clubs[i].name;
-    let teamIndex = teamNames.findIndex((team) => team.innerHTML === clubName);
-    guestResult = fixtureTeams[teamIndex].innerHTML;
-    window.totalGoalsAgainst[i] += parseInt(guestResult);
-    goalsAgainst[i].innerHTML = window.totalGoalsAgainst[i];
+  // Calculate goals against a team
+  let resp = await fetch(`fixtures_${leagueSelected[0]}.json`);
+  let respData = await resp.json();
+
+  let currentRound = `Matchday ${scheduleCounter - 1}`;
+
+  let matchdayNo = respData.filter((round) => round.round === currentRound);
+
+  for (let i = 0; i < matchdayNo.length; i++) {
+    for (let j = 0; j < resData.clubs.length; j++) {
+      let currentGoalsAgainst = parseInt(goalsAgainst[j].innerHTML);
+      if (matchdayNo[i].team1 === resData.clubs[j].name) {
+        let teamIndex = teamNames.findIndex(
+          (team) => team.innerHTML === matchdayNo[i].team2
+        );
+        homeResult = fixtureTeams[teamIndex].innerHTML;
+        goalsAgainst[j].innerHTML = currentGoalsAgainst + parseInt(homeResult);
+      } else if (matchdayNo[i].team2 === resData.clubs[j].name) {
+        let teamIndex = teamNames.findIndex(
+          (team) => team.innerHTML === matchdayNo[i].team1
+        );
+        guestResult = fixtureTeams[teamIndex].innerHTML;
+        goalsAgainst[j].innerHTML = currentGoalsAgainst + parseInt(guestResult);
+      }
+    }
   }
 }
 
@@ -640,48 +668,45 @@ function results() {
     f20,
   ];
 
-  for (let i = 0; i < 20; i += 2) {
-    if (fixtureTeams[i].innerHTML > fixtureTeams[i + 1].innerHTML) {
-      pointsTeams[i].innerHTML = parseInt(pointsTeams[i].innerHTML) + 3;
-      pointsTeams[i + 1].innerHTML = parseInt(pointsTeams[i + 1].innerHTML) + 0;
-      playedTeams[i].innerHTML = parseInt(playedTeams[i].innerHTML) + 1;
-      playedTeams[i + 1].innerHTML = parseInt(playedTeams[i + 1].innerHTML) + 1;
-      winsTeams[i].innerHTML = parseInt(winsTeams[i].innerHTML) + 1;
-      winsTeams[i + 1].innerHTML = parseInt(winsTeams[i + 1].innerHTML) + 0;
-      drawsTeams[i].innerHTML = parseInt(drawsTeams[i].innerHTML) + 0;
-      drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 0;
-      lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 0;
-      lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 1;
-      // goalsFor[i].innerHTML = fixtures[i];
-      // goalsAgainst[i + 1].innerHTML = fixtures[i + 1];
-    } else if (fixtureTeams[i].innerHTML < fixtureTeams[i + 1].innerHTML) {
-      pointsTeams[i].innerHTML = parseInt(pointsTeams[i].innerHTML) + 0;
-      pointsTeams[i + 1].innerHTML = parseInt(pointsTeams[i + 1].innerHTML) + 3;
-      playedTeams[i].innerHTML = parseInt(playedTeams[i].innerHTML) + 1;
-      playedTeams[i + 1].innerHTML = parseInt(playedTeams[i + 1].innerHTML) + 1;
-      winsTeams[i].innerHTML = parseInt(winsTeams[i].innerHTML) + 0;
-      winsTeams[i + 1].innerHTML = parseInt(winsTeams[i + 1].innerHTML) + 1;
-      drawsTeams[i].innerHTML = parseInt(drawsTeams[i].innerHTML) + 0;
-      drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 0;
-      lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 1;
-      lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 0;
-      // goalsFor[i].innerHTML = fixtures[i];
-      // goalsAgainst[i + 1].innerHTML = fixtures[i + 1];
-    } else {
-      pointsTeams[i].innerHTML = parseInt(pointsTeams[i].innerHTML) + 1;
-      pointsTeams[i + 1].innerHTML = parseInt(pointsTeams[i + 1].innerHTML) + 1;
-      playedTeams[i].innerHTML = parseInt(playedTeams[i].innerHTML) + 1;
-      playedTeams[i + 1].innerHTML = parseInt(playedTeams[i + 1].innerHTML) + 1;
-      winsTeams[i].innerHTML = parseInt(winsTeams[i].innerHTML) + 0;
-      winsTeams[i + 1].innerHTML = parseInt(winsTeams[i + 1].innerHTML) + 0;
-      drawsTeams[i].innerHTML = parseInt(drawsTeams[i].innerHTML) + 1;
-      drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 1;
-      lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 0;
-      lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 0;
-      // goalsFor[i].innerHTML = fixtures[i];
-      // goalsAgainst[i + 1].innerHTML = fixtures[i + 1];
-    }
-  }
+  // for (let i = 0; i < 20; i += 2) {
+  //   if (fixtureTeams[i].innerHTML > fixtureTeams[i + 1].innerHTML) {
+  //     pointsTeams[i].innerHTML = parseInt(pointsTeams[i].innerHTML) + 3;
+  //     pointsTeams[i + 1].innerHTML = parseInt(pointsTeams[i + 1].innerHTML) + 0;
+
+  //     winsTeams[i].innerHTML = parseInt(winsTeams[i].innerHTML) + 1;
+  //     winsTeams[i + 1].innerHTML = parseInt(winsTeams[i + 1].innerHTML) + 0;
+  //     drawsTeams[i].innerHTML = parseInt(drawsTeams[i].innerHTML) + 0;
+  //     drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 0;
+  //     lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 0;
+  //     lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 1;
+  //     goalsFor[i].innerHTML = fixtures[i];
+  //     goalsAgainst[i + 1].innerHTML = fixtures[i + 1];
+  //   } else if (fixtureTeams[i].innerHTML < fixtureTeams[i + 1].innerHTML) {
+  //     pointsTeams[i].innerHTML = parseInt(pointsTeams[i].innerHTML) + 0;
+  //     pointsTeams[i + 1].innerHTML = parseInt(pointsTeams[i + 1].innerHTML) + 3;
+
+  //     winsTeams[i].innerHTML = parseInt(winsTeams[i].innerHTML) + 0;
+  //     winsTeams[i + 1].innerHTML = parseInt(winsTeams[i + 1].innerHTML) + 1;
+  //     drawsTeams[i].innerHTML = parseInt(drawsTeams[i].innerHTML) + 0;
+  //     drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 0;
+  //     lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 1;
+  //     lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 0;
+  //     goalsFor[i].innerHTML = fixtures[i];
+  //     goalsAgainst[i + 1].innerHTML = fixtures[i + 1];
+  //   } else {
+  //     pointsTeams[i].innerHTML = parseInt(pointsTeams[i].innerHTML) + 1;
+  //     pointsTeams[i + 1].innerHTML = parseInt(pointsTeams[i + 1].innerHTML) + 1;
+
+  //     winsTeams[i].innerHTML = parseInt(winsTeams[i].innerHTML) + 0;
+  //     winsTeams[i + 1].innerHTML = parseInt(winsTeams[i + 1].innerHTML) + 0;
+  //     drawsTeams[i].innerHTML = parseInt(drawsTeams[i].innerHTML) + 1;
+  //     drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 1;
+  //     lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 0;
+  //     lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 0;
+  //     goalsFor[i].innerHTML = fixtures[i];
+  //     goalsAgainst[i + 1].innerHTML = fixtures[i + 1];
+  //   }
+  // }
 }
 
 // Start Playing button------------------------------------------------------
