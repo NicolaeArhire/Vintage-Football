@@ -134,7 +134,8 @@ body {
 }
 
 .start_games,
-.clear_results {
+.clear_results,
+.final_results {
   width: 80px;
   margin-top: 10px;
   margin-left: 10px;
@@ -150,18 +151,25 @@ body {
   background-color: rgb(24, 168, 194);
 }
 
+.final_results {
+  background-color: rgb(14, 224, 14);
+}
+
 .start_games:hover,
-.clear_results:hover {
+.clear_results:hover,
+.final_results {
   cursor: pointer;
 }
 
 .start_games:active,
-.clear_results:active {
+.clear_results:active,
+.final_results:active {
   background-color: rgb(5, 22, 175);
 }
 
 .start_games:disabled,
-.clear_results:disabled {
+.clear_results:disabled,
+.final_results:disabled {
   background-color: moccasin;
   opacity: 0.5;
   cursor: initial;
@@ -243,7 +251,7 @@ body {
 }
 
 #standings_details span:nth-child(9) {
-  color: red;
+  color: rgb(32, 34, 34);
 }
 
 .standings_place,
@@ -332,7 +340,7 @@ body {
   color: white;
 }
 
-.winner {
+/* .winner {
   visibility: hidden;
   margin-top: 200px;
   position: fixed;
@@ -388,12 +396,60 @@ body {
 
 .modal_close:hover {
   background-color: aquamarine;
-}
+} */
 
 @media screen and (max-width: 500px) {
+  body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* align-items: center;
+    text-align: center; */
+  }
+
+  .league_pick {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    height: 450px;
+    border-radius: 30px;
+    background-color: rgb(19, 35, 43);
+    overflow: hidden;
+  }
+
+  .intro {
+    font-size: 25px;
+  }
+
+  .england,
+  .spain,
+  .italy,
+  .france {
+    margin-top: 10px;
+    font-size: 20px;
+    width: 200px;
+    height: 70px;
+  }
+
   .wrapper {
     display: flex;
     flex-direction: column;
-    height: 100%;
+  }
+
+  .games {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 35px;
+  }
+
+  .standings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
   }
 }

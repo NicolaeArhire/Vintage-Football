@@ -1,4 +1,3 @@
-// Declaring Batch Variables--------------------------------------------------------------------------
 let leaguePick = document.querySelector(".container");
 let wrapperContainer = document.querySelector(".wrapper");
 let england = document.querySelector(".england");
@@ -69,6 +68,7 @@ async function firstPairings() {
 let scheduleCounter = 1;
 let gamesPlayedCounter = 0;
 
+// Pair teams on each round---------------------------------------------------------------------------
 async function schedulePairings() {
   let response = await fetch(`fixtures_${leagueSelected[0]}.json`);
   let data = await response.json();
@@ -83,65 +83,352 @@ async function schedulePairings() {
   }
   scheduleCounter++;
 
-  // let indexStandings = [];
-  // let indexPairings = [];
-
-  // for (let i = 0; i < standingTeams.length; i++) {
-  //   for (let j = 0; j < teamNames.length; j++) {
-  //     if (standingTeams[i].innerHTML === teamNames[j].innerHTML) {
-  //       indexStandings.push(i);
-  //       indexPairings.push(j);
-  //     }
-  //   }
-  // }
-
-  let res = await fetch(`clubs_${leagueSelected[0]}.json`);
-  let resData = await res.json();
-
-  // Calculate Games played
+  // Calculate games played---------------------------------------------------------------------------
   gamesPlayedCounter++;
+
   for (let i = 0; i <= 19; i++) {
     playedTeams[i].innerHTML = gamesPlayedCounter;
   }
 
-  // Calculate goals scored by a team
+  // Calculate goals scored by a team-----------------------------------------------------------------
+  let res = await fetch(`clubs_${leagueSelected[0]}.json`);
+  let resData = await res.json();
+
   if (!window.totalGoalsFor) window.totalGoalsFor = Array(20).fill(0);
   for (let i = 0; i <= 19; i++) {
     let clubName = resData.clubs[i].name;
     let teamIndex = teamNames.findIndex((team) => team.innerHTML === clubName);
+
     homeResult = fixtureTeams[teamIndex].innerHTML;
     window.totalGoalsFor[i] += parseInt(homeResult);
     goalsFor[i].innerHTML = window.totalGoalsFor[i];
   }
 
-  // Calculate goals against a team
+  // Calculate goals against a team--------------------------------------------------------------------
   let resp = await fetch(`fixtures_${leagueSelected[0]}.json`);
   let respData = await resp.json();
-
   let currentRound = `Matchday ${scheduleCounter - 1}`;
-
   let matchdayNo = respData.filter((round) => round.round === currentRound);
 
   for (let i = 0; i < matchdayNo.length; i++) {
     for (let j = 0; j < resData.clubs.length; j++) {
       let currentGoalsAgainst = parseInt(goalsAgainst[j].innerHTML);
+      let result = 0;
       if (matchdayNo[i].team1 === resData.clubs[j].name) {
         let teamIndex = teamNames.findIndex(
           (team) => team.innerHTML === matchdayNo[i].team2
         );
-        homeResult = fixtureTeams[teamIndex].innerHTML;
-        goalsAgainst[j].innerHTML = currentGoalsAgainst + parseInt(homeResult);
+        result = parseInt(fixtureTeams[teamIndex].innerHTML);
       } else if (matchdayNo[i].team2 === resData.clubs[j].name) {
         let teamIndex = teamNames.findIndex(
           (team) => team.innerHTML === matchdayNo[i].team1
         );
-        guestResult = fixtureTeams[teamIndex].innerHTML;
-        goalsAgainst[j].innerHTML = currentGoalsAgainst + parseInt(guestResult);
+        result = parseInt(fixtureTeams[teamIndex].innerHTML);
       }
+      goalsAgainst[j].innerHTML = currentGoalsAgainst + result;
+    }
+  }
+
+  // Calculate wins, draws, lost, points----------------------------------------------------------------
+  let currentRound1 = `Matchday ${scheduleCounter - 1}`;
+  let matchdayNo1 = respData.filter((round) => round.round === currentRound1);
+
+  let teamNameMap = new Map();
+
+  for (let i = 0; i < teamNames.length; i++) {
+    teamNameMap.set(teamNames[i].innerHTML, i);
+  }
+
+  for (let i = 0; i < matchdayNo1.length; i++) {
+    let team1Index = teamNameMap.get(matchdayNo1[i].team1);
+    let team2Index = teamNameMap.get(matchdayNo1[i].team2);
+
+    let teamIndexJocker1 = standingTeams.findIndex(
+      (team) => team.innerHTML === matchdayNo1[i].team1
+    );
+    let teamIndexJocker2 = standingTeams.findIndex(
+      (team) => team.innerHTML === matchdayNo1[i].team2
+    );
+
+    if (
+      fixtureTeams[team1Index].innerHTML > fixtureTeams[team2Index].innerHTML
+    ) {
+      winsTeams[teamIndexJocker1].innerHTML =
+        parseInt(winsTeams[teamIndexJocker1].innerHTML) + 1;
+      lostTeams[teamIndexJocker2].innerHTML =
+        parseInt(lostTeams[teamIndexJocker2].innerHTML) + 1;
+      pointsTeams[teamIndexJocker1].innerHTML =
+        parseInt(pointsTeams[teamIndexJocker1].innerHTML) + 3;
+      pointsTeams[teamIndexJocker2].innerHTML =
+        parseInt(pointsTeams[teamIndexJocker2].innerHTML) + 0;
+    } else if (
+      fixtureTeams[team1Index].innerHTML < fixtureTeams[team2Index].innerHTML
+    ) {
+      winsTeams[teamIndexJocker2].innerHTML =
+        parseInt(winsTeams[teamIndexJocker2].innerHTML) + 1;
+      lostTeams[teamIndexJocker1].innerHTML =
+        parseInt(lostTeams[teamIndexJocker1].innerHTML) + 1;
+      pointsTeams[teamIndexJocker2].innerHTML =
+        parseInt(pointsTeams[teamIndexJocker2].innerHTML) + 3;
+      pointsTeams[teamIndexJocker1].innerHTML =
+        parseInt(pointsTeams[teamIndexJocker1].innerHTML) + 0;
+    } else if (
+      fixtureTeams[team1Index].innerHTML == fixtureTeams[team2Index].innerHTML
+    ) {
+      drawsTeams[teamIndexJocker1].innerHTML =
+        parseInt(drawsTeams[teamIndexJocker1].innerHTML) + 1;
+      drawsTeams[teamIndexJocker2].innerHTML =
+        parseInt(drawsTeams[teamIndexJocker2].innerHTML) + 1;
+      pointsTeams[teamIndexJocker1].innerHTML =
+        parseInt(pointsTeams[teamIndexJocker1].innerHTML) + 1;
+      pointsTeams[teamIndexJocker2].innerHTML =
+        parseInt(pointsTeams[teamIndexJocker2].innerHTML) + 1;
     }
   }
 }
 
+function sortStandings() {
+  const standingDetails = {
+    team1: {
+      name: standingNo1.innerHTML,
+      games: playedTeam1.innerHTML,
+      wins: winsTeam1.innerHTML,
+      draws: drawsTeam1.innerHTML,
+      lost: lostTeam1.innerHTML,
+      goalsFor: goalsForTeam1.innerHTML,
+      goalsAgainst: goalsAgainstTeam1.innerHTML,
+      points: pointsTeam1.innerHTML,
+    },
+    team2: {
+      name: standingNo2.innerHTML,
+      games: playedTeam2.innerHTML,
+      wins: winsTeam2.innerHTML,
+      draws: drawsTeam2.innerHTML,
+      lost: lostTeam2.innerHTML,
+      goalsFor: goalsForTeam2.innerHTML,
+      goalsAgainst: goalsAgainstTeam2.innerHTML,
+      points: pointsTeam2.innerHTML,
+    },
+    team3: {
+      name: standingNo3.innerHTML,
+      games: playedTeam3.innerHTML,
+      wins: winsTeam3.innerHTML,
+      draws: drawsTeam3.innerHTML,
+      lost: lostTeam3.innerHTML,
+      goalsFor: goalsForTeam3.innerHTML,
+      goalsAgainst: goalsAgainstTeam3.innerHTML,
+      points: pointsTeam3.innerHTML,
+    },
+    team4: {
+      name: standingNo4.innerHTML,
+      games: playedTeam4.innerHTML,
+      wins: winsTeam4.innerHTML,
+      draws: drawsTeam4.innerHTML,
+      lost: lostTeam4.innerHTML,
+      goalsFor: goalsForTeam4.innerHTML,
+      goalsAgainst: goalsAgainstTeam4.innerHTML,
+      points: pointsTeam4.innerHTML,
+    },
+    team5: {
+      name: standingNo5.innerHTML,
+      games: playedTeam5.innerHTML,
+      wins: winsTeam5.innerHTML,
+      draws: drawsTeam5.innerHTML,
+      lost: lostTeam5.innerHTML,
+      goalsFor: goalsForTeam5.innerHTML,
+      goalsAgainst: goalsAgainstTeam5.innerHTML,
+      points: pointsTeam5.innerHTML,
+    },
+    team6: {
+      name: standingNo6.innerHTML,
+      games: playedTeam6.innerHTML,
+      wins: winsTeam6.innerHTML,
+      draws: drawsTeam6.innerHTML,
+      lost: lostTeam6.innerHTML,
+      goalsFor: goalsForTeam6.innerHTML,
+      goalsAgainst: goalsAgainstTeam6.innerHTML,
+      points: pointsTeam6.innerHTML,
+    },
+    team7: {
+      name: standingNo7.innerHTML,
+      games: playedTeam7.innerHTML,
+      wins: winsTeam7.innerHTML,
+      draws: drawsTeam7.innerHTML,
+      lost: lostTeam7.innerHTML,
+      goalsFor: goalsForTeam7.innerHTML,
+      goalsAgainst: goalsAgainstTeam7.innerHTML,
+      points: pointsTeam7.innerHTML,
+    },
+    team8: {
+      name: standingNo8.innerHTML,
+      games: playedTeam8.innerHTML,
+      wins: winsTeam8.innerHTML,
+      draws: drawsTeam8.innerHTML,
+      lost: lostTeam8.innerHTML,
+      goalsFor: goalsForTeam8.innerHTML,
+      goalsAgainst: goalsAgainstTeam8.innerHTML,
+      points: pointsTeam8.innerHTML,
+    },
+    team9: {
+      name: standingNo9.innerHTML,
+      games: playedTeam9.innerHTML,
+      wins: winsTeam9.innerHTML,
+      draws: drawsTeam9.innerHTML,
+      lost: lostTeam9.innerHTML,
+      goalsFor: goalsForTeam9.innerHTML,
+      goalsAgainst: goalsAgainstTeam9.innerHTML,
+      points: pointsTeam9.innerHTML,
+    },
+    team10: {
+      name: standingNo10.innerHTML,
+      games: playedTeam10.innerHTML,
+      wins: winsTeam10.innerHTML,
+      draws: drawsTeam10.innerHTML,
+      lost: lostTeam10.innerHTML,
+      goalsFor: goalsForTeam10.innerHTML,
+      goalsAgainst: goalsAgainstTeam10.innerHTML,
+      points: pointsTeam10.innerHTML,
+    },
+    team11: {
+      name: standingNo11.innerHTML,
+      games: playedTeam11.innerHTML,
+      wins: winsTeam11.innerHTML,
+      draws: drawsTeam11.innerHTML,
+      lost: lostTeam11.innerHTML,
+      goalsFor: goalsForTeam11.innerHTML,
+      goalsAgainst: goalsAgainstTeam11.innerHTML,
+      points: pointsTeam11.innerHTML,
+    },
+    team12: {
+      name: standingNo12.innerHTML,
+      games: playedTeam12.innerHTML,
+      wins: winsTeam12.innerHTML,
+      draws: drawsTeam12.innerHTML,
+      lost: lostTeam12.innerHTML,
+      goalsFor: goalsForTeam12.innerHTML,
+      goalsAgainst: goalsAgainstTeam12.innerHTML,
+      points: pointsTeam12.innerHTML,
+    },
+    team13: {
+      name: standingNo13.innerHTML,
+      games: playedTeam13.innerHTML,
+      wins: winsTeam13.innerHTML,
+      draws: drawsTeam13.innerHTML,
+      lost: lostTeam13.innerHTML,
+      goalsFor: goalsForTeam13.innerHTML,
+      goalsAgainst: goalsAgainstTeam13.innerHTML,
+      points: pointsTeam13.innerHTML,
+    },
+    team14: {
+      name: standingNo14.innerHTML,
+      games: playedTeam14.innerHTML,
+      wins: winsTeam14.innerHTML,
+      draws: drawsTeam14.innerHTML,
+      lost: lostTeam14.innerHTML,
+      goalsFor: goalsForTeam14.innerHTML,
+      goalsAgainst: goalsAgainstTeam14.innerHTML,
+      points: pointsTeam14.innerHTML,
+    },
+    team15: {
+      name: standingNo15.innerHTML,
+      games: playedTeam15.innerHTML,
+      wins: winsTeam15.innerHTML,
+      draws: drawsTeam15.innerHTML,
+      lost: lostTeam15.innerHTML,
+      goalsFor: goalsForTeam15.innerHTML,
+      goalsAgainst: goalsAgainstTeam15.innerHTML,
+      points: pointsTeam15.innerHTML,
+    },
+    team16: {
+      name: standingNo16.innerHTML,
+      games: playedTeam16.innerHTML,
+      wins: winsTeam16.innerHTML,
+      draws: drawsTeam16.innerHTML,
+      lost: lostTeam16.innerHTML,
+      goalsFor: goalsForTeam16.innerHTML,
+      goalsAgainst: goalsAgainstTeam16.innerHTML,
+      points: pointsTeam16.innerHTML,
+    },
+    team17: {
+      name: standingNo17.innerHTML,
+      games: playedTeam17.innerHTML,
+      wins: winsTeam17.innerHTML,
+      draws: drawsTeam17.innerHTML,
+      lost: lostTeam17.innerHTML,
+      goalsFor: goalsForTeam17.innerHTML,
+      goalsAgainst: goalsAgainstTeam17.innerHTML,
+      points: pointsTeam17.innerHTML,
+    },
+    team18: {
+      name: standingNo18.innerHTML,
+      games: playedTeam18.innerHTML,
+      wins: winsTeam18.innerHTML,
+      draws: drawsTeam18.innerHTML,
+      lost: lostTeam18.innerHTML,
+      goalsFor: goalsForTeam18.innerHTML,
+      goalsAgainst: goalsAgainstTeam18.innerHTML,
+      points: pointsTeam18.innerHTML,
+    },
+    team19: {
+      name: standingNo19.innerHTML,
+      games: playedTeam19.innerHTML,
+      wins: winsTeam19.innerHTML,
+      draws: drawsTeam19.innerHTML,
+      lost: lostTeam19.innerHTML,
+      goalsFor: goalsForTeam19.innerHTML,
+      goalsAgainst: goalsAgainstTeam19.innerHTML,
+      points: pointsTeam19.innerHTML,
+    },
+    team20: {
+      name: standingNo20.innerHTML,
+      games: playedTeam20.innerHTML,
+      wins: winsTeam20.innerHTML,
+      draws: drawsTeam20.innerHTML,
+      lost: lostTeam20.innerHTML,
+      goalsFor: goalsForTeam20.innerHTML,
+      goalsAgainst: goalsAgainstTeam20.innerHTML,
+      points: pointsTeam20.innerHTML,
+    },
+  };
+
+  let sortedStanding = Object.values(standingDetails)
+    .map((team) => ({
+      team: team.name,
+      games: team.games,
+      wins: team.wins,
+      draws: team.draws,
+      lost: team.lost,
+      goalsFor: team.goalsFor,
+      goalsAgainst: team.goalsAgainst,
+      points: team.points,
+    }))
+    .sort((a, b) => {
+      if (b.points !== a.points) {
+        return parseInt(b.points) - parseInt(a.points);
+      } else {
+        let diffA = parseInt(a.goalsFor) - parseInt(a.goalsAgainst);
+        let diffB = parseInt(b.goalsFor) - parseInt(b.goalsAgainst);
+        if (diffB !== diffA) {
+          return diffB - diffA;
+        } else {
+          return parseInt(b.goalsFor) - parseInt(a.goalsFor);
+        }
+      }
+    });
+
+  for (let i = 0; i < sortedStanding.length; i++) {
+    standingTeams[i].innerHTML = sortedStanding[i].team;
+    playedTeams[i].innerHTML = sortedStanding[i].games;
+    winsTeams[i].innerHTML = sortedStanding[i].wins;
+    drawsTeams[i].innerHTML = sortedStanding[i].draws;
+    lostTeams[i].innerHTML = sortedStanding[i].lost;
+    goalsFor[i].innerHTML = sortedStanding[i].goalsFor;
+    goalsAgainst[i].innerHTML = sortedStanding[i].goalsAgainst;
+    pointsTeams[i].innerHTML = sortedStanding[i].points;
+  }
+}
+
+// Declaring Batch Variables--------------------------------------------------------------------------
 let fixtureTeam1 = document.querySelector(".game1_home_score");
 let fixtureTeam2 = document.querySelector(".game1_guest_score");
 let fixtureTeam3 = document.querySelector(".game2_home_score");
@@ -590,123 +877,17 @@ let modalClose = document.querySelector(".modal_close");
 let roundNo = document.querySelector(".rounds");
 let startGames = document.querySelector(".start_games");
 let clearResults = document.querySelector(".clear_results");
+let finalResults = document.querySelector(".final_results");
+let pointsReveal = document.querySelectorAll("#standings_points");
 let round = 1;
 let isRed = true;
 let roundCounter = 0;
 
 clearResults.disabled = true;
+finalResults.disabled = true;
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
-}
-
-let f1 = 0;
-let f2 = 0;
-let f3 = 0;
-let f4 = 0;
-let f5 = 0;
-let f6 = 0;
-let f7 = 0;
-let f8 = 0;
-let f9 = 0;
-let f10 = 0;
-let f11 = 0;
-let f12 = 0;
-let f13 = 0;
-let f14 = 0;
-let f15 = 0;
-let f16 = 0;
-let f17 = 0;
-let f18 = 0;
-let f19 = 0;
-let f20 = 0;
-
-// Calculating Games, Wins, Draws, Loses, Goals, Points---------------------------------------
-
-function results() {
-  f1 += parseInt(fixtureTeam1.innerHTML);
-  f2 += parseInt(fixtureTeam2.innerHTML);
-  f3 += parseInt(fixtureTeam3.innerHTML);
-  f4 += parseInt(fixtureTeam4.innerHTML);
-  f5 += parseInt(fixtureTeam5.innerHTML);
-  f6 += parseInt(fixtureTeam6.innerHTML);
-  f7 += parseInt(fixtureTeam7.innerHTML);
-  f8 += parseInt(fixtureTeam8.innerHTML);
-  f9 += parseInt(fixtureTeam9.innerHTML);
-  f10 += parseInt(fixtureTeam10.innerHTML);
-  f11 += parseInt(fixtureTeam11.innerHTML);
-  f12 += parseInt(fixtureTeam12.innerHTML);
-  f13 += parseInt(fixtureTeam13.innerHTML);
-  f14 += parseInt(fixtureTeam14.innerHTML);
-  f15 += parseInt(fixtureTeam15.innerHTML);
-  f16 += parseInt(fixtureTeam16.innerHTML);
-  f17 += parseInt(fixtureTeam17.innerHTML);
-  f18 += parseInt(fixtureTeam18.innerHTML);
-  f19 += parseInt(fixtureTeam19.innerHTML);
-  f20 += parseInt(fixtureTeam20.innerHTML);
-
-  let fixtures = [
-    f1,
-    f2,
-    f3,
-    f4,
-    f5,
-    f6,
-    f7,
-    f8,
-    f9,
-    f10,
-    f11,
-    f12,
-    f13,
-    f14,
-    f15,
-    f16,
-    f17,
-    f18,
-    f19,
-    f20,
-  ];
-
-  // for (let i = 0; i < 20; i += 2) {
-  //   if (fixtureTeams[i].innerHTML > fixtureTeams[i + 1].innerHTML) {
-  //     pointsTeams[i].innerHTML = parseInt(pointsTeams[i].innerHTML) + 3;
-  //     pointsTeams[i + 1].innerHTML = parseInt(pointsTeams[i + 1].innerHTML) + 0;
-
-  //     winsTeams[i].innerHTML = parseInt(winsTeams[i].innerHTML) + 1;
-  //     winsTeams[i + 1].innerHTML = parseInt(winsTeams[i + 1].innerHTML) + 0;
-  //     drawsTeams[i].innerHTML = parseInt(drawsTeams[i].innerHTML) + 0;
-  //     drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 0;
-  //     lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 0;
-  //     lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 1;
-  //     goalsFor[i].innerHTML = fixtures[i];
-  //     goalsAgainst[i + 1].innerHTML = fixtures[i + 1];
-  //   } else if (fixtureTeams[i].innerHTML < fixtureTeams[i + 1].innerHTML) {
-  //     pointsTeams[i].innerHTML = parseInt(pointsTeams[i].innerHTML) + 0;
-  //     pointsTeams[i + 1].innerHTML = parseInt(pointsTeams[i + 1].innerHTML) + 3;
-
-  //     winsTeams[i].innerHTML = parseInt(winsTeams[i].innerHTML) + 0;
-  //     winsTeams[i + 1].innerHTML = parseInt(winsTeams[i + 1].innerHTML) + 1;
-  //     drawsTeams[i].innerHTML = parseInt(drawsTeams[i].innerHTML) + 0;
-  //     drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 0;
-  //     lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 1;
-  //     lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 0;
-  //     goalsFor[i].innerHTML = fixtures[i];
-  //     goalsAgainst[i + 1].innerHTML = fixtures[i + 1];
-  //   } else {
-  //     pointsTeams[i].innerHTML = parseInt(pointsTeams[i].innerHTML) + 1;
-  //     pointsTeams[i + 1].innerHTML = parseInt(pointsTeams[i + 1].innerHTML) + 1;
-
-  //     winsTeams[i].innerHTML = parseInt(winsTeams[i].innerHTML) + 0;
-  //     winsTeams[i + 1].innerHTML = parseInt(winsTeams[i + 1].innerHTML) + 0;
-  //     drawsTeams[i].innerHTML = parseInt(drawsTeams[i].innerHTML) + 1;
-  //     drawsTeams[i + 1].innerHTML = parseInt(drawsTeams[i + 1].innerHTML) + 1;
-  //     lostTeams[i].innerHTML = parseInt(lostTeams[i].innerHTML) + 0;
-  //     lostTeams[i + 1].innerHTML = parseInt(lostTeams[i + 1].innerHTML) + 0;
-  //     goalsFor[i].innerHTML = fixtures[i];
-  //     goalsAgainst[i + 1].innerHTML = fixtures[i + 1];
-  //   }
-  // }
 }
 
 // Start Playing button------------------------------------------------------
@@ -775,254 +956,22 @@ startGames.onclick = function startPlaying() {
   fixtureTeam20.innerHTML = getRandomInt(4 - fixtureTeam19.innerHTML);
 
   schedulePairings();
-  results();
-
-  const standingDetails = {
-    team1: {
-      name: standingNo1.innerHTML,
-      games: playedTeam1.innerHTML,
-      wins: winsTeam1.innerHTML,
-      draws: drawsTeam1.innerHTML,
-      lost: lostTeam1.innerHTML,
-      goalsFor: goalsForTeam1.innerHTML,
-      goalsAgainst: goalsAgainstTeam1.innerHTML,
-      points: pointsTeam1.innerHTML,
-    },
-    team2: {
-      name: standingNo2.innerHTML,
-      games: playedTeam2.innerHTML,
-      wins: winsTeam2.innerHTML,
-      draws: drawsTeam2.innerHTML,
-      lost: lostTeam2.innerHTML,
-      goalsFor: goalsForTeam2.innerHTML,
-      goalsAgainst: goalsAgainstTeam2.innerHTML,
-      points: pointsTeam2.innerHTML,
-    },
-    team3: {
-      name: standingNo3.innerHTML,
-      games: playedTeam3.innerHTML,
-      wins: winsTeam3.innerHTML,
-      draws: drawsTeam3.innerHTML,
-      lost: lostTeam3.innerHTML,
-      goalsFor: goalsForTeam3.innerHTML,
-      goalsAgainst: goalsAgainstTeam3.innerHTML,
-      points: pointsTeam3.innerHTML,
-    },
-    team4: {
-      name: standingNo4.innerHTML,
-      games: playedTeam4.innerHTML,
-      wins: winsTeam4.innerHTML,
-      draws: drawsTeam4.innerHTML,
-      lost: lostTeam4.innerHTML,
-      goalsFor: goalsForTeam4.innerHTML,
-      goalsAgainst: goalsAgainstTeam4.innerHTML,
-      points: pointsTeam4.innerHTML,
-    },
-    team5: {
-      name: standingNo5.innerHTML,
-      games: playedTeam5.innerHTML,
-      wins: winsTeam5.innerHTML,
-      draws: drawsTeam5.innerHTML,
-      lost: lostTeam5.innerHTML,
-      goalsFor: goalsForTeam5.innerHTML,
-      goalsAgainst: goalsAgainstTeam5.innerHTML,
-      points: pointsTeam5.innerHTML,
-    },
-    team6: {
-      name: standingNo6.innerHTML,
-      games: playedTeam6.innerHTML,
-      wins: winsTeam6.innerHTML,
-      draws: drawsTeam6.innerHTML,
-      lost: lostTeam6.innerHTML,
-      goalsFor: goalsForTeam6.innerHTML,
-      goalsAgainst: goalsAgainstTeam6.innerHTML,
-      points: pointsTeam6.innerHTML,
-    },
-    team7: {
-      name: standingNo7.innerHTML,
-      games: playedTeam7.innerHTML,
-      wins: winsTeam7.innerHTML,
-      draws: drawsTeam7.innerHTML,
-      lost: lostTeam7.innerHTML,
-      goalsFor: goalsForTeam7.innerHTML,
-      goalsAgainst: goalsAgainstTeam7.innerHTML,
-      points: pointsTeam7.innerHTML,
-    },
-    team8: {
-      name: standingNo8.innerHTML,
-      games: playedTeam8.innerHTML,
-      wins: winsTeam8.innerHTML,
-      draws: drawsTeam8.innerHTML,
-      lost: lostTeam8.innerHTML,
-      goalsFor: goalsForTeam8.innerHTML,
-      goalsAgainst: goalsAgainstTeam8.innerHTML,
-      points: pointsTeam8.innerHTML,
-    },
-    team9: {
-      name: standingNo9.innerHTML,
-      games: playedTeam9.innerHTML,
-      wins: winsTeam9.innerHTML,
-      draws: drawsTeam9.innerHTML,
-      lost: lostTeam9.innerHTML,
-      goalsFor: goalsForTeam9.innerHTML,
-      goalsAgainst: goalsAgainstTeam9.innerHTML,
-      points: pointsTeam9.innerHTML,
-    },
-    team10: {
-      name: standingNo10.innerHTML,
-      games: playedTeam10.innerHTML,
-      wins: winsTeam10.innerHTML,
-      draws: drawsTeam10.innerHTML,
-      lost: lostTeam10.innerHTML,
-      goalsFor: goalsForTeam10.innerHTML,
-      goalsAgainst: goalsAgainstTeam10.innerHTML,
-      points: pointsTeam10.innerHTML,
-    },
-    team11: {
-      name: standingNo11.innerHTML,
-      games: playedTeam11.innerHTML,
-      wins: winsTeam11.innerHTML,
-      draws: drawsTeam11.innerHTML,
-      lost: lostTeam11.innerHTML,
-      goalsFor: goalsForTeam11.innerHTML,
-      goalsAgainst: goalsAgainstTeam11.innerHTML,
-      points: pointsTeam11.innerHTML,
-    },
-    team12: {
-      name: standingNo12.innerHTML,
-      games: playedTeam12.innerHTML,
-      wins: winsTeam12.innerHTML,
-      draws: drawsTeam12.innerHTML,
-      lost: lostTeam12.innerHTML,
-      goalsFor: goalsForTeam12.innerHTML,
-      goalsAgainst: goalsAgainstTeam12.innerHTML,
-      points: pointsTeam12.innerHTML,
-    },
-    team13: {
-      name: standingNo13.innerHTML,
-      games: playedTeam13.innerHTML,
-      wins: winsTeam13.innerHTML,
-      draws: drawsTeam13.innerHTML,
-      lost: lostTeam13.innerHTML,
-      goalsFor: goalsForTeam13.innerHTML,
-      goalsAgainst: goalsAgainstTeam13.innerHTML,
-      points: pointsTeam13.innerHTML,
-    },
-    team14: {
-      name: standingNo14.innerHTML,
-      games: playedTeam14.innerHTML,
-      wins: winsTeam14.innerHTML,
-      draws: drawsTeam14.innerHTML,
-      lost: lostTeam14.innerHTML,
-      goalsFor: goalsForTeam14.innerHTML,
-      goalsAgainst: goalsAgainstTeam14.innerHTML,
-      points: pointsTeam14.innerHTML,
-    },
-    team15: {
-      name: standingNo15.innerHTML,
-      games: playedTeam15.innerHTML,
-      wins: winsTeam15.innerHTML,
-      draws: drawsTeam15.innerHTML,
-      lost: lostTeam15.innerHTML,
-      goalsFor: goalsForTeam15.innerHTML,
-      goalsAgainst: goalsAgainstTeam15.innerHTML,
-      points: pointsTeam15.innerHTML,
-    },
-    team16: {
-      name: standingNo16.innerHTML,
-      games: playedTeam16.innerHTML,
-      wins: winsTeam16.innerHTML,
-      draws: drawsTeam16.innerHTML,
-      lost: lostTeam16.innerHTML,
-      goalsFor: goalsForTeam16.innerHTML,
-      goalsAgainst: goalsAgainstTeam16.innerHTML,
-      points: pointsTeam16.innerHTML,
-    },
-    team17: {
-      name: standingNo17.innerHTML,
-      games: playedTeam17.innerHTML,
-      wins: winsTeam17.innerHTML,
-      draws: drawsTeam17.innerHTML,
-      lost: lostTeam17.innerHTML,
-      goalsFor: goalsForTeam17.innerHTML,
-      goalsAgainst: goalsAgainstTeam17.innerHTML,
-      points: pointsTeam17.innerHTML,
-    },
-    team18: {
-      name: standingNo18.innerHTML,
-      games: playedTeam18.innerHTML,
-      wins: winsTeam18.innerHTML,
-      draws: drawsTeam18.innerHTML,
-      lost: lostTeam18.innerHTML,
-      goalsFor: goalsForTeam18.innerHTML,
-      goalsAgainst: goalsAgainstTeam18.innerHTML,
-      points: pointsTeam18.innerHTML,
-    },
-    team19: {
-      name: standingNo19.innerHTML,
-      games: playedTeam19.innerHTML,
-      wins: winsTeam19.innerHTML,
-      draws: drawsTeam19.innerHTML,
-      lost: lostTeam19.innerHTML,
-      goalsFor: goalsForTeam19.innerHTML,
-      goalsAgainst: goalsAgainstTeam19.innerHTML,
-      points: pointsTeam19.innerHTML,
-    },
-    team20: {
-      name: standingNo20.innerHTML,
-      games: playedTeam20.innerHTML,
-      wins: winsTeam20.innerHTML,
-      draws: drawsTeam20.innerHTML,
-      lost: lostTeam20.innerHTML,
-      goalsFor: goalsForTeam20.innerHTML,
-      goalsAgainst: goalsAgainstTeam20.innerHTML,
-      points: pointsTeam20.innerHTML,
-    },
-  };
-
-  // let sortedStanding = Object.values(standingDetails)
-  //   .map((team) => ({
-  //     team: team.name,
-  //     games: team.games,
-  //     wins: team.wins,
-  //     draws: team.draws,
-  //     lost: team.lost,
-  //     goalsFor: team.goalsFor,
-  //     goalsAgainst: team.goalsAgainst,
-  //     points: team.points,
-  //   }))
-  //   .sort((a, b) => {
-  //     if (b.points !== a.points) {
-  //       return parseInt(b.points) - parseInt(a.points);
-  //     } else {
-  //       let diffA = parseInt(a.goalsFor) - parseInt(a.goalsAgainst);
-  //       let diffB = parseInt(b.goalsFor) - parseInt(b.goalsAgainst);
-  //       if (diffB !== diffA) {
-  //         return diffB - diffA;
-  //       } else {
-  //         return parseInt(b.goalsFor) - parseInt(a.goalsFor);
-  //       }
-  //     }
-  //   });
-
-  // for (let i = 0; i < sortedStanding.length; i++) {
-  //   standingTeams[i].innerHTML = sortedStanding[i].team;
-  //   playedTeams[i].innerHTML = sortedStanding[i].games;
-  //   winsTeams[i].innerHTML = sortedStanding[i].wins;
-  //   drawsTeams[i].innerHTML = sortedStanding[i].draws;
-  //   lostTeams[i].innerHTML = sortedStanding[i].lost;
-  //   goalsFor[i].innerHTML = sortedStanding[i].goalsFor;
-  //   goalsAgainst[i].innerHTML = sortedStanding[i].goalsAgainst;
-  //   pointsTeams[i].innerHTML = sortedStanding[i].points;
-  // }
 
   if (startGames.disabled == true) {
-    modal.style.visibility = "visible";
-    wrapperContainer.style.opacity = "0.6";
-    modalContent.innerHTML = `Congratulations, <span class="modal_winnerTeam"><br>${standingTeams[0].innerHTML}!</br></span> <br></br>Not so good, <span class="modal_looserTeam"><br>${standingTeams[19].innerHTML}!</br></span>`;
-  } else {
-    modal.style.visibility = "hidden";
+    finalResults.disabled = false;
   }
+};
+
+finalResults.onclick = () => {
+  sortStandings();
+  for (let i = 0; i < pointsReveal.length; i++) {
+    pointsReveal[i].style.color = "rgb(0, 217, 255)";
+  }
+  finalResults.disabled = true;
+
+  // modal.style.visibility = "visible";
+  // wrapperContainer.style.opacity = "0.6";
+  // modalContent.innerHTML = `Congratulations, <span class="modal_winnerTeam"><br>${standingTeams[0].innerHTML}!</br></span> <br></br>Not so good, <span class="modal_looserTeam"><br>${standingTeams[19].innerHTML}!</br></span>`;
 };
 
 startGames.focus();
@@ -1036,32 +985,32 @@ clearResults.addEventListener("click", () => {
   location.reload(true);
 });
 
-modalClose.onclick = () => {
-  modal.style.visibility = "hidden";
-  wrapperContainer.style.opacity = "1";
-};
+// modalClose.onclick = () => {
+//   modal.style.visibility = "hidden";
+//   wrapperContainer.style.opacity = "1";
+// };
 
-modal.addEventListener("mousedown", startDragging);
+// modal.addEventListener("mousedown", startDragging);
 
-let offset = 0;
-let isDown = false;
+// let offset = 0;
+// let isDown = false;
 
-function startDragging(e) {
-  isDown = true;
-  offset = e.clientY + 200 + -modal.offsetTop;
-  document.addEventListener("mousemove", doDrag);
-  document.addEventListener("mouseup", stopDragging);
-}
+// function startDragging(e) {
+//   isDown = true;
+//   offset = e.clientY + 200 + -modal.offsetTop;
+//   document.addEventListener("mousemove", doDrag);
+//   document.addEventListener("mouseup", stopDragging);
+// }
 
-function doDrag(e) {
-  e.preventDefault();
-  if (isDown) {
-    modal.style.top = e.clientY - offset + "px";
-  }
-}
+// function doDrag(e) {
+//   e.preventDefault();
+//   if (isDown) {
+//     modal.style.top = e.clientY - offset + "px";
+//   }
+// }
 
-function stopDragging() {
-  isDown = false;
-  document.removeEventListener("mousemove", doDrag);
-  document.removeEventListener("mouseup", stopDragging);
-}
+// function stopDragging() {
+//   isDown = false;
+//   document.removeEventListener("mousemove", doDrag);
+//   document.removeEventListener("mouseup", stopDragging);
+// }
