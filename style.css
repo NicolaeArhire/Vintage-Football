@@ -3,7 +3,7 @@ body {
   justify-content: center;
   margin: 0;
   padding: 0;
-  background-color: rgb(42, 45, 88);
+  background-image: url("./football-field.jpg");
 }
 
 .container {
@@ -29,7 +29,7 @@ body {
   width: 400px;
   height: 450px;
   border-radius: 50px;
-  background-color: rgb(19, 35, 43);
+  background-color: rgba(19, 35, 43, 0.75);
 }
 
 .intro {
@@ -114,10 +114,11 @@ body {
   flex-direction: row;
   justify-content: center;
   margin-top: 60px;
-  width: 770px;
-  height: 800px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  width: auto;
   border-radius: 10px;
-  background-color: rgb(72, 83, 51);
+  background-color: rgba(39, 85, 104, 0.75);
   transform: scaleX(1);
   z-index: 1;
 }
@@ -155,6 +156,10 @@ body {
   background-color: rgb(14, 224, 14);
 }
 
+.final_results {
+  width: 100px;
+}
+
 .start_games:hover,
 .clear_results:hover,
 .final_results {
@@ -164,15 +169,14 @@ body {
 .start_games:active,
 .clear_results:active,
 .final_results:active {
-  background-color: rgb(5, 22, 175);
+  background-color: rgb(185, 197, 16);
 }
 
 .start_games:disabled,
 .clear_results:disabled,
 .final_results:disabled {
-  background-color: moccasin;
-  opacity: 0.5;
-  cursor: initial;
+  cursor: not-allowed;
+  text-decoration: line-through;
 }
 
 .teams {
@@ -238,6 +242,11 @@ body {
   margin-left: 10px;
   background-color: rgb(32, 34, 34);
   color: white;
+}
+
+.standings_no20 {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 #standings_details span:nth-child(3),
@@ -399,25 +408,16 @@ body {
 } */
 
 @media screen and (max-width: 500px) {
-  body {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    /* align-items: center;
-    text-align: center; */
-  }
-
   .league_pick {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 300px;
-    height: 450px;
+    width: 270px;
+    height: 350px;
     border-radius: 30px;
     background-color: rgb(19, 35, 43);
-    overflow: hidden;
   }
 
   .intro {
@@ -431,25 +431,28 @@ body {
     margin-top: 10px;
     font-size: 20px;
     width: 200px;
-    height: 70px;
+    height: 50px;
   }
 
   .wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    background-color: rgba(39, 85, 104, 0.5);
   }
 
   .games {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 35px;
   }
 
   .standings {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    margin-top: 10px;
+    transform: scaleX(0.9);
   }
 }
