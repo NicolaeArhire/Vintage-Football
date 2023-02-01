@@ -173,10 +173,10 @@ body {
 }
 
 .start_games:disabled,
-.clear_results:disabled,
-.final_results:disabled {
+.final_results:disabled,
+.clear_results:disabled {
   cursor: not-allowed;
-  text-decoration: line-through;
+  background-color: rgba(185, 197, 16, 0.4);
 }
 
 .teams {

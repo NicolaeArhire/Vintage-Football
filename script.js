@@ -890,6 +890,37 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
+let xxx = 0;
+
+function gameDate() {
+  let date = new Date(Date.now() + xxx * 24 * 60 * 60 * 1000);
+  xxx += 7;
+
+  let datePlusSeven = date.toString().slice(4, 15);
+  let dateFormatted = datePlusSeven.split(" ");
+
+  const gameTimeDay = document.querySelectorAll("#game_time_day");
+  const gameTimeHour = document.querySelectorAll("#game_time_hour");
+  const year = new Date().getFullYear();
+  const month = new Date().getMonth() + 1;
+  const day = new Date().getDate();
+  const hours = new Date().getHours();
+  const minutes = new Date().getMinutes();
+  // const monthWithLeadingZero = month < 10 ? `0${month}` : month;
+  // const dayWithLeadingZero = day < 10 ? `0${day}` : day;
+  const hoursWithLeadingZero = hours < 10 ? `0${hours}` : hours;
+  const minutesWithLeadingZero = minutes < 10 ? `0${minutes}` : minutes;
+
+  for (const element of gameTimeDay) {
+    element.innerHTML =
+      dateFormatted[1] + " " + dateFormatted[0] + " " + dateFormatted[2];
+  }
+
+  for (const element of gameTimeHour) {
+    element.innerHTML = `${hoursWithLeadingZero}:${minutesWithLeadingZero}`;
+  }
+}
+
 // Start Playing button------------------------------------------------------
 startGames.onclick = function startPlaying() {
   clearResults.disabled = false;
@@ -901,26 +932,6 @@ startGames.onclick = function startPlaying() {
 
   for (let i = 0; i < teamNames.length; i++) {
     teamNames[i].style.opacity = "1";
-  }
-
-  const gameTimeDay = document.querySelectorAll("#game_time_day");
-  const gameTimeHour = document.querySelectorAll("#game_time_hour");
-  const year = new Date().getFullYear();
-  const month = new Date().getMonth() + 1;
-  const day = new Date().getDate();
-  const hours = new Date().getHours();
-  const minutes = new Date().getMinutes();
-  const monthWithLeadingZero = month < 10 ? `0${month}` : month;
-  const dayWithLeadingZero = day < 10 ? `0${day}` : day;
-  const hoursWithLeadingZero = hours < 10 ? `0${hours}` : hours;
-  const minutesWithLeadingZero = minutes < 10 ? `0${minutes}` : minutes;
-
-  for (const element of gameTimeDay) {
-    element.innerHTML = `${dayWithLeadingZero}.${monthWithLeadingZero}.${year}`;
-  }
-
-  for (const element of gameTimeHour) {
-    element.innerHTML = `${hoursWithLeadingZero}:${minutesWithLeadingZero}`;
   }
 
   roundNo.style.opacity = "1";
@@ -955,6 +966,7 @@ startGames.onclick = function startPlaying() {
   fixtureTeam19.innerHTML = getRandomInt(4 - fixtureTeam20.innerHTML) + 1;
   fixtureTeam20.innerHTML = getRandomInt(4 - fixtureTeam19.innerHTML);
 
+  gameDate();
   schedulePairings();
 
   if (startGames.disabled == true) {
